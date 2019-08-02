@@ -7,7 +7,7 @@
 #include <algorithm>
 using namespace std;
 
-int dp[(1 << 30)];
+int dp[(1 << 20)];
 int N, S1, V1, S2, V2;
 
 int main()
