@@ -42,7 +42,7 @@ int main()
 
     int res = solve();
 
-    printf("Case #%d: %d\n", tc, res);
+    printf("Case %d: %d\n", tc, res);
     tc++;
   }
 
