@@ -11,7 +11,7 @@ using namespace std;
 
 typedef long long ll;
 const int MAXN = 1000000;
-ll A[MAXN+10];
+ll A[MAXN+10], C[MAXN+10];
 int N; // [1, 1_000_000]
 ll SUM, AVG;
 
@@ -25,38 +25,17 @@ void input()
   AVG = SUM / N;
 }
 
-ll get(int dist, ll& dst, ll& src)
-{
-  ll need = AVG - dst;
-  ll rest = src - AVG;
-  if (need <= 0 || rest <= 0) return 0;
 
-  if (need > rest) {
-    src -= rest;
-    dst += rest;
-    return rest * dist;
-  }
-  else {
-    src -= need;
-    dst += need;
-    return need * dist;
-  }
-}
 
 ll solve()
 {
+  C[0] = 0;
+  for (int i = 1; i < N; i++) C[i] = C[i-1] + A[i] - AVG;
+  sort(C, C+N);
+
+  ll mid = C[N/2];
   ll best = 0;
-  for (int i = 0; i < N; i++) {
-    if (A[i] >= AVG) continue;
-
-    // A[i] < AVG
-    for (int j = 1; j <= N/2; j++) {
-      if (A[i] >= AVG) break;
-
-      best += get(j, A[i], A[(i+j)%N]);
-      best += get(j, A[i], A[(i-j+N)%N]);
-    }
-  }
+  for (int i = 0; i < N; i++) best += abs(mid - C[i]);
 
   return best;
 }
