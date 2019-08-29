@@ -23,9 +23,11 @@ int main()
     for (int i = 0; i < N; i++) scanf("%d", A+i);
 
     sort(A, A+N, abscomp);
+    // for (int i = 0; i < N; i++) printf("%d ", A[i]);
+    // printf("\n");
     int cnt = 1;
     for (int i = 1; i < N; i++) {
-      if (A[i] * A[i-1] < 0) cnt++;
+      if ((A[i] > 0 && A[i-1] < 0) || (A[i] < 0 && A[i-1] > 0)) cnt++;
     }
 
     printf("%d\n", cnt);
