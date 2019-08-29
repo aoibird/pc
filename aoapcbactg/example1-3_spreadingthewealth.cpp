@@ -11,7 +11,7 @@ using namespace std;
 
 typedef long long ll;
 const int MAXN = 1000000;
-ll A[MAXN+10], C[MAXN+10];
+ll A[MAXN+10];
 int N; // [1, 1_000_000]
 ll SUM, AVG;
 
