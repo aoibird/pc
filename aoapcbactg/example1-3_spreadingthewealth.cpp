@@ -29,13 +29,13 @@ void input()
 
 ll solve()
 {
-  C[0] = 0;
-  for (int i = 1; i < N; i++) C[i] = C[i-1] + A[i] - AVG;
-  sort(C, C+N);
+  A[0] = 0;
+  for (int i = 1; i < N; i++) A[i] = A[i-1] + A[i] - AVG;
+  sort(A, A+N);
 
-  ll mid = C[N/2];
+  ll mid = A[N/2];
   ll best = 0;
-  for (int i = 0; i < N; i++) best += abs(mid - C[i]);
+  for (int i = 0; i < N; i++) best += abs(mid - A[i]);
 
   return best;
 }
