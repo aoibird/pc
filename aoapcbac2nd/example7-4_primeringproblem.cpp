@@ -1,3 +1,4 @@
+// UVa 524
 #include <cctype>
 #include <cmath>
 #include <cstdio>
@@ -45,7 +46,7 @@ int main()
 {
   int T = 1;
   while (scanf("%d", &N) == 1) {
-    printf("Case #%d:\n", T);
+    printf("Case %d:\n", T);
     A[1] = 1;
     memset(V, 0, sizeof(V));
     dfs(2);
