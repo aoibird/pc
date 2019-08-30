@@ -1,0 +1,224 @@
+#+TITLE: Programming Contests
+
+This repository contains my solutions to contest problems from online judges and books.
+
+* Online Judges
+- [[https://codeforces.com][Codeforces]] (CF)
+- [[http://poj.org/][PKU JudgeOnline]] (POJ)
+- [[https://uva.onlinejudge.org/][UVa Online Judge]] (UVa)
+- [[https://open.kattis.com][Kattis]]
+- [[http://judge.u-aizu.ac.jp/onlinejudge/][Aizu Online Judge]] (AOJ)
+- Google Code Jam (GCJ)
+- [[https://atcoder.jp][AtCoder]]
+
+* Books
+- _算法竞赛入门经典（第2版）【算法艺术与信息学竞赛丛书】_ (*UVa*)
+  - /Beginning Algorithm Contests, 2nd [Art of Algorithms and Programming Contests Series]/
+- _算法竞赛入门经典：训练指南【算法艺术与信息学竞赛丛书】_ (*UVa*, *LA*)
+  - /Beginning Algorithm Contests: Training Guide [Art of Algorithms and Programming Contests Series]/
+- _挑战程序设计竞赛（第2版）_ (*POJ*, *GCJ*, *AOJ*)
+  - /Challenges Programming Contest, 2nd/
+  - /Programming Contest Challenge Book, 2nd/
+  - _プログラミングコンテストチャレンジブック [第2版]　~問題解決のアルゴリズム活用力とコーディングテクニックを鍛える~_
+- _挑战程序设计竞赛2：算法与数据结构_ (*AOJ*)
+  - /Challenges Programming Contest 2: Algorithms and Data Structures/
+  - _プログラミングコンテスト攻略のためのアルゴリズムとデータ構造_
+- /Programming Challenges: The Programming Contest Training Manual/ (*UVa*)
+
+* Folders
+- =aoapcbac2nd=: examples and exercises on /Beginning Algorithm Contests, 2nd/
+- =aoapcbactg=: examples and exercise on /Beginning Algorithm Contests: Training Guide/
+- =atcoder=: problems on AtCoder
+- =codeforces=: problems on Codeforces
+- =cpc=: examples and exercises on /Challenges Programming Contest, 2nd/
+- =cpc2=: examples and exercises on /Challenges Programming Contest 2: Algorithms and Data Structures/
+- =pc=: examples and exercises on /Programming Challenges: The Programming Contest Training Manual/
+- =poaps=: exercises on /Principles of Algorithmic Problem Solving/
+- =poj=: problems on PKU JudgeOnline
+
+* Problems
+- AC: Accepted
+- RE: Runtime Error
+- WA: Wrong Anwser
+- CE: Compile Error
+- TLE: Time Limit Exceeded
+- PE: Presentation Error
+
+| Problem                       | Name                               | Status                     |
+|-------------------------------+------------------------------------+----------------------------|
+| AOAPC BAC 2nd Example 3-1     | Tex Quotes                         | AC                         |
+| AOAPC BAC 2nd Example 3-2     | WERTYU                             | AC                         |
+| AOAPC BAC 2nd Example 3-3     | Palindromes                        | PE AC                      |
+| AOAPC BAC 2nd Example 4-1     | Ancient Cipher                     | AC                         |
+| AOAPC BAC 2nd Example 4-2     | Hangman Judge ID                   | AC                         |
+| AOAPC BAC 2nd Example 4-3     | The Dole Queue                     | AC                         |
+| AOAPC BAC 2nd Example 4-4     | Message Decoding                   | AC                         |
+| AOAPC BAC 2nd Example 5-1     | Where is the Marble?               | AC                         |
+| AOAPC BAC 2nd Example 5-2     | The Blocks Problem                 | TLE TLE                    |
+| AOAPC BAC 2nd Example 5-3     | Andy's First Dictionary            | AC                         |
+| AOAPC BAC 2nd Example 5-4     | Ananagrams                         | AC                         |
+| AOAPC BAC 2nd Example 5-5     | The SetStack Computer              | CE                         |
+| AOAPC BAC 2nd Example 5-6     | Team Queue                         | AC                         |
+| AOAPC BAC 2nd Example 5-7     | Ugly Numbers                       | AC                         |
+| AOAPC BAC 2nd Example 5-8     | Unix Is                            | AC                         |
+| AOAPC BAC 2nd Example 5-9     | Database                           | WA                         |
+| AOAPC BAC 2nd Example 6-1     | Concurrency Simulator              | RE                         |
+| AOAPC BAC 2nd Example 6-10    | The Falling Leaves                 | PE AC                      |
+| AOAPC BAC 2nd Example 6-11    | Quadtrees                          | AC                         |
+| AOAPC BAC 2nd Example 6-12    | Oil Deposits                       | AC                         |
+| AOAPC BAC 2nd Example 6-14    | Abbott's Revenge                   | AC                         |
+| AOAPC BAC 2nd Example 6-15    | Ordering Tasks                     | WA                         |
+| AOAPC BAC 2nd Example 6-16    | Play On Words                      | TLE                        |
+| AOAPC BAC 2nd Example 6-17    | Undraw the Trees                   | WA                         |
+| AOAPC BAC 2nd Example 6-2     | Rails                              | WA                         |
+| AOAPC BAC 2nd Example 6-3     | Matrix Chain Multiplication        | AC                         |
+| AOAPC BAC 2nd Example 6-4     | Beiju Text a.k.a Broken Keyboard   | TLE                        |
+| AOAPC BAC 2nd Example 6-5     | Boxes in a Line                    | TLE                        |
+| AOAPC BAC 2nd Example 6-6     | Dropping Balls                     | AC                         |
+| AOAPC BAC 2nd Example 6-7     | Trees on the level                 | CE AC                      |
+| AOAPC BAC 2nd Example 6-8     | Tree                               | AC                         |
+| AOAPC BAC 2nd Example 6-9     | Not so Mobile                      | AC                         |
+| AOAPC BAC 2nd Example 7-1     | Division                           | AC                         |
+| AOAPC BAC 2nd Example 7-11    | Zombie's Treasure Chest            | CE RE TLE                  |
+| AOAPC BAC 2nd Example 7-12    | The Rotation Game                  | TLE                        |
+| AOAPC BAC 2nd Example 7-2     | Maximum Product                    | WA AC                      |
+| AOAPC BAC 2nd Example 7-3     | Fractions Again?!                  | AC                         |
+| AOAPC BAC 2nd Example 7-4     | Prime Ring Problem                 | WA PE AC                   |
+| AOAPC BAC 2nd Example 7-5     | Krypton Factor                     | WA                         |
+| AOAPC BAC 2nd Example 7-6     | Bandwidth                          | AC                         |
+| AOAPC BAC 2nd Example 7-8     | Fill                               | AC                         |
+| AOAPC BAC 2nd Example 7-9     | The Morning after Halloween        | WA AC                      |
+| AOAPC BAC 2nd Exercise 1-1    | average                            |                            |
+| AOAPC BAC 2nd Exercise 1-2    | temperature                        |                            |
+| AOAPC BAC 2nd Exercise 1-3    | sum                                |                            |
+| AOAPC BAC 2nd Exercise 1-4    | sin and cos                        |                            |
+| AOAPC BAC 2nd Exercise 1-5    | discount                           |                            |
+| AOAPC BAC 2nd Exercise 1-6    | triangle                           |                            |
+| AOAPC BAC 2nd Exercise 1-7    | year                               |                            |
+| AOAPC BAC 2nd Exercise 2-1    | daffodil                           |                            |
+| AOAPC BAC 2nd Exercise 2-2    | hanxin                             |                            |
+| AOAPC BAC 2nd Exercise 2-3    | triangle                           |                            |
+| AOAPC BAC 2nd Exercise 2-4    | subsequence                        |                            |
+| AOAPC BAC 2nd Exercise 2-5    | decimal                            |                            |
+| AOAPC BAC 2nd Exercise 2-6    | permutation                        |                            |
+| AOAPC BAC 2nd Exercise 3-1    | Score                              | AC                         |
+| AOAPC BAC 2nd Exercise 3-10   | Box                                | WA                         |
+| AOAPC BAC 2nd Exercise 3-11   | Kickdown                           | WA                         |
+| AOAPC BAC 2nd Exercise 3-2    | Molar Mass                         | AC                         |
+| AOAPC BAC 2nd Exercise 3-3    | Digit Counting                     | AC                         |
+| AOAPC BAC 2nd Exercise 3-4    | Periodic Strings                   | WA WA PE AC WA WA AC WA    |
+| AOAPC BAC 2nd Exercise 3-7    | DNA Consensus String               | AC                         |
+| AOAPC BAC 2nd Exercise 3-9    | All in All                         | RE                         |
+| AOAPC BAC 2nd Exercise 4-10   | Flooded!                           | WA WA WA AC                |
+| AOAPC BAC 2nd Exercise 4-2    | Squares                            | AC                         |
+| AOAPC BAC 2nd Exercise 4-3    | Othello                            | PE AC                      |
+| AOAPC BAC 2nd Exercise 4-4    | Cube Painting                      | WA                         |
+| AOAPC BAC 2nd Exercise 4-5    | IP Networks                        | WA WA WA                   |
+| AOAPC BAC 2nd Exercise 4-6    | Morse Mismatches                   | CE WA                      |
+| AOAPC BAC 2nd Exercise 4-8    | Extraordinarily Tired Students     | WA                         |
+| AOAPC BAC 2nd Exercise 5-1    | Alignment of Code                  | AC                         |
+| AOAPC BAC 2nd Exercise 5-10   | Searching the Web                  | TLE                        |
+| AOAPC BAC 2nd Exercise 5-11   | Updating a Dictionary              | RE                         |
+| AOAPC BAC 2nd Exercise 5-2    | Ducci Sequence                     | WA                         |
+| AOAPC BAC 2nd Exercise 5-3    | Throwing cards away I              | RE                         |
+| AOAPC BAC 2nd Exercise 5-4    | Foreign Exchange                   | AC                         |
+| AOAPC BAC 2nd Exercise 5-5    | Compound Words                     | TLE                        |
+| AOAPC BAC 2nd Exercise 5-7    | Printer Queue                      | AC                         |
+| AOAPC BAC 2nd Exercise 5-8    | Borrowers                          | WA                         |
+| AOAPC BAC 2nd Exercise 6-1    | Parentheses Balance                | AC                         |
+| AOAPC BAC 2nd Exercise 6-3    | Tree Recovery                      | CE AC                      |
+| AOAPC BAC 2nd Exercise 6-4    | Knight Moves                       | AC                         |
+| AOAPC BAC 2nd Exercise 6-5    | Patrol Robot                       | WA                         |
+| AOAPC BAC 2nd Exercise 7-12   | Moving Pegs                        | WA                         |
+| AOAPC BAC 2nd Exercise 7-13   | According to Bartjens              | TLE                        |
+| AOAPC BAC 2nd Exercise 7-15   | Biggest Number                     | TLE                        |
+| AOAPC BAC 2nd Exercise 7-2    | Golygons                           | WA                         |
+| AOAPC BAC 2nd Exercise 7-9    | Cubic Eight-Puzzle                 | TLE                        |
+| AOAPC BAC TG Example 1-1      | The Dragon of Loowater             | AC                         |
+| AtCoder ABC 130 A             | Rounding                           | AC                         |
+| AtCoder ABC 130 B             | Bounding                           | AC                         |
+| AtCoder ABC 130 C             | Rectangle Cutting                  | WA                         |
+| AtCoder ABC 130 D             | Enough Array                       | RE RE RE                   |
+| AtCoder APC A                 | Welcome                            | AC WA                      |
+| AtCoder APC B                 | Interactive Sorting                | WA WA WA WA WA WA WA       |
+| CPC Example 10                | Saruman's Army                     | AC                         |
+| CPC Example 11                | Fence Repair                       | WA WA AC                   |
+| CPC Example 12                | 01背包问题                         |                            |
+| CPC Example 13                | 最长公共子序列问题                 |                            |
+| CPC Example 14                | 完全背包问题                       |                            |
+| CPC Example 16                | 多重部分和问题                     |                            |
+| CPC Example 17                | 最长上升子序列问题                 |                            |
+| CPC Example 18                | 划分数                             |                            |
+| CPC Example 19                | 多重集组合数                       |                            |
+| CPC Example 2                 | 三角形                             |                            |
+| CPC Example 20                | Expedition                         | WA WA                      |
+| CPC Example 21                | 食物链                             | RE                         |
+| CPC Example 22                | 二分图判定                         |                            |
+| CPC Example 23                | Roadblocks                         | CE                         |
+| CPC Example 3                 | Ants                               | AC                         |
+| CPC Example 33                | Crazy Rows                         |                            |
+| CPC Example 34                | Bribe the Pirsoners                |                            |
+| CPC Example 36                | lower_bound                        |                            |
+| CPC Example 37                | Cable master                       | AC                         |
+| CPC Example 38                | Aggressive cows                    | AC                         |
+| CPC Example 39                | 最大化平均值                       |                            |
+| CPC Example 4                 | 部分和问题                         |                            |
+| CPC Example 40                | Subsequence                        | AC                         |
+| CPC Example 41                | Jessica's Reading Problem          | WA WA TLE TLE AC AC        |
+| CPC Example 45                | 4 Values whose Sum is 0            | WA AC                      |
+| CPC Example 47                | 区域的个数                         |                            |
+| CPC Example 48                | Crane                              | WA WA                      |
+| CPC Example 5                 | Lake Counting                      | AC                         |
+| CPC Example 6                 | 迷宫的最短路径                     |                            |
+| CPC Example 7                 | 硬币问题                           |                            |
+| CPC Example 8                 | 区间调度问题                       |                            |
+| CPC Example 9                 | Best Cow Line                      | CE CE PE PE PE PE          |
+| CPC Exercise 2-1              | Red and Black                      | AC                         |
+| CPC Exercise 2-12             | Cleaning Shifts                    | WA WA WA WA WA             |
+| CPC Exercise 2-13             | Radar Installation                 | WA WA CE WA WA CE CE CE WA |
+| CPC Exercise 2-14             | Stall Reservations                 | WA TLE AC                  |
+| CPC Exercise 2-15             | Yogurt Factory                     | AC                         |
+| CPC Exercise 2-16             | Packets                            | WA AC                      |
+| CPC Exercise 2-2              | Property Distribution              | AC                         |
+| CPC Exercise 2-5              | Cheese                             | AC                         |
+| CPC Exercise 2-9              | Backward Digit Sums                | AC                         |
+| CPC2 2.5                      | Maximum Profit                     | WA AC                      |
+| CPC2 3.2                      | Insertion Sort                     | AC                         |
+| CPC2 3.3                      | Bubble Sort                        | CE AC                      |
+| CPC2 3.4                      | Selection Sort                     | AC                         |
+| CPC2 3.5                      | Stable Sort                        | AC                         |
+| CPC2 3.6                      | Shell Sort                         | WA WA WA AC                |
+| CPC2 4.2                      | Stack                              | CE AC                      |
+| CPC2 4.3                      | Queue                              | AC                         |
+| Codeforces GYM 102152 B       | Memory Management System           | WA WA TLE TLE TLE          |
+| Codeforces GYM 102212 A       | Adding Two Integers                | AC                         |
+| Codeforces GYM 102212 B       | Racetrack                          | AC                         |
+| Codeforces GYM 102212 C       | Pig Latin                          | AC                         |
+| Codeforces GYM 102254 A       | Arnon-Degree of Separation         | WA WA WA WA WA TLE         |
+| Codeforces GYM 102254 C       | Coach                              | WA WA                      |
+| Codeforces GYM 102254 D       | Donimo's                           | AC                         |
+| Codeforces GYM 102254 E       | Essay Time                         | WA WA WA                   |
+| PC 1.6.1                      | The 3np1 Problem                   | WA                         |
+| PC 1.6.2                      | Minesweeper                        | AC                         |
+| PC 1.6.3                      | The Trip                           | RE                         |
+| PC 1.6.4                      | LCD Display                        | TLE                        |
+| PC 1.6.7                      | Check the Check                    | AC                         |
+| POAPS Exercise 2.1 hello      | Hello World!                       | AC                         |
+| POAPS Exercise 2.13 faktor    | Faktor                             | AC                         |
+| POAPS Exercise 2.13 herman    | Herman                             | AC                         |
+| POAPS Exercise 2.13 pizza2    | Pizza Crust                        | AC                         |
+| POAPS Exercise 2.13 r2        | R2                                 | AC                         |
+| POAPS Exercise 2.16 aaah      | Aaah!                              | AC                         |
+| POAPS Exercise 2.16 quadrant  | Quadrant Selection                 | AC                         |
+| POAPS Exercise 2.16 spavanac  | Spavanac                           | AC                         |
+| POAPS Exercise 2.16 twostones | Take Two Stones                    | AC                         |
+| POAPS Exercise 2.19 cold      | Cold-puter Science                 | AC                         |
+| POAPS Exercise 2.19 fizzbuzz  | FizzBuzz                           | AC                         |
+| POAPS Exercise 2.19 tarifa    | Tarifa                             | AC                         |
+| POAPS Exercise 2.19 timeloop  | Stuck In A Time Loop               | WA AC                      |
+| POAPS Exercise 2.19 trik      | Trik                               | WA AC                      |
+| POJ 1088                      | 滑雪                               | AC                         |
+| AOAPC BAC TG Example 1-2      | Commando War                       | WA AC                      |
+| AOAPC BAC TG Example 1-3      | Spreading the Wealth               | WA AC AC AC                |
+| AOAPC BAC TG Exercise 1-1     | Hello World!                       | AC                         |
+| AOAPC BAC TG Exercise 1-2     | Building Designing                 | WA AC                      |
