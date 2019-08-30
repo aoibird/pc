@@ -1,3 +1,4 @@
+// UVa 1601
 #include <cctype>
 #include <cmath>
 #include <cstdio>
@@ -25,7 +26,7 @@ int C; // W ~ [4, 16]
 int N; // N ~ [1, 3]
 
 int board[MAXR][MAXC];
-int visit[MAXB][MAXB][MAXB];
+int DIST[MAXB][MAXB][MAXB];
 
 int dr[4] = {-1, 1, 0, 0};
 int dc[4] = {0, 0, -1, 1};
@@ -41,32 +42,6 @@ struct State {
   }
 };
 
-
-void print()
-{
-  printf("start - target\n");
-  for (int i = 0; i < N; i++) {
-    printf("%d -> %d\n", S[i], T[i]);
-  }
-
-  printf("board\n");
-  for (int r = 0; r < R; r++) {
-    for (int c = 0; c < C; c++) {
-      printf("%2d ", board[r][c]);
-    }
-    printf("\n");
-  }
-
-  printf("graph\n");
-  for (int i = 0; i < V; i++) {
-    printf("%d: ", i);
-    for (int j = 0; j < G[i].size(); j++) {
-      printf("%d ", G[i][j]);
-    }
-    printf("\n");
-  }
-}
-
 void init()
 {
   // start and target point
@@ -75,8 +50,8 @@ void init()
   V = 0;
   for (int i = 0; i < MAXB; i++) G[i].resize(0);
   // board
-  // visit
-  memset(visit, 0, sizeof(visit));
+  // DIST
+  memset(DIST, -1, sizeof(DIST));
 }
 
 void input()
@@ -115,86 +90,61 @@ void input()
       else ;
     }
   }
-}
 
-int valid(int cx, int cy, int cz, int nx, int ny, int nz)
-{
+
   if (N == 1) {
-    return 1;
+    G[V].push_back(V); S[1] = T[1] = V;
+    G[V+1].push_back(V+1); S[2] = T[2] = V+1;
   }
   else if (N == 2) {
-    if ((nx == ny) || (nx == cy && ny == cx)) return 0;
-    else return 1;
+    G[V].push_back(V); S[2] = T[2] = V;
   }
-  else if (N == 3) {
-    if (nx == cx && ny == cy && nz == cz) return 0;
-    if ((nx == ny) || (nx == nz) || (ny == nz)) return 0;
-    else if ((nx == cy && ny == cx) || (nx == cz && nz == cx) || (ny == cz && nz == cy)) return 0;
-    else {
-      // int curr[3] = {cx, cy, cz};
-      // int next[3] = {nx, ny, nz};
-      // sort(curr, curr+3);
-      // sort(next, next+3);
-      // for (int i = 0; i < 3; i++) if (curr[i] != next[i]) return 1;
-      // return 0;
-      return 1;
-    }
-  }
-  else return 0;
+  else ;
+  //printf("(%d,%d,%d) -> (%d,%d,%d)\n", S[0], S[1]);
 }
 
-void solve()
+int conflict(int cx, int cy, int nx, int ny)
+{
+  return (nx == ny || (cx == ny && cy == nx));
+}
+
+int solve()
 {
   // N = 1, 2, 3  ~ state[i][0][0]: (x, 0, 0), state[i][j][0]: (x, y, 0), state[i][j][k]: (x, y, z)
   queue<State> q;
-  queue<int> s;
-  //queue<State> p;
   q.push(State(S[0], S[1], S[2])); // start
-  s.push(0);
-  //p.push(State(-1, -1, -1));
-  //printf("(%d,%d,%d)~%d\n", S[0], S[1], S[2], 0);
+  DIST[S[0]][S[1]][S[2]] = 0;
 
-  int cnt = 1;
   while (!q.empty()) {
-
     State curr = q.front(); q.pop();
-    int step = s.front(); s.pop();
-    //State pre = p.front(); p.pop();
-    //printf("(%d,%d,%d)~%d(%d,%d,%d)%d\n", curr.x, curr.y, curr.z, step, pre.x, pre.y, pre.z, cnt);
-
-    if (curr.x == T[0] && curr.y == T[1] && curr.z == T[2]) {
-      printf("%d\n", step);
-      break;
-    }
+    int cx = curr.x;
+    int cy = curr.y;
+    int cz = curr.z;
+    int step = DIST[cx][cy][cz];
+    if (cx == T[0] && cy == T[1] && cz == T[2]) return step;
 
     // next state
-    for (int x = 0; x < G[curr.x].size(); x++) {
-      for (int y = 0; y < G[curr.y].size(); y++) {
-        for (int z = 0; z < G[curr.z].size(); z++) {
-          int nx = G[curr.x][x];
-          int ny = (N < 2) ? 0 : G[curr.y][y];
-          int nz = (N < 3) ? 0 : G[curr.z][z];
+    for (int x = 0; x < G[cx].size(); x++) {
+      int nx = G[cx][x];
+      for (int y = 0; y < G[cy].size(); y++) {
+        int ny = G[cy][y];
+        if (conflict(cx, cy, nx, ny)) continue;
+        for (int z = 0; z < G[cz].size(); z++) {
+          int nz = G[cz][z];
 
-          if (visit[nx][ny][nz]) continue;
+          if (DIST[nx][ny][nz] != -1) continue;
+          if (conflict(cx, cz, nx, nz)) continue;
+          if (conflict(cy, cz, ny, nz)) continue;
 
-          if (valid(curr.x, curr.y, curr.z, nx, ny, nz)) {
-            //printf("%d %d %d\n", nx, ny, nz);
-            q.push(State(nx, ny, nz));
-            s.push(step+1);
-            //p.push(State(curr.x, curr.y, curr.z));
-            visit[nx][ny][nz] = 1;
-          }
+          q.push(State(nx, ny, nz));
+          DIST[nx][ny][nz] = step+1;
 
-          if (N < 3) break; // N == 1, 2 only once
         }
-        if (N < 2) break; // N == 1 only once
       }
     }
-
-    cnt++;
   }
 
-  //printf("%d\n", cnt);
+  return -1;
 }
 
 int main()
@@ -205,8 +155,8 @@ int main()
 
     init();
     input(); // read graph
-    //print();
-    solve();
+    int res = solve();
+    printf("%d\n", res);
   }
 
 }
