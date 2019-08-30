@@ -46,11 +46,12 @@ int main()
 {
   int T = 1;
   while (scanf("%d", &N) == 1) {
+    if (T != 1) printf("\n");
     printf("Case %d:\n", T);
     A[1] = 1;
     memset(V, 0, sizeof(V));
     dfs(2);
-    printf("\n");
+
     T++;
   }
 
