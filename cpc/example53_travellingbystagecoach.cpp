@@ -50,62 +50,28 @@ void input()
   }
 }
 
-int encode(int s[], int n)
-{
-  int code = 0;
-  for (int i = 0; i < n; i++) {
-    code = code | (s[i] << i);
-  }
-  return code;
-}
-
-void decode(int s[], int n, int code)
-{
-  for (int i = 0; i < n; i++) {
-    s[i] = code & 1;
-    code = code >> 1;
-  }
-}
-
-double bfs()
+double solve()
 {
   double res = INF;
-  queue<State> q;
-  q.push(State(A, encode(S, N)));
-  D[A][encode(S, N)] = 0;
+  D[A][(1<<N)-1] = 0;
 
-  while (!q.empty()) {
-    State s = q.front(); q.pop();
-    int city = s.city;
-    int tickets = s.tickets;
-    decode(S, N, tickets);
-
-    // next state
-    //printf("(%d,%d) %.3f\n", city, tickets, D[city][tickets]);
-    for (int c = 1; c <= M; c++) { // cities
-      for (int t = 0; t < N; t++) { // tickets
-        if (G[city][c] == 0) {  continue; }
-        if (S[t] == 0) {  continue; }
-        S[t] = 0;
-        double cost = G[city][c] / (double)T[t];
-        int nt = encode(S, N);
-        S[t] = 1;
-
-        if (D[c][nt] < D[city][tickets] + cost) { continue; }
-
-        q.push(State(c, nt));
-        D[c][nt] = D[city][tickets] + cost;
-        //printf("    %f (%d,%d) %f\n", cost, c, nt, D[c][nt]);
-
-        if (c == B) res = min(res, D[c][nt]);
+  for (int s = (1 << N) - 1; s >= 0; s--) {
+    res = min(res, D[B][s]);
+    for (int f = 1; f <= M; f++) {
+      for (int i = 0; i < N; i++) {
+        if (s >> i & 1) {
+          for (int t = 1; t <= M; t++) {
+            if (G[f][t] > 0) {
+              D[t][s & ~(1 << i)] = min(D[t][s & ~(1 << i)],
+                                        D[f][s] + G[f][t] / (double)T[i]);
+            }
+          }
+        }
       }
     }
   }
 
   return res;
-
-  // for (int i = 1; i <= M; i++) printf("%f ", D[i]);
-  // printf("\n");
 }
 
 
@@ -114,7 +80,7 @@ int main()
   while(scanf("%d%d%d%d%d", &N, &M, &P, &A, &B) == 5) {
     if (N == 0 && M == 0 && P == 0 && A == 0 && B == 0) break;
     input();
-    double res = bfs();
+    double res = solve();
 
     if ((int) res == INF) printf("Impossible\n");
     else printf("%.3f\n", res);
