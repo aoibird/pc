@@ -42,6 +42,7 @@ const int MAXR = 300;
 const int MAXC = 300;
 //const int MAXM = 50000;
 int GRID[MAXR+10][MAXC+10];
+int D[MAXR+10][MAXC+10];
 //Meteor METEORS[MAXM];
 int M;
 int T;
@@ -84,6 +85,7 @@ int solve()
 {
   queue<Node> q;
   q.push(Node(0, 0, 0));
+  D[0][0] = 0;
   for (int t = 0; t < T; t++) {
 
     while (q.front().d == t) {
@@ -94,8 +96,9 @@ int solve()
         int nr = r+dr[i];
         int nc = c+dc[i];
         if (nr >= 0 && nr < MAXR && nc >= 0 && nc < MAXC
-            && t+1 < GRID[nr][nc]) {
+            && t+1 < GRID[nr][nc] && D[nr][nc] == 0) {
           q.push(Node(nr, nc, t+1));
+          D[nr][nc] = t+1;
         }
       }
     }
@@ -108,8 +111,10 @@ int solve()
 int main()
 {
   for (int i = 0; i < MAXR+10; i++) {
-    for (int j = 0; j < MAXC+10; j++)
+    for (int j = 0; j < MAXC+10; j++) {
       GRID[i][j] = INF;
+      D[i][j] = 0;
+    }
   }
   input();
   int res = solve();
