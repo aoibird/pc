@@ -44,6 +44,17 @@ void input()
 {
   scanf("%d", &N);
   //printf("N = %d\n", N);
+  for (int i = 1; i <= N; i++) {
+    for (int j = 1; j <= N; j++) {
+      int x; scanf("%d", &x);
+      WO[i][x] = j;
+
+      //printf("%d ", x);
+    }
+    FH[i] = 0;
+
+    //printf("\n");
+  }
   // man
   for (int i = 1; i <= N; i++) {
     for (int j = 1; j <= N; j++) {
@@ -60,17 +71,6 @@ void input()
     //printf("\n");
   }
   //printf("\n");
-  for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-      int x; scanf("%d", &x);
-      WO[i][x] = j;
-
-      //printf("%d ", x);
-    }
-    FH[i] = 0;
-
-    //printf("\n");
-  }
 }
 
 void init()
