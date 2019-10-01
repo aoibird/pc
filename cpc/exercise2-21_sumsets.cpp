@@ -13,17 +13,24 @@ const int MAXN = 1000000;
 ll DP[MAXN];
 int N;
 
+void print()
+{
+  for (int i = 0; i <= N; i++) {
+    printf("%3lld ", DP[i]);
+  }
+  printf("\n");
+}
 
 int main()
 {
   scanf("%d", &N);
   fill(DP, DP+N+1, 1);
+  //DP[0] = 0;
+
   for (int k = 1; (1 << k) <= N; k++) {
     for (int s = 1<<k; s <= N; s++) {
       DP[s] = DP[s] + DP[s-(1<<k)];
-      //printf("%lld ", DP[s]);
     }
-    //printf("\n");
   }
   printf("%lld\n", DP[N] % 1000000000);
 }
