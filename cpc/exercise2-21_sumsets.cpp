@@ -25,12 +25,12 @@ int main()
 {
   scanf("%d", &N);
   fill(DP, DP+N+1, 1);
-  //DP[0] = 0;
 
   for (int k = 1; (1 << k) <= N; k++) {
     for (int s = 1<<k; s <= N; s++) {
       DP[s] = DP[s] + DP[s-(1<<k)];
+      DP[s] = DP[s] % 1000000000;
     }
   }
-  printf("%lld\n", DP[N] % 1000000000);
+  printf("%lld\n", DP[N]);
 }
