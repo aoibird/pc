@@ -91,6 +91,13 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 7-7     | UVa 1354                | Mobile Computing                   |                            |
 | AOAPC BAC 2nd Example 7-8     | UVa 10603               | Fill                               | AC                         |
 | AOAPC BAC 2nd Example 7-9     | UVa 1601                | The Morning after Halloween        | WA AC                      |
+| AOAPC BAC 2nd Example 8-1     | UVa 120                 | Stacks of Flapjacks                | WA                         |
+| AOAPC BAC 2nd Example 8-2     | UVa 1605                | Building for UN                    | AC                         |
+| AOAPC BAC 2nd Example 8-4     | UVa 11134               | Fabled Rooks                       | WA                         |
+| AOAPC BAC 2nd Example 8-5     | UVa 11054               | Wine trading in Gergovia           | AC                         |
+| AOAPC BAC 2nd Example 8-6     | UVa 1606                | Amphiphilic Carbon Molecules       | WA                         |
+| AOAPC BAC 2nd Example 8-7     | UVa 11572               | Unique snowflakes                  | AC                         |
+| AOAPC BAC 2nd Example 8-8     | UVa 1471                | Defense Lines                      |                            |
 | AOAPC BAC 2nd Exercise 1-1    |                         | average                            |                            |
 | AOAPC BAC 2nd Exercise 1-2    |                         | temperature                        |                            |
 | AOAPC BAC 2nd Exercise 1-3    |                         | sum                                |                            |
@@ -140,6 +147,10 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Exercise 7-2    | UVa 225                 | Golygons                           | WA                         |
 | AOAPC BAC 2nd Exercise 7-9    | UVa 1604                | Cubic Eight-Puzzle                 | TLE                        |
 | AOAPC BAC TG Example 1-1      | UVa 11292               | The Dragon of Loowater             | AC                         |
+| AOAPC BAC TG Example 1-2      | UVa 11729               | Commando War                       | WA AC                      |
+| AOAPC BAC TG Example 1-3      | UVa 11300               | Spreading the Wealth               | WA AC AC AC                |
+| AOAPC BAC TG Exercise 1-1     | UVa 11636               | Hello World!                       | AC                         |
+| AOAPC BAC TG Exercise 1-2     | UVa 11039               | Building Designing                 | WA AC                      |
 | AtCoder ABC 130 A             | AtCoder ABC 130 A       | Rounding                           | AC                         |
 | AtCoder ABC 130 B             | AtCoder ABC 130 B       | Bounding                           | AC                         |
 | AtCoder ABC 130 C             | AtCoder ABC 130 C       | Rectangle Cutting                  | WA                         |
@@ -176,6 +187,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 47                |                         | 区域的个数                         |                            |
 | CPC Example 48                | POJ 2991                | Crane                              | WA WA                      |
 | CPC Example 5                 | POJ 2386                | Lake Counting                      | AC                         |
+| CPC Example 53                | POJ 2686                | Travelling by Stagecoach           | TLE AC                     |
 | CPC Example 6                 |                         | 迷宫的最短路径                     |                            |
 | CPC Example 7                 |                         | 硬币问题                           |                            |
 | CPC Example 8                 |                         | 区间调度问题                       |                            |
@@ -187,7 +199,12 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-15             | POJ 2393                | Yogurt Factory                     | AC                         |
 | CPC Exercise 2-16             | POJ 1017                | Packets                            | WA AC                      |
 | CPC Exercise 2-2              | AOJ 0118                | Property Distribution              | AC                         |
+| CPC Exercise 2-21             | POJ 2229                | Sumsets                            | WA WA TLE AC               |
+| CPC Exercise 2-39             | POJ 2139                | Six Degrees of Cowvin Bacon        | AC                         |
+| CPC Exercise 2-40             | POJ 3259                | Wormholes                          | WA RE RE AC                |
+| CPC Exercise 2-41             | POJ 3268                | Silver Cow Party                   | TLE TLE TLE TLE AC         |
 | CPC Exercise 2-5              | AOJ 0558                | Cheese                             | AC                         |
+| CPC Exercise 2-6              | POJ 3669                | Meteor Shower                      | TLE WA                     |
 | CPC Exercise 2-9              | POJ 3187                | Backward Digit Sums                | AC                         |
 | CPC2 2.5                      | AOJ ALDS1_1_D           | Maximum Profit                     | WA AC                      |
 | CPC2 3.2                      | AOJ ALDS1_1_A           | Insertion Sort                     | AC                         |
@@ -227,26 +244,9 @@ This repository contains my solutions to contest problems from online judges and
 | POAPS Exercise 2.19 tarifa    | Kattis tarifa           | Tarifa                             | AC                         |
 | POAPS Exercise 2.19 timeloop  | Kattis timeloop         | Stuck In A Time Loop               | WA AC                      |
 | POAPS Exercise 2.19 trik      | Kattis trik             | Trik                               | WA AC                      |
-| POJ 1088                      | POJ 1088                | 滑雪                               | AC                         |
-| AOAPC BAC TG Example 1-2      | UVa 11729               | Commando War                       | WA AC                      |
-| AOAPC BAC TG Example 1-3      | UVa 11300               | Spreading the Wealth               | WA AC AC AC                |
-| AOAPC BAC TG Exercise 1-1     | UVa 11636               | Hello World!                       | AC                         |
-| AOAPC BAC TG Exercise 1-2     | UVa 11039               | Building Designing                 | WA AC                      |
-| CPC Example 53                | POJ 2686                | Travelling by Stagecoach           | TLE AC                     |
-| AOAPC BAC 2nd Example 8-1     | UVa 120                 | Stacks of Flapjacks                | WA                         |
-| AOAPC BAC 2nd Example 8-2     | UVa 1605                | Building for UN                    | AC                         |
-| AOAPC BAC 2nd Example 8-4     | UVa 11134               | Fabled Rooks                       | WA                         |
-| AOAPC BAC 2nd Example 8-5     | UVa 11054               | Wine trading in Gergovia           | AC                         |
-| AOAPC BAC 2nd Example 8-6     | UVa 1606                | Amphiphilic Carbon Molecules       | WA                         |
-| AOAPC BAC 2nd Example 8-7     | UVa 11572               | Unique snowflakes                  | AC                         |
-| AOAPC BAC 2nd Example 8-8     | UVa 1471                | Defense Lines                      |                            |
-| CPC Exercise 2-6              | POJ 3669                | Meteor Shower                      | TLE WA                     |
 | POJ 1007                      | POJ 1007                | DNS Sorting                        | WA                         |
+| POJ 1088                      | POJ 1088                | 滑雪                               | AC                         |
 | POJ 2400                      | POJ 2400                | Supervisor, Supervisee             | WA WA                      |
 | POJ 2719                      | POJ 2719                | Faulty Odometer                    | AC                         |
-| CPC Exercise 2-21             | POJ 2229                | Sumsets                            | WA WA TLE AC               |
-| CPC Exercise 2-39             | POJ 2139                | Six Degrees of Cowvin Bacon        | AC                         |
-| CPC Exercise 2-40             | POJ 3259                | Wormholes                          | WA RE RE AC                |
-| CPC Exercise 2-41             | POJ 3268                | Silver Cow Party                   | TLE TLE TLE TLE AC         |
 
 Solved / All: 105 / 202
