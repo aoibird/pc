@@ -43,15 +43,19 @@ void prim()
 
 int main()
 {
-  scanf("%d", &N);
-  for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {
-      int c; scanf("%d", &c);
-      if (c != 0) G[i].push_back(PII(j, c));
+  int ch;
+  while ((ch = getchar()) != EOF) {
+    ungetc(ch, stdin);
+    if (scanf("%d", &N) != 1) break;
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < N; j++) {
+        int c; scanf("%d", &c);
+        if (c != 0) G[i].push_back(PII(j, c));
+      }
     }
+
+    prim();
+
+    printf("%d\n", S);
   }
-
-  prim();
-
-  printf("%d\n", S);
 }
