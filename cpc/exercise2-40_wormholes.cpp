@@ -16,7 +16,8 @@ struct Edge {
 const int MAXN = 500+10;
 const int MAXM = 2500+10;
 const int MAXW = 200+10;
-Edge ES[MAXM+MAXW];
+const int MAXE = MAXM + MAXW;
+Edge ES[MAXE];
 int D[MAXN];
 int E;
 int N; // [1, 500]
@@ -56,6 +57,7 @@ void input()
     //G[s][e] = -t;
     ES[E++] = Edge(s, e, -t);
   }
+  //printf("E = %d\n", E);
 }
 
 int main()
