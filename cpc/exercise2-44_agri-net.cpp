@@ -32,10 +32,10 @@ void prim()
     if (c > D[v]) continue;
     S += c;
     for (int u = 0; u < G[v].size(); u++) {
-      PII e = G[v][u];
-      if (D[e.first] > e.second) {
-        D[e.first] = e.second;
-        pq.push(PII(D[e.first], e.first));
+      PII x = G[v][u]; int to = x.first; int cost = x.second;
+      if (D[to] > cost) {
+        D[to] = cost;
+        pq.push(PII(D[to], to));
       }
     }
   }
