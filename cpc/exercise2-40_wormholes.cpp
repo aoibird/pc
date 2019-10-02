@@ -16,7 +16,7 @@ struct Edge {
 const int MAXN = 500+10;
 const int MAXM = 2500+10;
 const int MAXW = 200+10;
-const int MAXE = MAXM + MAXW;
+const int MAXE = MAXM*2 + MAXW;
 Edge ES[MAXE];
 int D[MAXN];
 int E;
