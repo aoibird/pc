@@ -43,10 +43,7 @@ void prim()
 
 int main()
 {
-  int ch;
-  while ((ch = getchar()) != EOF) {
-    ungetc(ch, stdin);
-    if (scanf("%d", &N) != 1) break;
+  while (scanf("%d", &N) == 1) {
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
         int c; scanf("%d", &c);
@@ -57,5 +54,6 @@ int main()
     prim();
 
     printf("%d\n", S);
+    for (int i = 0; i < N; i++) G[i].clear();
   }
 }
