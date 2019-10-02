@@ -31,7 +31,7 @@ void print()
 void dijkstra(int s)
 {
   D[s][s] = 0;
-  priority_queue<PII> pq;
+  priority_queue<PII, vector<PII>, greater<PII> > pq;
   pq.push(PII(D[s][s], s));
   while (!pq.empty()) {
     PII curr = pq.top(); pq.pop();
