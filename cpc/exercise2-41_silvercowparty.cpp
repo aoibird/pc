@@ -14,7 +14,8 @@ const int INF = 200000000;
 const int MAXN = 1000+10;
 //const int MAXM = 100000+10;
 //Edge ES[MAXM];
-int D[MAXN][MAXN];
+int DX[MAXN];
+int D[MAXN];
 int G[MAXN][MAXN];
 int N; // [1, 1000]
 int M; // [1, 100000]
@@ -30,30 +31,22 @@ void print()
 
 void dijkstra(int s)
 {
-  D[s][s] = 0;
+  fill(D, D+N, INF);
+  D[s] = 0;
   priority_queue<PII, vector<PII>, greater<PII> > pq;
-  pq.push(PII(D[s][s], s));
+  pq.push(PII(D[s], s));
   while (!pq.empty()) {
     PII curr = pq.top(); pq.pop();
     int v = curr.second;
     int d = curr.first;
-    if (D[s][v] < d) continue;
+    if (D[v] < d) continue;
     for (int to = 0; to < N; to++) {
-      if (D[s][to] > D[s][v] + G[v][to]) {
-        D[s][to] = D[s][v] + G[v][to];
-        pq.push(PII(D[s][to], to));
+      if (D[to] > D[v] + G[v][to]) {
+        D[to] = D[v] + G[v][to];
+        pq.push(PII(D[to], to));
       }
     }
   }
-}
-
-void output()
-{
-  int m = 0;
-  for (int i = 0; i < N; i++) {
-    m = max(m, D[i][X] + D[X][i]);
-  }
-  printf("%d\n", m);
 }
 
 void init()
@@ -64,9 +57,6 @@ void init()
       else G[i][j] = INF;
     }
   }
-  for (int i = 0; i < N; i++)
-    for (int j = 0; j < N; j++)
-      D[i][j] = INF;
 }
 
 void input()
@@ -84,7 +74,15 @@ int main()
   scanf("%d%d%d", &N, &M, &X); X -= 1;
   init();
   input();
-  for (int i = 0; i < N; i++) dijkstra(i);
+  int m = 0;
+  dijkstra(X);
+  for (int i = 0; i < N; i++) DX[i] = D[i];
+  for (int i = 0; i < N; i++) {
+    dijkstra(i);
+    //int s = D[X] + DX[i];
+    //printf("%d\n", s);
+    m = max(m, D[X] + DX[i]);
+  }
   //print();
-  output();
+  printf("%d\n", m);
 }
