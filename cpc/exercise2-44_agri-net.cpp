@@ -14,7 +14,7 @@ typedef pair<int,int> PII;
 const int INF = 10000000;
 const int MAXN = 100+10;
 int N; // [3, 100]
-int G[MAXN][MAXN];
+vector<PII> G[MAXN];
 int D[MAXN];
 bool IN[MAXN];
 int S;
@@ -35,9 +35,10 @@ void prim()
     if (c > D[v] || IN[v] == true) continue;
     IN[v] = true;
     S += D[v];
-    for (int u = 0; u < N; u++) {
-      if (D[u] > G[v][u]) {
-        D[u] = G[v][u];
+    for (int i = 0; i < G[v].size(); i++) {
+      int u = G[v][i].first;
+      if (D[u] > G[v][i].second) {
+        D[u] = G[v][i].second;
         pq.push(PII(D[u], u));
       }
     }
@@ -50,13 +51,14 @@ int main()
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
         int c; scanf("%d", &c);
-        G[i][j] = c;
+        //G[i][j] = c;
+        G[i].push_back(PII(j, c));
       }
     }
 
     prim();
 
     printf("%d\n", S);
-    //for (int i = 0; i < N; i++) G[i].clear();
+    for (int i = 0; i < N; i++) G[i].clear();
   }
 }
