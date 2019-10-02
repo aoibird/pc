@@ -7,6 +7,7 @@
 #include <iostream>
 #include <algorithm>
 #include <queue>
+#include <vector>
 using namespace std;
 
 typedef pair<int,int> PII;
@@ -16,18 +17,18 @@ const int MAXN = 1000+10;
 //Edge ES[MAXM];
 int DX[MAXN];
 int D[MAXN];
-int G[MAXN][MAXN];
+vector<PII> G[MAXN];
 int N; // [1, 1000]
 int M; // [1, 100000]
 int X;
 
-void print()
-{
-  for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) printf("%d ", G[i][j]);
-    printf("\n");
-  }
-}
+// void print()
+// {
+//   for (int i = 0; i < N; i++) {
+//     for (int j = 0; j < N; j++) printf("%d ", G[i][j]);
+//     printf("\n");
+//   }
+// }
 
 void dijkstra(int s)
 {
@@ -40,10 +41,11 @@ void dijkstra(int s)
     int v = curr.second;
     int d = curr.first;
     if (D[v] < d) continue;
-    for (int to = 0; to < N; to++) {
-      if (D[to] > D[v] + G[v][to]) {
-        D[to] = D[v] + G[v][to];
-        pq.push(PII(D[to], to));
+    for (int u = 0; u < G[v].size(); u++) {
+      PII e = G[v][u];
+      if (D[e.first] > D[v] + e.second) {
+        D[e.first] = D[v] + e.second;
+        pq.push(PII(D[e.first], e.first));
       }
     }
   }
@@ -51,12 +53,12 @@ void dijkstra(int s)
 
 void init()
 {
-  for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {
-      if (i == j) G[i][j] = 0;
-      else G[i][j] = INF;
-    }
-  }
+  // for (int i = 0; i < N; i++) {
+  //   for (int j = 0; j < N; j++) {
+  //     if (i == j) G[i][j] = 0;
+  //     else G[i][j] = INF;
+  //   }
+  // }
 }
 
 void input()
@@ -64,7 +66,7 @@ void input()
   for (int i = 0; i < M; i++) {
     int from, to, cost;
     scanf("%d%d%d", &from, &to, &cost);
-    G[from-1][to-1] = cost;
+    G[from-1].push_back(PII(to-1, cost));
     //scanf("%d%d%d",&ES[i].from, &ES[i].to, &ES[i].cost);
   }
 }
