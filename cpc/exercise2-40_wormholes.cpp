@@ -8,58 +8,53 @@
 #include <algorithm>
 using namespace std;
 
-const int INF = 1 << 30;
+struct Edge {
+  int from, to, cost;
+  Edge(int f=0, int t=0, int c=0) { from=f; to=t; cost=c; }
+};
+//const int INF = 1 << 30;
 const int MAXN = 500+10;
-int G[MAXN][MAXN];
+const int MAXM = 2500+10;
+const int MAXW = 200+10;
+Edge ES[MAXM+MAXW];
+int D[MAXN];
+int E;
 int N; // [1, 500]
 int M; // [1, 2500]
 int W; // [1, 200]
 
-void print_g()
+bool bellman_ford()
 {
+  memset(D, 0, sizeof(D));
   for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {
-      printf("%d ", G[i][j]);
+    for (int j = 0; j < E; j++) {
+      Edge e = ES[j];
+      if (D[e.to] > D[e.from] + e.cost) {
+        D[e.to] = D[e.from] + e.cost;
+        if (i == N-1) return true;
+      }
     }
-    printf("\n");
   }
-}
-
-void solve()
-{
-  for (int k = 0; k < N; k++)
-    for (int i = 0; i < N; i++)
-      for (int j = 0; j < N; j++)
-        G[i][j] = min(G[i][j], G[i][k] + G[k][j]);
-}
-
-void output()
-{
-  for (int i = 0; i < N; i++) {
-    if (G[i][i] < 0) { printf("YES\n"); return; }
-  }
-  printf("NO\n");
+  return false;
 }
 
 void input()
 {
   scanf("%d%d%d", &N, &M, &W);
-  for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {
-      if (i == j) G[i][j] = 0;
-      else G[i][j] = INF;
-    }
-  }
+  E = 0;
   for (int i = 0; i < M; i++) {
     int s, e, t; scanf("%d%d%d", &s, &e, &t);
     s -= 1; e -= 1;
-    G[s][e] = t;
-    G[e][s] = t;
+    //G[s][e] = t;
+    //G[e][s] = t;
+    ES[E++] = Edge(s, e, t);
+    ES[E++] = Edge(e, s, t);
   }
   for (int i = 0; i < W; i++) {
     int s, e, t; scanf("%d%d%d", &s, &e, &t);
     s -= 1; e -= 1;
-    G[s][e] = -t;
+    //G[s][e] = -t;
+    ES[E++] = Edge(s, e, -t);
   }
 }
 
@@ -68,9 +63,7 @@ int main()
   int T; scanf("%d", &T);
   for (int i = 0; i < T; i++) {
     input();
-    //print_g();
-    solve();
-    //print_g();
-    output();
+    if (bellman_ford()) printf("YES\n");
+    else printf("NO\n");
   }
 }
