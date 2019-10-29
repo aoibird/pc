@@ -23,17 +23,22 @@ int prim()
   MINCOST[0] = 0;
   int sum = 0;
 
-  while (true) {
-    int curr = -1, i = 0;
-    for ( ; i < N; i++) if (!V[i]) { curr = i; break; }
-    for ( ; i < N; i++) if (!V[i] && MINCOST[i] < MINCOST[curr]) curr = i;
+  priority_queue<PII, vector<PII>, greater<PII> > pq;
+  pq.push(PII(MINCOST[0], 0));
+  while (!pq.empty()) {
+    PII p = pq.top(); pq.pop();
+    int curr = p.second;
+    int cost = p.first;
+    if (V[curr] || cost > MINCOST[curr]) continue;
 
-    if (curr == -1) break;
     V[curr] = true;
-    sum += MINCOST[curr];
+    sum += cost;
 
     for (int i = 0; i < N; i++) {
-      MINCOST[i] = min(MINCOST[i], G[curr][i]);
+      if (G[curr][i] < MINCOST[i]) {
+        MINCOST[i] = G[curr][i];
+        pq.push(PII(MINCOST[i], i));
+      }
     }
   }
 
