@@ -39,5 +39,6 @@ int main()
     input();
     int res = solve();
     printf("%d\n", res);
+    if (i != T-1) printf("\n");
   }
 }
