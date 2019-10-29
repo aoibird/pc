@@ -92,6 +92,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 7-8     | UVa 10603               | Fill                               | AC                         |
 | AOAPC BAC 2nd Example 7-9     | UVa 1601                | The Morning after Halloween        | WA AC                      |
 | AOAPC BAC 2nd Example 8-1     | UVa 120                 | Stacks of Flapjacks                | WA                         |
+| AOAPC BAC 2nd Example 8-12    | UVa 12627               | Erratic Expanision                 | TLE                        |
 | AOAPC BAC 2nd Example 8-2     | UVa 1605                | Building for UN                    | AC                         |
 | AOAPC BAC 2nd Example 8-4     | UVa 11134               | Fabled Rooks                       | WA                         |
 | AOAPC BAC 2nd Example 8-5     | UVa 11054               | Wine trading in Gergovia           | AC                         |
@@ -146,6 +147,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Exercise 7-16   | UVa 11846               | Finding Seats Again                |                            |
 | AOAPC BAC 2nd Exercise 7-2    | UVa 225                 | Golygons                           | WA                         |
 | AOAPC BAC 2nd Exercise 7-9    | UVa 1604                | Cubic Eight-Puzzle                 | TLE                        |
+| AOAPC BAC 2nd Exercise 8-1    | UVa 1149                | Bin Packing                        | PE AC                      |
 | AOAPC BAC TG Example 1-1      | UVa 11292               | The Dragon of Loowater             | AC                         |
 | AOAPC BAC TG Example 1-2      | UVa 11729               | Commando War                       | WA AC                      |
 | AOAPC BAC TG Example 1-3      | UVa 11300               | Spreading the Wealth               | WA AC AC AC                |
@@ -203,9 +205,14 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-39             | POJ 2139                | Six Degrees of Cowvin Bacon        | AC                         |
 | CPC Exercise 2-40             | POJ 3259                | Wormholes                          | WA RE RE AC                |
 | CPC Exercise 2-41             | POJ 3268                | Silver Cow Party                   | TLE TLE TLE TLE AC         |
+| CPC Exercise 2-44             | POJ 1258                | Agri-Net                           | WA WA WA WA AC AC          |
+| CPC Exercise 2-49             | POJ 2429                | GCD & LCM Inverse                  | TLE                        |
 | CPC Exercise 2-5              | AOJ 0558                | Cheese                             | AC                         |
 | CPC Exercise 2-6              | POJ 3669                | Meteor Shower                      | TLE WA                     |
 | CPC Exercise 2-9              | POJ 3187                | Backward Digit Sums                | AC                         |
+| CPC2 12.2                     | AOJ ALDS1_11_A          | Graph                              | AC                         |
+| CPC2 13.2                     | AOJ ALDS1_12_A          | Minimum Spanning Tree              | AC AC                      |
+| CPC2 13.3                     | AOJ ALDS1_12_C          | Single Source Shortest Path II     | AC                         |
 | CPC2 2.5                      | AOJ ALDS1_1_D           | Maximum Profit                     | WA AC                      |
 | CPC2 3.2                      | AOJ ALDS1_1_A           | Insertion Sort                     | AC                         |
 | CPC2 3.3                      | AOJ ALDS1_2_A           | Bubble Sort                        | CE AC                      |
@@ -249,4 +256,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400                | Supervisor, Supervisee             | WA WA                      |
 | POJ 2719                      | POJ 2719                | Faulty Odometer                    | AC                         |
 
-Solved / All: 105 / 202
+Solved / All: 110 / 209
