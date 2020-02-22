@@ -50,7 +50,7 @@ void solve()
     int m = calc(k);
     if (m < M) { M = m; K = k; }
   }
-  printf("%d %d\n", M, K);
+  printf("%d %d\n", K, M);
 }
 
 int main()
