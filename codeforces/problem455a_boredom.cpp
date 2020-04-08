@@ -6,33 +6,49 @@
 #include <iostream>
 #include <algorithm>
 #include <map>
+#define INVALID -1
 using namespace std;
 
-const int MAXN = 100000+10;
-map<int,int> DP[MAXN];
-int R[MAXN];
+typedef map<int,int> seq;
+//const int MAXN = 100000+10;
 int N;
-map<int,int> NR;
+map<seq,int> P;
+seq NR;
+seq FINAL;
 
-void print(int i)
+void print(seq s)
 {
-  printf("%d: ", i);
-  for (map<int,int>::iterator it = DP[i].begin();
-         it != DP[i].end(); it++) {
+  for (seq::iterator it = s.begin(); it != s.end(); it++) {
     printf("%d->%d ", it->first, it->second);
   }
-  printf("(%d)\n", R[i]);
+  printf("\n");
 }
 
-int count_rest(int i)
+int get_points(seq s)
 {
-  int sum = 0;
-  for (map<int,int>::iterator it = DP[i].begin();
-         it != DP[i].end(); it++) {
-    sum += (it->first * it->second);
+  if (P.count(s) > 0) return P[s];
+
+  int value = 0;
+  for (seq::iterator it = s.begin(); it != s.end(); it++) {
+    int number = it->first;
+    // printf("number = %d\n", number);
+    bool empty_plus = (s.count(number+1) <= 0) ||
+      (s.count(number+1) > 0 && s[number+1] == 0);
+    bool empty_minus = (s.count(number-1) <= 0) ||
+      (s.count(number-1) > 0 && s[number-1] == 0);
+
+    if (empty_plus && empty_minus && s[number] < NR[number]) {
+      s[number] += 1;
+      // printf("value = max(value, get_points(s) + number);\n");
+      // print(s);
+      value = max(value, get_points(s) + number);
+      s[number] -= 1;
+    }
   }
-  return sum;
+  P[s] = value;
+  return value;
 }
+
 
 int main()
 {
@@ -40,48 +56,11 @@ int main()
   for (int i = 0; i < N; i++) {
     int a; scanf("%d", &a);
     NR[a] += 1;
+    FINAL[a] = 0;
   }
+  // print(FINAL);
+  // print(NR);
 
-  DP[0] = NR;
-  int start = MAXN;
-  // print(0);
-  for (map<int,int>::iterator it = NR.begin();
-         it != NR.end(); it++) {
-    int number = it->first;
-    DP[number] = NR;
-    DP[number].erase(number+1);
-    DP[number].erase(number-1);
-    DP[number][number] = NR[number] - 1;
-    if (DP[number][number] == 0) DP[number].erase(number);
-    R[number] = count_rest(number);
-    start = min(start, number);
-  }
-  int i;
-  int mx;
-  for (i = start, mx = start+1; i <= mx; i++) {
-    for (map<int,int>::iterator it = DP[i].begin();
-         it != DP[i].end(); it++) {
-      int number = it->first;
-      if (R[i] - number > R[i+number]) {
-        DP[i+number] = DP[i];
-        // DP[i+number][number] -= 1;
-        if (--DP[i+number][number] == 0) DP[i+number].erase(number);
-        R[i+number] = R[i] - number;
-        // printf("i:%d number:%d i+number:%d R[i]:%d R[i+number]:%d\n",
-        //        i, number, i+number, R[i], R[i+number]);
-      }
-      // print(i);
-      // print(i+number);
-      mx = max(mx, i+number);
-      // if (DP[i].empty() && i == mx) break;
-    }
-
-    // for (int j = 0; j < 10; j++) {
-    //   printf("%d%c", R[j], j==9?'\n':' ');
-    // }
-    // for (int j = 0; j < 10; j++) print(i);
-  }
-  // print(i);
-  printf("%d\n", mx);
-
+  int res = get_points(FINAL);
+  printf("%d\n", res);
 }
