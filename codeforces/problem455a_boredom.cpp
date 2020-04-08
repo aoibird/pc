@@ -13,8 +13,7 @@ typedef long long ll;
 const int MAXN = 100000+10;
 ll DP[MAXN];
 int N;
-map<int,int> NR;
-
+vector<int> NR(MAXN, 0);
 
 int main()
 {
@@ -28,13 +27,8 @@ int main()
 
   DP[0] = 0;
   DP[1] = NR[1];
-  for (map<int,int>::iterator it = NR.begin(); it != NR.end(); it++) {
-    int num = it->first;
-    int value = it->second;
-    if (num >= 2) {
-      DP[num] = max(DP[num-1], DP[num-2] + value * num);
-      M = num;
-    }
+  for (ll i = 2; i <= M; i++) {
+    DP[i] = max(DP[i-1], DP[i-2] + NR[i] * i);
   }
 
   printf("%lld\n", DP[M]);
