@@ -43,10 +43,10 @@ int main()
 
 
   for (int i = 0; i < m; i++)
-    printf("%d ", a[i]);
+    printf("%d", a[i]);
   printf(" ");
   for (int i = 0; i < m; i++)
-    printf("%d ", b[i]);
+    printf("%d", b[i]);
   printf("\n");
 
   return 0;
