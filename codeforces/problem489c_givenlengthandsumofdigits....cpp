@@ -15,6 +15,10 @@ int main()
   int m, s;
   scanf("%d%d", &m, &s);
 
+  if (m == 1 && s == 0) {
+    printf("0 0\n");
+    return 0;
+  }
   if (s < 1 || s > m*9) {
     printf("-1 -1\n");
     return 0;
