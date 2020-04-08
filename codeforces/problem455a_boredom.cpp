@@ -6,15 +6,15 @@
 #include <iostream>
 #include <algorithm>
 #include <map>
-#define INVALID -1
+#include <vector>
 using namespace std;
 
+typedef long long ll;
 typedef map<int,int> seq;
-//const int MAXN = 100000+10;
+const int MAXN = 100000+10;
+ll DP[MAXN];
 int N;
-map<seq,int> P;
 seq NR;
-seq FINAL;
 
 void print(seq s)
 {
@@ -24,43 +24,30 @@ void print(seq s)
   printf("\n");
 }
 
-int get_points(seq s)
-{
-  if (P.count(s) > 0) return P[s];
-
-  int value = 0;
-  for (seq::iterator it = s.begin(); it != s.end(); it++) {
-    int number = it->first;
-    // printf("number = %d\n", number);
-    bool empty_plus = (s.count(number+1) <= 0) ||
-      (s.count(number+1) > 0 && s[number+1] == 0);
-    bool empty_minus = (s.count(number-1) <= 0) ||
-      (s.count(number-1) > 0 && s[number-1] == 0);
-
-    if (empty_plus && empty_minus && s[number] < NR[number]) {
-      s[number] += 1;
-      // printf("value = max(value, get_points(s) + number);\n");
-      // print(s);
-      value = max(value, get_points(s) + number);
-      s[number] -= 1;
-    }
-  }
-  P[s] = value;
-  return value;
-}
-
-
 int main()
 {
   scanf("%d", &N);
   for (int i = 0; i < N; i++) {
     int a; scanf("%d", &a);
     NR[a] += 1;
-    FINAL[a] = 0;
   }
-  // print(FINAL);
+  for (seq::iterator it = NR.begin(); it != NR.end(); it++) {
+    it->second *= it->first;
+  }
   // print(NR);
 
-  int res = get_points(FINAL);
-  printf("%d\n", res);
+  seq::iterator f = NR.begin();
+  DP[f->first] = f->second;
+  seq::iterator s = NR.begin(); s++;
+  DP[s->first] = (f->second > s->second) ? f->second : s->second;
+  seq::iterator it = NR.begin();
+  it++; it++;
+  for ( ; it != NR.end(); it++) {
+    int num = it->first;
+    int value = it->second;
+    DP[num] = max(DP[num-2]+value, DP[num-1]);
+  }
+
+  it = NR.end(); it--;
+  printf("%lld\n", DP[it->first]);
 }
