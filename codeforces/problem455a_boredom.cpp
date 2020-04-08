@@ -10,44 +10,32 @@
 using namespace std;
 
 typedef long long ll;
-typedef map<int,int> seq;
 const int MAXN = 100000+10;
 ll DP[MAXN];
 int N;
-seq NR;
+map<int,int> NR;
 
-void print(seq s)
-{
-  for (seq::iterator it = s.begin(); it != s.end(); it++) {
-    printf("%d->%d ", it->first, it->second);
-  }
-  printf("\n");
-}
 
 int main()
 {
   scanf("%d", &N);
+  int M = 0;
   for (int i = 0; i < N; i++) {
     int a; scanf("%d", &a);
-    NR[a] += 1;
+    NR[a]++;
+    M = max(M, a);
   }
-  for (seq::iterator it = NR.begin(); it != NR.end(); it++) {
-    it->second *= it->first;
-  }
-  // print(NR);
 
-  seq::iterator f = NR.begin();
-  DP[f->first] = f->second;
-  seq::iterator s = NR.begin(); s++;
-  DP[s->first] = (f->second > s->second) ? f->second : s->second;
-  seq::iterator it = NR.begin();
-  it++; it++;
-  for ( ; it != NR.end(); it++) {
+  DP[0] = 0;
+  DP[1] = NR[1];
+  for (map<int,int>::iterator it = NR.begin(); it != NR.end(); it++) {
     int num = it->first;
     int value = it->second;
-    DP[num] = max(DP[num-2]+value, DP[num-1]);
+    if (num >= 2) {
+      DP[num] = max(DP[num-1], DP[num-2] + value * num);
+      M = num;
+    }
   }
 
-  it = NR.end(); it--;
-  printf("%lld\n", DP[it->first]);
+  printf("%lld\n", DP[M]);
 }
