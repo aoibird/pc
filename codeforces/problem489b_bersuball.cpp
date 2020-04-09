@@ -37,8 +37,8 @@ int dfs(int v, int t, int f)
     if (!V[e.to] && e.cap > 0) {
       int d = dfs(e.to, t, min(f, e.cap));
       if (d > 0) {
-        e.cap = -d;
-        GR[e.to][e.rev].cap -= d;
+        e.cap -= d;
+        GR[e.to][e.rev].cap += d;
         return d;
       }
     }
