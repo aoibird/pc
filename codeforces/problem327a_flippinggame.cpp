@@ -24,13 +24,15 @@ int main()
   }
   int s = S[N-1];
 
+
   DP[0][0] = s + flip(A[0]);
+  int M = DP[0][0];
   for (int i = 1; i < N; i++) {
     DP[0][i] = DP[0][i-1] + flip(A[i]);
     DP[i][i] = s + flip(A[i]);
+    M = max(M, max(DP[0][i], DP[i][i]));
   }
 
-  int M = 0;
   for (int i = 1; i < N; i++) {
     for (int j = i+1; j < N; j++) {
       DP[i][j] = DP[i][j-1] + flip(A[j]);
