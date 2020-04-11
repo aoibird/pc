@@ -74,6 +74,7 @@ int main()
     // printf("TC %d\n", i);
     scanf("%d%d", &N, &M); getchar();
     init();
+    for (int i = 0; i < N; i++) D[i].clear();
     solve();
   }
 }
