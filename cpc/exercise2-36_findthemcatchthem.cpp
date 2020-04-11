@@ -43,6 +43,14 @@ void merge(int x, int y)
   else { par[y] = x; rnk[x]++; }
 }
 
+void print_d()
+{
+  for (int i = 1; i <= N; i++) {
+    printf("%d: ", i);
+    for (int j = 0; j < D[i].size(); j++) printf("%d ", D[i][j]); printf("\n");
+  }
+}
+
 void solve()
 {
   for (int i = 0; i < M; i++) {
@@ -50,16 +58,22 @@ void solve()
     scanf("%c %d%d", &op, &a, &b); getchar();
     // printf("%d %c %d %d\n", i, op, a, b);
     if (op == 'A') {
+      // printf("find %d->%d %d->%d %d->%d\n",
+      //        a, find(a), b, find(b),  (D[a].size() != 0) ? D[a][0] : -1,
+      //        (D[a].size() != 0) ? find(D[a][0]) : -1);
       if (D[a].size() == 0 || D[b].size() == 0) printf("Not sure yet.\n");
       else if (find(a) == find(b)) printf("In the same gang.\n");
-      else if (find(D[a][0]) == find(b)) printf("In different gangs.\n");
+      else if (find(D[a][0]) == find(b)
+               || find(a) == find(D[b][0])) printf("In different gangs.\n");
       else printf("Not sure yet.\n");
     }
     else if (op == 'D') { // different
       D[a].push_back(b);
       D[b].push_back(a);
-      merge(b, D[a][0]);
-      merge(a, D[b][0]);
+      merge(D[a][0], b);
+      merge(D[b][0], a);
+      // print_d();
+      // for (int i = 1; i <= N; i++) printf("%d ", par[i]); printf("\n");
       // printf("\n");
     }
     else ;
