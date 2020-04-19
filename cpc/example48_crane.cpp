@@ -3,9 +3,9 @@
 #include <cmath>
 using namespace std;
 const int STSIZE = (1 << 15) - 1;
-const int MAXN = 10000;
-const int MAXC = 10000;
-const double PI = 3.141592653589793;
+const int MAXN = 10000+10;
+const int MAXC = 10000+10;
+const double M_PI = 3.141592653589793;
 
 int N, C;
 int L[MAXN];
@@ -50,7 +50,6 @@ void change(int s, double a, int v, int l, int r)
 
 void input()
 {
-  scanf("%d%d", &N, &C);
   for (int i = 0; i < N; i++) {
     scanf("%d", L+i);
   }
@@ -58,17 +57,16 @@ void input()
     scanf("%d", S+i);
     scanf("%d", A+i);
   }
-  getchar();
 }
 
 void solve()
 {
   init(0, 0, N);
-  for (int i = 1; i < N; i++) pre[i] = PI;
+  for (int i = 1; i < N; i++) pre[i] = M_PI;
 
   for (int i = 0; i < C; i++) {
     int s = S[i];
-    double a = A[i] / 360.0 * 2 * PI;
+    double a = (A[i] * M_PI) / 180.0;
     change(s, a-pre[s], 0, 0, N);
     pre[s] = a;
 
@@ -78,10 +76,8 @@ void solve()
 
 int main()
 {
-  int c, first = 1;
-  while ((c = getchar()) != EOF) {
-    ungetc(c, stdin);
-    if (c == '\n') getchar();
+  int first = 1;
+  while (scanf("%d%d", &N, &C) > 0) {
     input();
     if (first) first = 0;
     else printf("\n");
