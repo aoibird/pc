@@ -13,17 +13,18 @@ const int MAXNT = 65536+10;
 const int MAXH = 2000000;
 const int MINH = 0;
 int A[MAXN];
-int T[MAXNT]; // tallest
-int S[MAXNT]; // shortest
+int T[2*MAXNT-1]; // tallest
+int S[2*MAXNT-1]; // shortest
 int N;
+int NT;
 int Q;
 
 void init(int t[MAXNT], bool tallest)
 {
-  int nt = 1;
-  while (nt < N) nt *= 2;
+  NT = 1;
+  while (NT < N) NT *= 2;
 
-  int full = nt*2-2;
+  int full = NT*2-2;
   // printf("%d\n", full);
   for (int i = full; i >= 0; i--) {
     if (2*i+1 <= full && 2*i+2 <= full) {
@@ -31,7 +32,7 @@ void init(int t[MAXNT], bool tallest)
         min(t[2*i+1], t[2*i+2]);
     }
     else {
-      if (nt - (full-i) <= N) t[i] = A[nt - (full-i)];
+      if (NT - (full-i) <= N) t[i] = A[NT - (full-i)];
       else t[i] = (tallest) ? MINH : MAXH;
     }
   }
@@ -68,8 +69,9 @@ int main()
   for (int i = 0; i < Q; i++) {
     int a, b;
     scanf("%d%d", &a, &b);
-    int t = query(T, true, a, b+1, 0, 1, N+1);
-    int s = query(S, false, a, b+1, 0, 1, N+1);
+    // printf("%d %d %d %d\n", a, b+1, 1, NT+1);
+    int t = query(T, true, a, b+1, 0, 1, NT+1);
+    int s = query(S, false, a, b+1, 0, 1, NT+1);
     printf("%d\n", t-s);
   }
 }
