@@ -29,5 +29,5 @@ int main()
   ll thegcd = gcd(a, L);
   // printf("%lld k - %lld g = %lld\n", a, L, b);
   if (b % thegcd != 0) printf("Impossible\n");
-  else { exgcd(a, L, d, k, g); printf("%lld\n", (k*(thegcd/b) + L) % L); }
+  else { exgcd(a, L, d, k, g); printf("%lld\n", (k*(b/thegcd) + L) % L); }
 }
