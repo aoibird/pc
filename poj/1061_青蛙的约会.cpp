@@ -22,15 +22,13 @@ void exgcd(ll a, ll b, ll& d, ll& x, ll& y)
 int main()
 {
   ll x, y, m, n, L;
-  scanf("%lld%lld%lld%lld%lld", &x, &y, &m, &n, &L);
+  while (scanf("%lld%lld%lld%lld%lld", &x, &y, &m, &n, &L) == 5) {
+    ll a = ((m-n)%L + L) % L;
+    ll b = ((y-x)%L + L) % L;
+    ll d = 0, k = 0, g = 0;
+    ll thegcd = gcd(a, L);
 
-  ll a = ((m-n) + L) % L;
-  ll b = ((y-x) + L) % L;
-  ll d = 0, k = 0, g = 0;
-  ll thegcd = gcd(a, L);
-  // printf("%lld k - %lld g = %lld\n", a, L, b);
-  if (y == x) printf("0\n");
-  else if (m == n) printf("Impossible\n");
-  else if (b % thegcd != 0) printf("Impossible\n");
-  else { exgcd(a, L, d, k, g); printf("%lld\n", (k*(b/thegcd) + L) % L); }
+    if (m == n || b % thegcd != 0) printf("Impossible\n");
+    else { exgcd(a, L, d, k, g); printf("%lld\n", (k*(b/thegcd)%L + L) % L); }
+  }
 }
