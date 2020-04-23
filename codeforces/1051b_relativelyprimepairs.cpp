@@ -9,10 +9,10 @@ using namespace std;
 
 int main()
 {
-  int l, r;
-  scanf("%d%d", &l, &r);
+  long long l, r;
+  scanf("%lld%lld", &l, &r);
   printf("YES\n");
-  for (int i = l; i <= r-1; i+=2) {
-    printf("%d %d\n", i, i+1);
+  for (long long i = l; i <= r-1; i+=2) {
+    printf("%lld %lld\n", i, i+1);
   }
 }
