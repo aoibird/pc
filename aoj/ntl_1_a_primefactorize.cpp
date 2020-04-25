@@ -29,7 +29,7 @@ int main()
   }
   // for (int i = 0; i <= n; i++) printf("%d:%d%c", i, V[i], i==n?'\n':' ');
   if (factor.empty()) {
-    printf("%d: %d %d\n", on, 1, on);
+    printf("%d: %d\n", on, on);
   }
   else {
     printf("%d:", on);
