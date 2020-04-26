@@ -137,6 +137,10 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC TG Exercise 1-1     | UVa 11636           | Hello World!                      | AC                         |
 | AOAPC BAC TG Exercise 1-2     | UVa 11039           | Building Designing                | WA AC                      |
 | AOAPC BAC TG Exercise 1-8     | UVa 10905           | Children's Game                   | WA                         |
+| AOJ NTL_1_A                   | AOJ NTL_1_A         | Prime Factorize                   | WA WA MLE MLE AC           |
+| AOJ NTL_1_B                   | AOJ NTL_1_B         | Power                             | AC                         |
+| AOJ NTL_1_C                   | AOJ NTL_1_C         | Least Common Multiple             | AC                         |
+| AOJ NTL_1_E                   | AOJ NTL_1_E         | Extended Euclid Algorithm         | AC                         |
 | AtCoder ABC 130 A             | AtCoder ABC 130 A   | Rounding                          | AC                         |
 | AtCoder ABC 130 B             | AtCoder ABC 130 B   | Bounding                          | AC                         |
 | AtCoder ABC 130 C             | AtCoder ABC 130 C   | Rectangle Cutting                 | WA                         |
@@ -155,7 +159,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 41                | POJ 3320            | Jessica's Reading Problem         | WA WA TLE TLE AC AC        |
 | CPC Example 42                | POJ 3276            | Face The Right Way                | WA AC                      |
 | CPC Example 45                | POJ 2785            | 4 Values whose Sum is 0           | WA AC                      |
-| CPC Example 48                | POJ 2991            | Crane                             | WA WA                      |
+| CPC Example 48                | POJ 2991            | Crane                             | WA WA AC                   |
 | CPC Example 5                 | POJ 2386            | Lake Counting                     | AC                         |
 | CPC Example 53                | POJ 2686            | Travelling by Stagecoach          | TLE AC                     |
 | CPC Example 9                 | POJ 3617            | Best Cow Line                     | CE CE PE PE PE PE          |
@@ -173,10 +177,11 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-40             | POJ 3259            | Wormholes                         | WA RE RE AC                |
 | CPC Exercise 2-41             | POJ 3268            | Silver Cow Party                  | TLE TLE TLE TLE AC         |
 | CPC Exercise 2-44             | POJ 1258            | Agri-Net                          | WA WA WA WA AC AC          |
-| CPC Exercise 2-49             | POJ 2429            | GCD & LCM Inverse                 | TLE                        |
+| CPC Exercise 2-49             | POJ 2429            | GCD & LCM Inverse                 | TLE TLE TLE                |
 | CPC Exercise 2-5              | AOJ 0558            | Cheese                            | AC                         |
 | CPC Exercise 2-6              | POJ 3669            | Meteor Shower                     | TLE WA                     |
 | CPC Exercise 2-9              | POJ 3187            | Backward Digit Sums               | AC                         |
+| CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                      |
 | CPC2 12.2                     | AOJ ALDS1_11_A      | Graph                             | AC                         |
 | CPC2 13.2                     | AOJ ALDS1_12_A      | Minimum Spanning Tree             | AC AC                      |
 | CPC2 13.3                     | AOJ ALDS1_12_C      | Single Source Shortest Path II    | AC                         |
@@ -199,13 +204,21 @@ This repository contains my solutions to contest problems from online judges and
 | Codeforces 102318 A           | Codeforces 102318 A | Electric Bill                     | AC                         |
 | Codeforces 102318 B           | Codeforces 102318 B | Simplified Keyboard               | AC                         |
 | Codeforces 102318 C           | Codeforces 102318 C | Singin' in the Rain               | AC                         |
+| Codeforces 1051 B             | Codeforces 1051 B   | Relatively Prime Pairs            | WA AC                      |
+| Codeforces 1180 A             | Codeforces 1180 A   | Alex and a Rhombus                | AC                         |
+| Codeforces 1323 A             | Codeforces 1323 A   | Even Subset Sum Problem           | AC                         |
+| Codeforces 1325 A             | Codeforces 1325 A   | EhAb AnD gCd                      | AC                         |
 | Codeforces 189 A              | Codeforces 189 A    | Cut Ribbon                        | WA AC                      |
+| Codeforces 313 B              | Codeforces 313 B    | Ilya and Queries                  | AC                         |
 | Codeforces 327 A              | Codeforces 327 A    | Flipping Game                     | WA AC                      |
 | Codeforces 455 A              | Codeforces 455 A    | Boredom                           | WA TLE WA WA AC            |
 | Codeforces 489 B              | Codeforces 489 B    | BerSU Ball                        | WA AC                      |
 | Codeforces 489 C              | Codeforces 489 C    | Given Length and Sum of Digits... | WA WA AC                   |
 | Codeforces 580 A              | Codeforces 580 A    | Kefa and First Steps              | AC                         |
+| Codeforces 630 A              | Codeforces 630 A    | Again Twenty Five!                | AC                         |
 | Codeforces 706 B              | Codeforces 706 B    | Interesting drink                 | AC                         |
+| Codeforces 749 A              | Codeforces 749 A    | Bachgold Problem                  | AC                         |
+| Codeforces 894 A              | Codeforces 894 A    | QAQ                               | AC                         |
 | Codeforces 996 A              | Codeforces 996 A    | Hit the Lottery                   | AC                         |
 | PC 1.6.1                      | UVa 100             | The 3np1 Problem                  | WA                         |
 | PC 1.6.2                      | UVa 10189           | Minesweeper                       | AC                         |
@@ -227,10 +240,11 @@ This repository contains my solutions to contest problems from online judges and
 | POAPS Exercise 2.19 timeloop  | Kattis timeloop     | Stuck In A Time Loop              | WA AC                      |
 | POAPS Exercise 2.19 trik      | Kattis trik         | Trik                              | WA AC                      |
 | POJ 1007                      | POJ 1007            | DNS Sorting                       | WA                         |
+| POJ 1061                      | POJ 1061            | 青蛙的约会                        | WA WA WA AC                |
 | POJ 1068                      | POJ 1068            | Parencodings                      | AC                         |
 | POJ 1088                      | POJ 1088            | 滑雪                              | AC                         |
 | POJ 1274                      | POJ 1274            | The Perfect Stall                 | AC                         |
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                      |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                         |
 
-Solved / All: 128 / 186
+Solved / All: 143 / 200
