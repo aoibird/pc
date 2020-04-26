@@ -8,20 +8,16 @@
 #include <vector>
 using namespace std;
 
-const int MAXN = 1000000000+10;
-bool V[MAXN];
 vector<int> factor;
 
 int main()
 {
   int n; scanf("%d", &n);
   int on = n;
-  for (int i = 2; i <= on && n != 1; i++) {
-    if (!V[i]) {
-      while (n % i == 0) { factor.push_back(i); n /= i; }
-      for (int j = i*i; j <= n; j += i) V[j] = true;
-    }
+  for (int i = 2; i*i <= n; i++) {
+    while (n % i == 0) { factor.push_back(i); n /= i; }
   }
+  if (n != 1) factor.push_back(n);
 
   printf("%d:", on);
   for (int i = 0; i < factor.size(); i++) printf(" %d", factor[i]);
