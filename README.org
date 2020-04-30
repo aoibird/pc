@@ -137,6 +137,10 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC TG Exercise 1-1     | UVa 11636           | Hello World!                      | AC                         |
 | AOAPC BAC TG Exercise 1-2     | UVa 11039           | Building Designing                | WA AC                      |
 | AOAPC BAC TG Exercise 1-8     | UVa 10905           | Children's Game                   | WA                         |
+| AOJ GRL_1_A                   | AOJ GRL_1_A         | Single Source Shortest Path       | WA AC                      |
+| AOJ GRL_2_A                   | AOJ GRL_2_A         | Minimum Spanning Tree             | AC                         |
+| AOJ GRL_4_B                   | AOJ GRL_4_B         | Topological Sort                  | WA AC                      |
+| AOJ GRL_7_A                   | AOJ GRL_7_A         | Bipartite Matching                | WA AC                      |
 | AOJ NTL_1_A                   | AOJ NTL_1_A         | Prime Factorize                   | WA WA MLE MLE AC           |
 | AOJ NTL_1_B                   | AOJ NTL_1_B         | Power                             | AC                         |
 | AOJ NTL_1_C                   | AOJ NTL_1_C         | Least Common Multiple             | AC                         |
@@ -246,5 +250,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 1274                      | POJ 1274            | The Perfect Stall                 | AC                         |
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                      |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                         |
-
-Solved / All: 143 / 200
+Solved / All: 147 / 204
