@@ -9,44 +9,46 @@
 #include <queue>
 using namespace std;
 
-typedef pair<int,int> PII;
+typedef long long ll;
+typedef pair<int,ll> PILL;
 struct Edge {
-    int to, dist;
-    Edge(int t=0, int d=0) { to = t; dist = d; }
+    int to;
+    ll dist;
+    Edge(int t=0, ll d=0) { to = t; dist = d; }
 };
 
 const int MAXN = 100000+10;
-const int INF = 200000000;
+const ll INF = 1LL << 62;
 vector<Edge> G[MAXN];
 int n, m, r;
-int D[MAXN];
+ll D[MAXN];
 
 void input()
 {
     scanf("%d%d%d", &n, &m, &r);
     for (int i = 0; i < m; i++) {
-        int f, t, d; scanf("%d%d%d", &f, &t, &d);
+        int f, t; ll d; scanf("%d%d%lld", &f, &t, &d);
         G[f].push_back(Edge(t, d));
     }
 }
 
 void solve()
 {
-    priority_queue<PII, vector<PII>, greater<PII> > pq;
+    priority_queue<PILL, vector<PILL>, greater<PILL> > pq;
     for (int i = 0; i < n; i++) D[i] = INF;
     D[r] = 0;
-    pq.push(PII(D[r], r));
+    pq.push(PILL(D[r], r));
 
     while (!pq.empty()) {
-        PII p = pq.top(); pq.pop();
-        int d = p.first, v = p.second;
+        PILL p = pq.top(); pq.pop();
+        ll d = p.first; int v = p.second;
         if (D[v] < d) continue;
 
         for (int i = 0; i < G[v].size(); i++) {
-            int to = G[v][i].to, dist = G[v][i].dist;
+            int to = G[v][i].to; ll dist = G[v][i].dist;
             if (D[v] + dist < D[to]) {
                 D[to] = D[v] + dist;
-                pq.push(PII(D[to], to));
+                pq.push(PILL(D[to], to));
             }
         }
     }
@@ -57,7 +59,7 @@ int main()
     input();
     solve();
     for (int i = 0; i < n; i++) {
-        if (D[i] != INF)printf("%d\n", D[i]);
+        if (D[i] != INF)printf("%lld\n", D[i]);
         else printf("INF\n");
     }
 }
