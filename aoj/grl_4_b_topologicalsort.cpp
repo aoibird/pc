@@ -20,7 +20,7 @@ int n, m;
 int main()
 {
     scanf("%d%d", &n, &m);
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < m; i++) {
         int f, t; scanf("%d%d", &f, &t);
         G[f].push_back(t);
         deg[t] += 1;
