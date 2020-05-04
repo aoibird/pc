@@ -6,11 +6,13 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
-const int MAXN = 50+5;
-// const int MAXC = 200;
-string numbers[MAXN];
+// const int MAXN = 50+5;
+const int MAXC = 100;
+vector<string> numbers;
+char S[MAXC];
 int N;
 
 bool compare(string &a, string &b)
@@ -27,15 +29,22 @@ int main()
 {
     while (scanf("%d", &N) == 1) {
         if (N == 0) break;
+        // while (!numbers.empty()) numbers.pop_back();
+        numbers.clear();
         getchar();
         // printf("N = %d\n", N);
-        // char str[MAXC];
+        string number;
         for (int i = 0; i < N; i++) {
-            cin >> numbers[i];
-            getchar();
+            int ch; int t = 0;
+            // while ((ch = getchar()) == ' ') ;
+            while (isdigit(ch = getchar())) { S[t++] = ch; }
+            S[t] = '\0';
+            // while ((ch = getchar()) == ' ') ;
+            number = S;
+            numbers.push_back(number);
         }
 
-        sort(numbers, numbers+N, compare);
+        sort(numbers.begin(), numbers.end(), compare);
 
         for (int i = 0; i < N; i++) {
             cout << numbers[i];
