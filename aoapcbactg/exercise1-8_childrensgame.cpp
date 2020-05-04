@@ -13,6 +13,15 @@ const int MAXC = 200;
 string numbers[MAXN];
 int N;
 
+bool compare(string &a, string &b)
+{
+    for (int i = 0; a[i] != '\0' && b[i] != '\0'; i++) {
+        if (a[i] > b[i]) return true;
+    }
+    if (a.size() < b.size()) return true;
+    else return false;
+}
+
 
 int main()
 {
@@ -25,9 +34,9 @@ int main()
       numbers[i] = str;
     }
 
-    sort(numbers, numbers+N);
+    sort(numbers, numbers+N, compare);
 
-    for (int i = N-1; i >=0; i--) {
+    for (int i = 0; i < N; i++) {
       cout << numbers[i];
     }
     printf("\n");
