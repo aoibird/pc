@@ -97,6 +97,8 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 8-7     | UVa 11572           | Unique snowflakes                 | AC                         |
 | AOAPC BAC 2nd Example 8-8     | UVa 1471            | Defense Lines                     | AC                         |
 | AOAPC BAC 2nd Example 8-9     | UVa 1451            | Average                           | AC                         |
+| AOAPC BAC 2nd Example 9-1     | UVa 1025            | A Spy in the Metro                | AC AC                      |
+| AOAPC BAC 2nd Example 9-2     | UVa 437             | The Tower of Babylon              | AC                         |
 | AOAPC BAC 2nd Exercise 3-1    | UVa 1585            | Score                             | AC                         |
 | AOAPC BAC 2nd Exercise 3-10   | UVa 1587            | Box                               | WA                         |
 | AOAPC BAC 2nd Exercise 3-11   | UVa 1588            | Kickdown                          | WA                         |
@@ -218,6 +220,7 @@ This repository contains my solutions to contest problems from online judges and
 | Codeforces 455 A              | Codeforces 455 A    | Boredom                           | WA TLE WA WA AC            |
 | Codeforces 489 B              | Codeforces 489 B    | BerSU Ball                        | WA AC                      |
 | Codeforces 489 C              | Codeforces 489 C    | Given Length and Sum of Digits... | WA WA AC                   |
+| Codeforces 543 A              | Codeforces 543 A    | Writing Code                      | AC AC                      |
 | Codeforces 580 A              | Codeforces 580 A    | Kefa and First Steps              | AC                         |
 | Codeforces 630 A              | Codeforces 630 A    | Again Twenty Five!                | AC                         |
 | Codeforces 706 B              | Codeforces 706 B    | Interesting drink                 | AC                         |
@@ -250,4 +253,5 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 1274                      | POJ 1274            | The Perfect Stall                 | AC                         |
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                      |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                         |
-Solved / All: 147 / 204
+
+Solved / All: 150 / 207
