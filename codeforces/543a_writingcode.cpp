@@ -16,10 +16,10 @@ void solve()
 {
     dp[0][0] = 1;
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            for (int k = 0; k <= b-A[i]; k++) {
-                if (dp[j][k] != 0) {
-                    dp[j+1][k+A[i]] = (dp[j+1][k+A[i]] + dp[j][k]) % mod;
+        for (int j = 1; j <= m; j++) {
+            for (int k = A[i]; k <= b; k++) {
+                if (dp[j-1][k-A[i]] != 0) {
+                    dp[j][k] = (dp[j][k] + dp[j-1][k-A[i]]) % mod;
                 }
             }
         }
