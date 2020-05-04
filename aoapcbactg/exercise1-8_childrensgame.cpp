@@ -28,9 +28,11 @@ int main()
     while (scanf("%d", &N) == 1) {
         if (N == 0) break;
         getchar();
+        // printf("N = %d\n", N);
         // char str[MAXC];
         for (int i = 0; i < N; i++) {
             cin >> numbers[i];
+            getchar();
         }
 
         sort(numbers, numbers+N, compare);
