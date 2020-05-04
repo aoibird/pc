@@ -9,13 +9,13 @@
 using namespace std;
 
 const int MAXN = 50+5;
-const int MAXC = 200;
+// const int MAXC = 200;
 string numbers[MAXN];
 int N;
 
 bool compare(string &a, string &b)
 {
-    for (int i = 0; a[i] != '\0' && b[i] != '\0'; i++) {
+    for (int i = 0; i < a.size() && i < b.size(); i++) {
         if (a[i] > b[i]) return true;
     }
     if (a.size() < b.size()) return true;
@@ -25,20 +25,19 @@ bool compare(string &a, string &b)
 
 int main()
 {
-  while (scanf("%d", &N) != EOF) {
-    if (N == 0) break;
-    getchar();
-    char str[MAXC];
-    for (int i = 0; i < N; i++) {
-      scanf("%s", str);
-      numbers[i] = str;
-    }
+    while (scanf("%d", &N) == 1) {
+        if (N == 0) break;
+        getchar();
+        // char str[MAXC];
+        for (int i = 0; i < N; i++) {
+            cin >> numbers[i];
+        }
 
-    sort(numbers, numbers+N, compare);
+        sort(numbers, numbers+N, compare);
 
-    for (int i = 0; i < N; i++) {
-      cout << numbers[i];
+        for (int i = 0; i < N; i++) {
+            cout << numbers[i];
+        }
+        printf("\n");
     }
-    printf("\n");
-  }
 }
