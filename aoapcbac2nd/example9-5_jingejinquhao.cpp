@@ -20,13 +20,13 @@ int ans;
 void input()
 {
     scanf("%d%d", &N, &T);
-    for (int i = 1; i <= N; i++) scanf("%d", &A[i]);
+    for (int i = 0; i < N; i++) scanf("%d", &A[i]);
 }
 
 void print_table()
 {
     for (int i = 0; i <= N; i++) {
-        for (int j = 80; j < T; j++) {
+        for (int j = 0; j < T; j++) {
             printf("%d(%d)%c", dp[i][j], w[i][j],j==T-1?'\n':' ');
         }
     }
@@ -35,21 +35,22 @@ void print_table()
 
 void solve()
 {
+    // for (int i = 0; i < N; i++) printf("%d ", A[i]); printf("\n");
     ans = 0;
-    for (int i = 1; i <= N; i++) {
+    for (int i = 0; i < N; i++) {
         for (int j = 0; j < T; j++) {
             if (j < A[i]) {
-                dp[i][j] = dp[i-1][j];
-                w[i][j] = w[i-1][j];
+                dp[i+1][j] = dp[i][j];
+                w[i+1][j] = w[i][j];
             }
             else {
-                if (dp[i-1][j] > dp[i-1][j-A[i]] + 1) {
-                    dp[i][j] = dp[i-1][j];
-                    w[i][j] = w[i-1][j];
+                if (dp[i][j] > dp[i][j-A[i]] + 1) {
+                    dp[i+1][j] = dp[i][j];
+                    w[i+1][j] = w[i][j];
                 }
                 else {
-                    dp[i][j] = dp[i-1][j-A[i]]+1;
-                    w[i][j] = w[i-1][j-A[i]] + A[i];
+                    dp[i+1][j] = dp[i][j-A[i]]+1;
+                    w[i+1][j] = w[i][j-A[i]] + A[i];
                 }
             }
         }
