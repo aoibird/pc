@@ -14,6 +14,8 @@ int A[MAXN];
 int N, T;
 int dp[MAXN][MAXT];
 int w[MAXN][MAXT];
+int ans;
+
 
 void input()
 {
@@ -24,8 +26,8 @@ void input()
 void print_table()
 {
     for (int i = 0; i <= N; i++) {
-        for (int j = 0; j < T; j++) {
-            printf("%d%c", dp[i][j], j==T-1?'\n':' ');
+        for (int j = 80; j < T; j++) {
+            printf("%d(%d)%c", dp[i][j], w[i][j],j==T-1?'\n':' ');
         }
     }
     printf("\n");
@@ -33,17 +35,22 @@ void print_table()
 
 void solve()
 {
-    // printf("N = %d T = %d\n", N, T);
-    // for (int i = 1; i <= N; i++) printf("%d ", A[i]); printf("\n");
+    ans = 0;
     for (int i = 1; i <= N; i++) {
-        for (int j = A[i]; j < T; j++) {
-            if (dp[i-1][j] > dp[i-1][j-A[i]] + 1) {
+        for (int j = 0; j < T; j++) {
+            if (j < A[i]) {
                 dp[i][j] = dp[i-1][j];
                 w[i][j] = w[i-1][j];
             }
             else {
-                dp[i][j] = dp[i-1][j-A[i]] + 1;
-                w[i][j] = w[i-1][j-A[i]] + A[i];
+                if (dp[i-1][j] > dp[i-1][j-A[i]] + 1) {
+                    dp[i][j] = dp[i-1][j];
+                    w[i][j] = w[i-1][j];
+                }
+                else {
+                    dp[i][j] = dp[i-1][j-A[i]]+1;
+                    w[i][j] = w[i-1][j-A[i]] + A[i];
+                }
             }
         }
     }
