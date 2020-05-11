@@ -43,9 +43,10 @@ int dfs(int r, int c)
 {
     if (dp[r][c] != -1) return dp[r][c];
 
-    dp[r][c] = 0;
+    dp[r][c] = 1;
     for (int i = 0; i < 4; i++) {
         int tr = r + dr[i], tc = c + dc[i];
+        if (tr < 0 || tr >= R || tc < 0 || tc >= C) continue;
         if (field[tr][tc] < field[r][c])
             dp[r][c] = max(dp[r][c], dfs(tr, tc) + 1);
     }
