@@ -98,6 +98,8 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 8-8     | UVa 1471            | Defense Lines                     | AC                         |
 | AOAPC BAC 2nd Example 8-9     | UVa 1451            | Average                           | AC                         |
 | AOAPC BAC 2nd Example 9-1     | UVa 1025            | A Spy in the Metro                | AC AC                      |
+| AOAPC BAC 2nd Example 9-12    | UVa 12186           | Another Crisis                    | AC                         |
+| AOAPC BAC 2nd Example 9-13    | UVa 1220            | Party at Hali-Bula                | WA                         |
 | AOAPC BAC 2nd Example 9-2     | UVa 437             | The Tower of Babylon              | AC                         |
 | AOAPC BAC 2nd Example 9-3     | UVa 1347            | Tour                              | AC                         |
 | AOAPC BAC 2nd Example 9-4     | UVa 116             | Unidirectional TSP                | AC                         |
@@ -140,6 +142,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Exercise 7-9    | UVa 1604            | Cubic Eight-Puzzle                | TLE                        |
 | AOAPC BAC 2nd Exercise 8-1    | UVa 1149            | Bin Packing                       | PE AC                      |
 | AOAPC BAC 2nd Exercise 9-1    | UVa 10285           | Longest Run on a Snowboard        | WA AC                      |
+| AOAPC BAC 2nd Exercise 9-22   | UVa 1579            | Matryoshka                        | AC                         |
 | AOAPC BAC TG Example 1-1      | UVa 11292           | The Dragon of Loowater            | AC                         |
 | AOAPC BAC TG Example 1-2      | UVa 11729           | Commando War                      | WA AC                      |
 | AOAPC BAC TG Example 1-3      | UVa 11300           | Spreading the Wealth              | WA AC AC AC                |
@@ -262,4 +265,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                      |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                         |
 
-Solved / All: 157 / 215
+Solved / All: 159 / 218
