@@ -9,46 +9,28 @@
 #include <vector>
 using namespace std;
 
-// const int MAXN = 50+5;
-const int MAXC = 100;
-vector<string> numbers;
-char S[MAXC];
+const int MAXN = 50+5;
+string numbers[MAXN];
 int N;
 
 bool compare(string &a, string &b)
 {
-    for (int i = 0; i < a.size() && i < b.size(); i++) {
-        if (a[i] > b[i]) return true;
-    }
-    if (a.size() < b.size()) return true;
+    string c = a + b;
+    string d = b + a;
+    if (c > d || (c == d && a.size() > b.size())) return true;
     else return false;
 }
 
 
 int main()
 {
-    while (scanf("%d", &N) == 1) {
-        if (N == 0) break;
-        // while (!numbers.empty()) numbers.pop_back();
-        numbers.clear();
+    while (scanf("%d", &N) == 1 && N) {
         getchar();
-        // printf("N = %d\n", N);
-        string number;
-        for (int i = 0; i < N; i++) {
-            int ch; int t = 0;
-            // while ((ch = getchar()) == ' ') ;
-            while (isdigit(ch = getchar())) { S[t++] = ch; }
-            S[t] = '\0';
-            // while ((ch = getchar()) == ' ') ;
-            number = S;
-            numbers.push_back(number);
-        }
+        for (int i = 0; i < N; i++) cin >> numbers[i];
 
-        sort(numbers.begin(), numbers.end(), compare);
+        sort(numbers, numbers+N, compare);
 
-        for (int i = 0; i < N; i++) {
-            cout << numbers[i];
-        }
+        for (int i = 0; i < N; i++) cout << numbers[i];
         printf("\n");
     }
 }
