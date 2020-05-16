@@ -5,17 +5,17 @@ using namespace std;
 
 map<string, int> m;
 vector<string> v;
+const int MAXL = 8000000+10;
 
 int main()
 {
-  int n;
-  cin >> n;
+  int n; scanf("%d", &n);
   string s;
-  cin.ignore();
+  char str[MAXL];
   int cnt = 0;
   for (int i = 0; i < n; i++) {
-    // cout << s << endl;
-    getline(cin, s);
+    scanf("%s", str);
+    s = string(str);
     m[s] += 1;
     if (m[s] > 1) { v.push_back(s); cnt++; }
   }
