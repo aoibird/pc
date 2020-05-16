@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector>
 #include <map>
 using namespace std;
 
 map<string, int> m;
+vector<string> v;
 
 int main()
 {
@@ -10,26 +12,17 @@ int main()
   cin >> n;
   string s;
   cin.ignore();
-  for (int i = 0; i < n; i++) {
-    getline(cin, s);
-    // cout << s << endl;
-    m[s] += 1;
-  }
-
   int cnt = 0;
-  for (auto x : m) {
-    cnt += x.second - 1;
+  for (int i = 0; i < n; i++) {
+    // cout << s << endl;
+    cin >> s;
+    m[s] += 1;
+    if (m[s] > 1) { v.push_back(s); cnt++; }
   }
 
-  if (cnt == 0) {
-    cout << "SAFO\n";
-  }
+  if (cnt == 0) printf("SAFO\n");
   else {
-    cout << cnt << "\n";
-    for (auto x : m) {
-      for (int i = 1; i < x.second; i++) {
-        cout << x.first << "\n";
-      }
-    }
+      printf("%d\n", cnt);
+      for (int i = 0; i < v.size(); i++) cout << v[i] << "\n";
   }
 }
