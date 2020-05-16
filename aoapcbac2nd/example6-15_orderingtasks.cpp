@@ -39,7 +39,8 @@ void dfs(int s)
 
 int main()
 {
-  while (scanf("%d%d", &N, &M) == 2 && N && M) {
+  while (scanf("%d%d", &N, &M) == 2) {
+    if (M == 0 && N == 0) break;
     init();
     input();
 
