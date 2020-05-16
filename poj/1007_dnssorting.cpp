@@ -11,9 +11,11 @@ using namespace std;
 
 struct DNA {
   string s;
+  int x;
   int cnt;
-  DNA(string si="", int c=0) {
+  DNA(string si="", int xi=0, int c=0) {
     s = si;
+    x = xi;
     cnt = c;
   }
 };
@@ -35,7 +37,8 @@ int cnt(string& s)
 
 bool compare(DNA& a, DNA& b)
 {
-  return a.cnt < b.cnt;
+  if (a.cnt < b.cnt || (a.cnt == b.cnt && a.x < b.x)) return true;
+  return false;
 }
 
 int main()
@@ -52,11 +55,12 @@ int main()
     string s = str;
     //cout << s << endl;
     int c = cnt(s);
-    S[i] = DNA(s, c);
+    S[i] = DNA(s, i, c);
   }
   sort(S, S+M, compare);
 
   for (int i = 0; i < M; i++) {
-    cout << S[i].s << endl;
+    // cout << S[i].s << " ("<< S[i].cnt << ")"<< endl;
+    cout << S[i].s << "\n";
   }
 }
