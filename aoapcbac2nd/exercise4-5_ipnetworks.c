@@ -30,8 +30,9 @@ void trace()
 
 void input()
 {
-  scanf("%d", &m);
   memset(ipa, 0, sizeof(ipa));
+  memset(mask, 0, sizeof(mask));
+  memset(neta, 0, sizeof(neta));
 
 
   for (int i = 0; i < m; i++) {
@@ -58,20 +59,15 @@ void solve()
 
   for (int i = 31; i >= 0; i--) {
     int eq = 1;
-    for (int j = 1; j < m; j++) {
+    for (int j = 0; j < m; j++) {
       if (ipa[0][i] != ipa[j][i]) eq = 0;
     }
+    /* printf("%d: %d\n", i, eq); */
 
 
     if (eq == 1) {
-      if (i != 0) {
-        mask[i] = 1;
-        neta[i] = ipa[0][i];
-      }
-      else {
-        mask[i] = 0;
-        neta[i] = 0;
-      }
+      mask[i] = 1;
+      neta[i] = ipa[0][i];
     }
     else {
       break;
@@ -103,8 +99,10 @@ void output()
 
 int main()
 {
-  input();
-  solve();
-  trace();
-  output();
+  while (scanf("%d", &m) == 1) {
+    input();
+    solve();
+    /* trace(); */
+    output();
+  }
 }
