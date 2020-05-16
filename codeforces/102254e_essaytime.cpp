@@ -15,7 +15,7 @@ int main()
   int cnt = 0;
   for (int i = 0; i < n; i++) {
     // cout << s << endl;
-    cin >> s;
+    getline(cin, s);
     m[s] += 1;
     if (m[s] > 1) { v.push_back(s); cnt++; }
   }
