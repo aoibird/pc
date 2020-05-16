@@ -19,8 +19,8 @@ struct DNA {
     cnt = c;
   }
 };
-const int MAXM = 50+5;
-const int MAXN = 100+5;
+const int MAXN = 50+5;
+const int MAXM = 100+5;
 DNA S[MAXM];
 int M, N;
 
