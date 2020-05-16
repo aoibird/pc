@@ -10,7 +10,7 @@
 #include <unordered_map>
 using namespace std;
 
-const int MAXL = 800000+10;
+const int MAXL = 8000000+10;
 
 map<string,int> m;
 vector<int> v;
