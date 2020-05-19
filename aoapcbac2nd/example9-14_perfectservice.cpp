@@ -16,21 +16,23 @@ const int INF = 100000000;
 int G[MAXN][MAXN];
 int N;
 int par[MAXN];
-vector<int> children[MAXN];
+vector<int> vert, children[MAXN];
 int dp[MAXN][3];
 
 void build_tree(int x)
 {
+    vert.push_back(x);
     for (int i = 1; i <= N; i++) {
         if (G[x][i] == 1) {
+            G[x][i] = G[i][x] = 0;
             par[i] = x;
             children[x].push_back(i);
-            G[x][i] = G[i][x] = 0;
             build_tree(i);
         }
     }
 }
 
+/*
 int dfs(int u, int c)
 {
     if (dp[u][c] < INF) return dp[u][c];
@@ -51,19 +53,38 @@ int dfs(int u, int c)
 
     return dp[u][c];
 }
+*/
+
+void print_table()
+{
+    printf("par & vert:\n");
+    for (int i = 1; i <= N; i++) printf("%d%c", par[i], i==N?'\n':' ');
+    for (int i = 0; i < vert.size(); i++) printf("%d ", vert[i]); printf("\n");
+}
 
 void solve()
 {
     par[1] = 1; build_tree(1);
-    // for (int i = 1; i <= N; i++) printf("%d%c", par[i], i==N?'\n':' ');
+    // print_table();
 
-    for (int i=0; i<N; i++) for (int c=0; c<3; c++) dp[i][c] = INF;
-    int v1 = dfs(1, 0);
-    int v2 = dfs(1, 2);
-    if (v1 > 0 && v2 > 0) printf("%d\n", min(v1, v2));
-    else if (v1 <= 0) printf("%d\n", v2);
-    else if (v2 <= 0) printf("%d\n", v1);
-    else printf("%d\n", 1);
+    for (int i = vert.size()-1; i >= 0; i--) {
+        int u = vert[i];
+        dp[u][0] = 1; dp[u][1] = 0;
+        for (int j = 0; j < children[u].size(); j++) {
+            int v = children[u][j];
+            dp[u][0] += min(dp[v][0], dp[v][1]);
+            dp[u][1] += dp[v][2];
+            dp[u][0] = min(dp[u][0], INF);
+            dp[u][1] = min(dp[u][1], INF);
+        }
+        dp[u][2] = INF;
+        for (int j = 0; j < children[u].size(); j++) {
+            int v = children[u][j];
+            dp[u][2] = min(dp[u][2], dp[u][1] - dp[v][2] + dp[v][0]);
+        }
+        // printf("%d: %d %d %d\n", u, dp[u][0], dp[u][1], dp[u][2]);
+    }
+    printf("%d\n", min(dp[1][0], dp[1][2]));
 }
 
 int main()
@@ -79,7 +100,8 @@ int main()
         memset(G, 0, sizeof(G));
         memset(par, 0, sizeof(par));
         memset(dp, 0, sizeof(dp));
-        for (int i = 0; i < N; i++) children[i].clear();
+        vert.clear();
+        for (int i = 1; i <= N; i++) children[i].clear();
 
         int e; scanf("%d", &e);
         if (e == -1) break;
