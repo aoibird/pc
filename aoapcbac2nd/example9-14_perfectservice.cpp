@@ -1,4 +1,4 @@
-// UBa 1218
+// UVa 1218
 #include <cctype>
 #include <cmath>
 #include <cstdio>
@@ -31,29 +31,6 @@ void build_tree(int x)
         }
     }
 }
-
-/*
-int dfs(int u, int c)
-{
-    if (dp[u][c] < INF) return dp[u][c];
-
-    int nchild = children[u].size();
-
-    int sum = 0;
-    for (int i = 0; i < nchild; i++) {
-        int v = children[u][i];
-        if (c == 0) sum += min(dfs(v, 0), dfs(v, 1));
-        else if (c == 1) sum += dfs(v, 2);
-        else if (c == 2) dp[u][c] = min(dp[u][c], dfs(u, 1) - dfs(v, 2) + dfs(v, 0));
-        else ;
-    }
-    if (c == 0) dp[u][c] = sum + 1;
-    else if (c == 1) dp[u][c] = sum;
-    else ;
-
-    return dp[u][c];
-}
-*/
 
 void print_table()
 {
