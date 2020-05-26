@@ -83,8 +83,8 @@ int main()
         ungetc(ch, stdin);
         input();
 
+        if (tc != 1) printf("\n");
         printf("Puzzle #%d:\n", tc); tc++;
         solve();
-        printf("\n");
     }
 }
