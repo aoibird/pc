@@ -1,7 +1,7 @@
 // UVa 10340
 #include <stdio.h>
 #include <string.h>
-#define MAXS 1000
+#define MAXS 1000000
 
 char s[MAXS];
 char t[MAXS];
