@@ -1,4 +1,6 @@
+// UVa 10340
 #include <stdio.h>
+#include <string.h>
 #define MAXS 1000
 
 char s[MAXS];
@@ -15,15 +17,15 @@ void input()
 
 int solve()
 {
-  int i = 0, j = 0;
-  while (s[i] != '\0' && t[j] != '\0') {
-    //printf("%c %c\n", s[i], t[j]);
-    if (s[i] == t[j]) j++;
+    int ls = strlen(s);
+    int lt = strlen(t);
+    int p = 0;
+    for (int i = 0; i < ls; i++) {
+        if (t[p] == s[i]) p++;
+    }
 
-    i++;
-  }
-
-  return (t[j] == '\0');
+    if (p == lt) return 1;
+    else return 0;
 }
 
 int main()
