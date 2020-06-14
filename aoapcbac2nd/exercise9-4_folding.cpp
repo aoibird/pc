@@ -11,13 +11,13 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
-const int MAXN = 100+10;
+const int MAXN = 200;
 
 char S[MAXN];
 string SS;
 int N;
 string dp[MAXN][MAXN];
-char buff[MAXN*2];
+char buff[MAXN];
 
 void get_pos(string &s, int &p, int &q, int &l)
 {
