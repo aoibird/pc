@@ -7,6 +7,7 @@
 #include <iostream>
 #include <algorithm>
 #include <stack>
+#include <unordered_map>
 using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
@@ -16,7 +17,8 @@ const int MAXN = 200;
 char S[MAXN];
 string SS;
 int N;
-string dp[MAXN][MAXN];
+// string dp[MAXN][MAXN];
+unordered_map<string, string> M;
 char buff[MAXN];
 
 void get_pos(string &s, int &p, int &q, int &l)
@@ -52,18 +54,21 @@ bool isrepeat(string &s, int f, int t, int r)
 string fold(int f, int t)
 {
     int l = t - f + 1;
+    string orig = SS.substr(f, l);
+    string res = orig;
 
-    if (dp[f][t] != "") return dp[f][t];
-    if (l <= 4) return SS.substr(f, l);
-
-    for (int i = 1; i <= 3; i++) {
-        if (isrepeat(SS, f, t, i)) {
-            sprintf(buff, "%d(%s)", l/i, SS.substr(f, i).c_str());
-            return dp[f][t] = string(buff);
+    if (M.count(orig) != 0) return M[orig];
+    if (l <= 4) return M[orig] = orig;
+    if (l <= 6) {
+        for (int i = 1; i <= 3; i++) {
+            if (isrepeat(SS, f, t, i)) {
+                sprintf(buff, "%d(%s)", l/i, SS.substr(f, i).c_str());
+                return M[orig] = string(buff);
+            }
         }
     }
 
-    string res = SS.substr(f, t-f+1), s, a, b, asub, bsub;
+    string s, a, b, asub, bsub;
     int p1, p2, q1, q2, l1, l2, c1, c2;
     for (int i = f; i <= t-1; i++) {
         a = fold(f, i); b = fold(i+1, t);
@@ -100,6 +105,22 @@ string fold(int f, int t)
                 }
                 else s = a + b;
             }
+            else if (c2 != 0 && q2 == b.size()-1) {
+                // ...x(...)... <-> x(...)
+                if (bsub == "("+a+")") {
+                    sprintf(buff, "%d", c2+1);
+                    s = string(buff) + bsub;
+                }
+                else s = a + b;
+            }
+            else if (c1 != 0 && q1 == a.size()-1) {
+                // x(...) <-> ...x(...)...
+                if (asub == "("+b+")") {
+                    sprintf(buff, "%d", c1+1);
+                    s = string(buff) + asub;
+                }
+                else s = a + b;
+            }
             else if (a == b) s = "2(" + a + ")";
             else s = a + b;
         }
@@ -108,7 +129,7 @@ string fold(int f, int t)
         // printf("%s %s -> %s (%d %d %d)\n",a.c_str(),b.c_str(),s.c_str(),
         //        f,t,i);
     }
-    return dp[f][t] = res;
+    return M[orig] = res;
 }
 
 void solve()
@@ -122,7 +143,6 @@ void solve()
 int main()
 {
     while (scanf("%s", S) == 1) {
-        memset(dp, 0, sizeof(dp));
         solve();
     }
 }
