@@ -128,10 +128,10 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Exercise 5-1    | UVa 1593            | Alignment of Code                 | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 5-10   | UVa 1597            | Searching the Web                 | TLE                           |        |
 | AOAPC BAC 2nd Exercise 5-11   | UVa 12504           | Updating a Dictionary             | RE                            |        |
-| AOAPC BAC 2nd Exercise 5-2    | UVa 1594            | Ducci Sequence                    | WA                            |        |
-| AOAPC BAC 2nd Exercise 5-3    | UVa 10935           | Throwing cards away I             | RE                            |        |
+| AOAPC BAC 2nd Exercise 5-2    | UVa 1594            | Ducci Sequence                    | WA AC                         | ✓      |
+| AOAPC BAC 2nd Exercise 5-3    | UVa 10935           | Throwing cards away I             | RE AC                         | ✓      |
 | AOAPC BAC 2nd Exercise 5-4    | UVa 10763           | Foreign Exchange                  | AC                            | ✓      |
-| AOAPC BAC 2nd Exercise 5-5    | UVa 10391           | Compound Words                    | TLE                           |        |
+| AOAPC BAC 2nd Exercise 5-5    | UVa 10391           | Compound Words                    | TLE AC                        | ✓      |
 | AOAPC BAC 2nd Exercise 5-7    | UVa 12100           | Printer Queue                     | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 5-8    | UVa 230             | Borrowers                         | WA                            |        |
 | AOAPC BAC 2nd Exercise 6-1    | UVa 673             | Parentheses Balance               | AC                            | ✓      |
@@ -272,4 +272,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 173 / 225
+Solved / All: 176 / 225
