@@ -1,3 +1,4 @@
+// UVa 1594
 #include <iostream>
 #include <algorithm>
 #include <cmath>
@@ -16,7 +17,7 @@ void input()
 
 void solve()
 {
-  int limit = 10;
+  int limit = 1010;
 
   int zero;
   while (limit) {
