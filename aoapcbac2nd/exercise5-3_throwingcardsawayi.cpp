@@ -1,3 +1,4 @@
+// UVa 10935
 #include <iostream>
 #include <algorithm>
 #include <queue>
@@ -20,10 +21,12 @@ void solve()
     qr.push(b);
   }
 
-  printf("Discarded cards: ");
-  printf("%d", qt.front()); qt.pop();
+  printf("Discarded cards:");
+  bool first = true;
   while (!qt.empty()) {
-    printf(", %d", qt.front()); qt.pop();
+    if (first) { printf(" "); first = false; }
+    else printf(", ");
+    printf("%d", qt.front()); qt.pop();
   }
   printf("\n");
   printf("Remaining card: %d\n", qr.front()); qr.pop();
