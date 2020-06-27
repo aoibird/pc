@@ -110,13 +110,14 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 9-9     | UVa 10003           | Cutting Sticks                    | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 3-1    | UVa 1585            | Score                             | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 3-10   | UVa 1587            | Box                               | WA WA AC                      | ✓      |
-| AOAPC BAC 2nd Exercise 3-11   | UVa 1588            | Kickdown                          | WA                            |        |
+| AOAPC BAC 2nd Exercise 3-11   | UVa 1588            | Kickdown                          | WA AC                         | ✓      |
 | AOAPC BAC 2nd Exercise 3-2    | UVa 1586            | Molar Mass                        | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 3-3    | UVa 1225            | Digit Counting                    | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 3-4    | UVa 455             | Periodic Strings                  | WA WA PE AC WA WA AC WA       | ✓      |
 | AOAPC BAC 2nd Exercise 3-5    | UVa 227             | Puzzle                            | PE AC                         | ✓      |
 | AOAPC BAC 2nd Exercise 3-6    | UVa 232             | Crossword Anwsers                 | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 3-7    | UVa 1368            | DNA Consensus String              | AC                            | ✓      |
+| AOAPC BAC 2nd Exercise 3-8    | UVa 202             | Repeating Decimals                | WA AC                         | ✓      |
 | AOAPC BAC 2nd Exercise 3-9    | UVa 10340           | All in All                        | RE RE AC                      | ✓      |
 | AOAPC BAC 2nd Exercise 4-10   | UVa 815             | Flooded!                          | WA WA WA AC                   | ✓      |
 | AOAPC BAC 2nd Exercise 4-2    | UVa 201             | Squares                           | AC                            | ✓      |
@@ -272,4 +273,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 176 / 225
+Solved / All: 178 / 226
