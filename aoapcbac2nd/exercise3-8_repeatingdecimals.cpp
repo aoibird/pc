@@ -21,13 +21,12 @@ void solve()
 {
     int left = 0, right = 0;
     int integral = a / b;
-    int at = a % b * 10;
+    int at = a % b;
     for (int i = 0; ; i++) {
         Q.push_back(at / b);
         R.push_back(at % b);
-        if (at % b == 0) { left = i+1; right = i+2; break; }
-        else if (RL.count(at % b) == 0) { RL[at % b] = i; }
-        else { left = RL[at % b]; right = i; break; }
+        if (RL.count(at % b) == 0) { RL[at % b] = i; }
+        else { left = RL[at % b] + 1; right = i + 1; break; }
         at = (at % b) * 10;
         // printf("a = %d\n", a);
     }
@@ -39,11 +38,11 @@ void solve()
     //     printf("%d%c", R[i], i==R.size()-1?'\n':' ');
 
     printf("%d/%d = %d.", a, b, integral);
-    for (int i = 0; i < left; i++) printf("%d", Q[i]);
+    for (int i = 1; i < left; i++) printf("%d", Q[i]);
     printf("(");
-    for (int i = left; i < right && i<50; i++) printf("%d", Q[i]);
-    printf("%s)\n", right-left>50?"...":"");
-    printf("   %d = number of digits in repeating cycle\n", right-left);
+    for (int i = left; i < right && i<=50; i++) printf("%d", Q[i]);
+    printf("%s)\n", right-left>=50?"...":"");
+    printf("   %d = number of digits in repeating cycle\n\n", right-left);
 
 }
 
