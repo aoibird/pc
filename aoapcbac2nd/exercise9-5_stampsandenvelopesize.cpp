@@ -57,10 +57,11 @@ void solve()
         }
     }
 
-    printf("max coverage = %3d : ", maxamount);
+    printf("max coverage = %3d :", maxamount);
     for (int j = 0, l = sets[maxi].size(); j < l; j++) {
-        printf("%2d%c", sets[maxi][j], (j==l-1)?'\n':' ');
+        printf("%3d", sets[maxi][j]);
     }
+    printf("\n");
 }
 
 int main()
