@@ -48,8 +48,8 @@ void solve()
         int amount, cnt;
         calc(sets[i], amount, cnt);
         if (amount > maxamount ||
-            (amount == maxamount && cnt < maxcnt) ||
-            (amount == maxamount && cnt == maxcnt
+            (amount == maxamount && sets[i].size() < sets[maxi].size()) ||
+            (amount == maxamount && sets[i].size() == sets[maxi].size()
              && sets[i][sets[i].size()-1] < sets[maxi][sets[maxi].size()-1])) {
             maxamount = amount;
             maxcnt = cnt;
