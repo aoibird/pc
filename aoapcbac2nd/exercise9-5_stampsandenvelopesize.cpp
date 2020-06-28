@@ -20,11 +20,10 @@ int S, N;
 
 void calc(const vector<int> &set, int &amount, int &cnt)
 {
-    for (int j = 0; j < MAXV; j++) dp[j] = INF;
-
     int maxv = set[set.size()-1]*S;
     dp[0] = 0;
     for (amount = 1; amount <= maxv; amount++) {
+        dp[amount] = INF;
         for (int j = 0; j < set.size();  j++) {
             int denom = set[j];
             if (amount - denom >= 0 && dp[amount - denom]+1 <= S) {
