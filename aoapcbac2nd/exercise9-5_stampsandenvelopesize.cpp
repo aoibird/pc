@@ -18,8 +18,9 @@ vector<int> sets[MAXN];
 int dp[MAXV];
 int S, N;
 
-void calc(const vector<int> &set, int &amount, int &cnt)
+int calc(const vector<int> &set)
 {
+    int amount = 0;
     int maxv = set[set.size()-1]*S;
     dp[0] = 0;
     for (amount = 1; amount <= maxv; amount++) {
@@ -27,32 +28,25 @@ void calc(const vector<int> &set, int &amount, int &cnt)
         for (int j = 0; j < set.size();  j++) {
             int denom = set[j];
             if (amount - denom >= 0 && dp[amount - denom]+1 <= S) {
-                // printf("%d(%d): %d(%d) + 1(%d)\n",
-                //        dp[amount], amount,
-                //        dp[amount - denom], amount - denom,
-                //        denom);
                 dp[amount] = min(dp[amount], dp[amount - denom] + 1);
             }
 
         }
         if (dp[amount] >= INF) break;
     }
-    amount -= 1;
-    cnt = dp[amount];
+    return amount - 1;
 }
 
 void solve()
 {
-    int maxamount = 0, maxcnt = 0, maxi = 0;
+    int maxamount = 0, maxi = 0;
     for (int i = 0; i < N; i++) {
-        int amount, cnt;
-        calc(sets[i], amount, cnt);
+        int amount = calc(sets[i]);
         if (amount > maxamount ||
             (amount == maxamount && sets[i].size() < sets[maxi].size()) ||
             (amount == maxamount && sets[i].size() == sets[maxi].size()
              && sets[i][sets[i].size()-1] < sets[maxi][sets[maxi].size()-1])) {
             maxamount = amount;
-            maxcnt = cnt;
             maxi = i;
         }
     }
