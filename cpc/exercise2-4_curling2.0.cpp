@@ -12,23 +12,13 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
+const int INF = 10000;
 const int MAXR = 20+5;
 const int MAXC = 20+5;
-
 int F[MAXR][MAXC];
-
-struct State {
-    int r, c, step;
-    vector<PII> blocks;
-    State(int ri=0, int ci=0, int si=0) {
-        r=ri; c=ci; step=si;
-        blocks.resize(0);
-    }
-};
-
 int R, C;
 int SR, SC, GR, GC;
-queue<State> q;
+int best;
 
 int dr[4] = {1, -1, 0, 0};
 int dc[4] = {0, 0, 1, -1};
@@ -41,69 +31,39 @@ void print_field(int f[MAXR][MAXC])
     }
 }
 
-bool move(State &curr, int ir, int ic, State &nxt)
+void dfs(int curr, int curc, int dirr, int dirc, int &step)
 {
-    for (int i = 0; i < curr.blocks.size(); i++) {
-        PII p = curr.blocks[i]; int a = p.first, b = p.second;
-        F[a][b] = 0;
-        nxt.blocks.push_back(p);
-    }
-    bool cont = false;
-    // printf("r = %d c = %d\n", curr.r, curr.c);
-    for (int r = curr.r, c = curr.c;  ; r += ir, c += ic) {
-        if (r < 0 || r >= R || c < 0 || c >= C) { // out
-            break;
-        }
-        else if (F[r][c] == 1 && r - ir == curr.r && c - ic == curr.c) {
-            break;
-        }
-        else if (F[r][c] == 1) { // hit
-            nxt.r = r - ir;
-            nxt.c = c - ic;
-            nxt.step = curr.step + 1;
-            nxt.blocks.push_back(PII(r, c));
-            cont = true;
-            break;
-        }
-        else if (F[r][c] == 3) { // goal
-            nxt.r = r;
-            nxt.c = c;
-            nxt.step = curr.step + 1;
-            cont = true;
-            break;
-        }
+    // printf("curr r = %d c = %d (%d)\n", curr, curc, step);
+    if (step > 10) return;
+    if (F[curr + dirr][curc + dirc] == 1) return;
+
+    int r = curr, c = curc;
+    for ( ;  ; r += dirr, c += dirc) {
+        if (r < 0 || r >= R || c < 0 || c >= C) { return; } // out
+        else if (F[r][c] == 1) { break; } // hit
+        else if (F[r][c] == 3) { best = min(best, step + 1); return; } // goal
         else {}
     }
-    // printf("    nextr = %d nextc = %d %d (%d)\n", nxt.r, nxt.c, nxt.step, cont);
-    for (int i = 0; i < curr.blocks.size(); i++) {
-        PII p = curr.blocks[i]; int a = p.first, b = p.second;
-        F[a][b] = 1;
+    // printf("    next %d %d\n", r - dirr, c - dirc);
+    F[r][c] = 0;
+    for (int i = 0; i < 4; i++) {
+        step += 1;
+        dfs(r - dirr, c - dirc, dr[i], dc[i], step);
+        step -= 1;
     }
-
-    return cont;
+    F[r][c] = 1;
 }
 
 void solve()
 {
-    State curr, nxt;
-    q.push(State(SR, SC, 0));
-
-    int step = -1;
-    while (!q.empty()) {
-        curr = q.front(); q.pop();
-        if (curr.step > 10) { break; }
-        if (curr.r == GR && curr.c == GC) { step = curr.step; break; }
-
-        for (int i = 0; i < 4; i++) {
-            bool ret = move(curr, dr[i], dc[i], nxt);
-            if (ret) {
-                q.push(nxt);
-            }
-        }
+    best = INF;
+    int step;
+    for (int i = 0; i < 4; i++) {
+        step = 0;
+        dfs(SR, SC, dr[i], dc[i], step);
     }
 
-    while (!q.empty()) q.pop();
-    printf("%d\n", step);
+    printf("%d\n", (best>10)?-1:best);
 }
 
 int main()
