@@ -35,6 +35,16 @@ void print()
   }
 }
 
+void print_d()
+{
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      printf("%d ", D[i][j]);
+    }
+    printf("\n");
+  }
+}
+
 void input()
 {
   T = 0;
@@ -42,12 +52,16 @@ void input()
     int r, c, t;
     scanf("%d%d%d", &r, &c, &t);
     T = max(T, t);
-    GRID[r][c] = t;
+    if (t < GRID[r][c]) GRID[r][c] = t;
+    // printf("r c t %d %d %d\n", r, c, t);
     for (int j = 0; j < 4; j++) {
       int nr = r+dr[j];
       int nc = c+dc[j];
       if (nr >= 0 && nr < MAXR && nc >= 0 && nc < MAXC
-        && (GRID[nr][nc] == 0 || t < GRID[nr][nc])) { GRID[nr][nc] = t; }
+        && (t < GRID[nr][nc])) {
+        // printf("    nr nc nt %d %d %d\n", nr, nc, t);
+        GRID[nr][nc] = t;
+      }
     }
   }
 }
@@ -63,13 +77,13 @@ int solve()
     int r = curr.r;
     int c = curr.c;
     int d = curr.d;
-    if (GRID[r][c] == 0) { return d; }
+    if (GRID[r][c] >= INF) { return d; }
     for (int i = 0; i < 4; i++) {
       int nr = r+dr[i];
       int nc = c+dc[i];
       int nd = d + 1;
       if (nr >= 0 && nr < MAXR && nc >= 0 && nc < MAXC
-        && (GRID[nr][nc] == 0 || nd < GRID[nr][nc]) && D[nr][nc] == 0) {
+        && nd < GRID[nr][nc] && D[nr][nc] == 0) {
         q.push(Node(nr, nc, nd));
         D[nr][nc] = nd;
       }
@@ -81,10 +95,12 @@ int solve()
 int main()
 {
   while (scanf("%d", &M) == 1) {
-    memset(GRID, 0, sizeof(GRID));
+    for (int i = 0; i < MAXR; i++) for (int j = 0; j < MAXC; j++) GRID[i][j] = INF;
     memset(D, 0, sizeof(D));
     input();
+    // print();
     int res = solve();
     printf("%d\n", res);
+    // print_d();
   }
 }
