@@ -90,6 +90,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 7-9     | UVa 1601            | The Morning after Halloween       | WA AC                         | ✓      |
 | AOAPC BAC 2nd Example 8-1     | UVa 120             | Stacks of Flapjacks               | WA                            |        |
 | AOAPC BAC 2nd Example 8-12    | UVa 12627           | Erratic Expanision                | TLE                           |        |
+| AOAPC BAC 2nd Example 8-15    | UVa 12174           | Shuffle                           | WA AC                         | ✓      |
 | AOAPC BAC 2nd Example 8-2     | UVa 1605            | Building for UN                   | AC                            | ✓      |
 | AOAPC BAC 2nd Example 8-4     | UVa 11134           | Fabled Rooks                      | WA                            |        |
 | AOAPC BAC 2nd Example 8-5     | UVa 11054           | Wine trading in Gergovia          | AC                            | ✓      |
@@ -149,6 +150,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Exercise 9-2    | UVa 10118           | Free Candies                      | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 9-22   | UVa 1579            | Matryoshka                        | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 9-4    | UVa 1630            | Folding                           | RE RE AC                      | ✓      |
+| AOAPC BAC 2nd Exercise 9-5    | UVa 242             | Stamps and Envelope Size          | TLE WA WA WA AC AC            | ✓      |
 | AOAPC BAC TG Example 1-1      | UVa 11292           | The Dragon of Loowater            | AC                            | ✓      |
 | AOAPC BAC TG Example 1-2      | UVa 11729           | Commando War                      | WA AC                         | ✓      |
 | AOAPC BAC TG Example 1-3      | UVa 11300           | Spreading the Wealth              | WA AC AC AC                   | ✓      |
@@ -178,7 +180,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 37                | POJ 1064            | Cable master                      | AC                            | ✓      |
 | CPC Example 38                | POJ 2456            | Aggressive cows                   | AC                            | ✓      |
 | CPC Example 40                | POJ 3061            | Subsequence                       | AC                            | ✓      |
-| CPC Example 41                | POJ 3320            | Jessica's Reading Problem         | WA WA TLE TLE AC AC           | ✓      |
+| CPC Example 41                | POJ 3320            | Jessica's Reading Problem         | WA WA TLE TLE AC AC AC        | ✓      |
 | CPC Example 42                | POJ 3276            | Face The Right Way                | WA AC                         | ✓      |
 | CPC Example 45                | POJ 2785            | 4 Values whose Sum is 0           | WA AC                         | ✓      |
 | CPC Example 48                | POJ 2991            | Crane                             | WA WA AC                      | ✓      |
@@ -186,6 +188,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 53                | POJ 2686            | Travelling by Stagecoach          | TLE AC                        | ✓      |
 | CPC Example 9                 | POJ 3617            | Best Cow Line                     | CE CE PE PE PE PE             |        |
 | CPC Exercise 2-1              | POJ 1979            | Red and Black                     | AC                            | ✓      |
+| CPC Exercise 2-10             | POJ 3050            | Hopscotch                         | AC                            | ✓      |
 | CPC Exercise 2-12             | POJ 2376            | Cleaning Shifts                   | WA WA WA WA WA                |        |
 | CPC Exercise 2-13             | POJ 1328            | Radar Installation                | WA WA CE WA WA CE CE CE WA    |        |
 | CPC Exercise 2-14             | POJ 3190            | Stall Reservations                | WA TLE AC                     | ✓      |
@@ -196,12 +199,14 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-35             | POJ 2236            | Wireless Network                  | AC                            | ✓      |
 | CPC Exercise 2-36             | POJ 1703            | Find them, Catch them             | WA WA WA AC                   | ✓      |
 | CPC Exercise 2-39             | POJ 2139            | Six Degrees of Cowvin Bacon       | AC                            | ✓      |
+| CPC Exercise 2-4              | POJ 3009            | Curling 2.0                       | MLE AC                        | ✓      |
 | CPC Exercise 2-40             | POJ 3259            | Wormholes                         | WA RE RE AC                   | ✓      |
 | CPC Exercise 2-41             | POJ 3268            | Silver Cow Party                  | TLE TLE TLE TLE AC            | ✓      |
 | CPC Exercise 2-44             | POJ 1258            | Agri-Net                          | WA WA WA WA AC AC             | ✓      |
 | CPC Exercise 2-49             | POJ 2429            | GCD & LCM Inverse                 | TLE TLE TLE                   |        |
 | CPC Exercise 2-5              | AOJ 0558            | Cheese                            | AC                            | ✓      |
-| CPC Exercise 2-6              | POJ 3669            | Meteor Shower                     | TLE WA                        |        |
+| CPC Exercise 2-6              | POJ 3669            | Meteor Shower                     | TLE WA WA AC                  | ✓      |
+| CPC Exercise 2-8              | POJ 2718            | Smallest Difference               | TLE                           |        |
 | CPC Exercise 2-9              | POJ 3187            | Backward Digit Sums               | AC                            | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
 | CPC2 12.2                     | AOJ ALDS1_11_A      | Graph                             | AC                            | ✓      |
@@ -273,4 +278,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 178 / 226
+Solved / All: 183 / 231
