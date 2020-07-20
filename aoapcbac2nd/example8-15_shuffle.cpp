@@ -38,7 +38,7 @@ void print_mul()
 
 bool satisfy(int x)
 {
-    for (int i = x; i + S <= N; i += S) {
+    for (int i = x; i < N; i += S) {
         if (SAT[i] == false) return false;
     }
     return true;
