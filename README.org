@@ -190,8 +190,8 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-1              | POJ 1979            | Red and Black                     | AC                            | ✓      |
 | CPC Exercise 2-10             | POJ 3050            | Hopscotch                         | AC                            | ✓      |
 | CPC Exercise 2-12             | POJ 2376            | Cleaning Shifts                   | WA WA WA WA WA                |        |
-| CPC Exercise 2-13             | POJ 1328            | Radar Installation                | WA WA CE WA WA CE CE CE WA    |        |
-| CPC Exercise 2-14             | POJ 3190            | Stall Reservations                | WA TLE AC                     | ✓      |
+| CPC Exercise 2-13             | POJ 1328            | Radar Installation                | WA WA CE WA WA CE CE CE WA AC | ✓      |
+| CPC Exercise 2-14             | POJ 3190            | Stall Reservations                | WA TLE AC WA AC               | ✓      |
 | CPC Exercise 2-15             | POJ 2393            | Yogurt Factory                    | AC                            | ✓      |
 | CPC Exercise 2-16             | POJ 1017            | Packets                           | WA AC                         | ✓      |
 | CPC Exercise 2-2              | AOJ 0118            | Property Distribution             | AC                            | ✓      |
@@ -278,4 +278,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 183 / 231
+Solved / All: 184 / 231
