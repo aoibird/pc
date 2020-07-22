@@ -23,9 +23,9 @@ struct cow {
 cow A[MAXN];
 int N;
 
-bool compare_finish(struct cow &a, struct cow &b)
+bool compare_start(struct cow &a, struct cow &b)
 {
-    return a.finish < b.finish;
+    return a.start < b.start;
 }
 
 bool compare_index(struct cow &a, struct cow &b)
@@ -35,7 +35,7 @@ bool compare_index(struct cow &a, struct cow &b)
 
 void solve()
 {
-  sort(A, A+N, compare_finish);
+  sort(A, A+N, compare_start);
   priority_queue<PII, vector<PII>, greater<PII>> pq; // (finish, index)
 
   for (int i = 0; i < N; i++) {
