@@ -31,17 +31,24 @@ bool cmp(const P &a, const P &b) { return a.second < b.second; }
 
 void solve()
 {
-    sort(v.begin(), v.end(), cmp);
-    int cnt = 0, time = 0, sel = -1;
-    while (sel < ((int)v.size())-1) {
-        for (sel = v.size()-1; sel >= 0; sel--) {
-            if (v[sel].first <= time + 1 && v[sel].second > time) break;
+    sort(v.begin(), v.end());
+    if (v[0].first != 1) { printf("-1\n"); return; }
+
+    int cnt = 1, t = 0;
+    while (true) {
+        int best = v[t].second, target = -1;
+        for (int i = t+1; i < v.size(); i++) {
+            if (v[i].first <= v[t].second + 1 && best < v[i].second) {
+                best = v[i].second; target = i;
+            }
         }
-        if (sel == -1) { cnt = -1; break; }
-        else { time = v[sel].second; cnt++; }
+        //printf("target == %d\n", target);
+        if (target == -1) { break; }
+        cnt++;
+        t = target;
     }
-    if (v[sel].second != T) cnt = -1;
-    printf("%d\n", cnt);
+    if (v[t].second < T) printf("-1\n");
+    else printf("%d\n", cnt);
 }
 
 int main()
