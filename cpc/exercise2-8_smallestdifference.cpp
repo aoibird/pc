@@ -29,35 +29,46 @@ void input()
         if (isdigit(ch)) D.push_back(ch-'0');
         else ;
     }
-    // print_set();
 }
 
-int difference(int s1, int l1, int s2, int l2)
+void form(int x, int y, int n1, int n2, int &a, int &b)
 {
-    if (D[s1] == 0 && l1 > 1) return INF;
-    if (D[s2] == 0 && l2 > 1) return INF;
-    char buf[100]; int v1, v2;
-    for (int i = 0; i < l1; i++) { buf[i] = D[s1+i]+'0'; } buf[s1+l1] = '\0';
-    v1 = atoi(buf);
-    for (int i = 0; i < l2; i++) { buf[i] = D[s2+i]+'0'; } buf[s2+l2] = '\0';
-    v2 = atoi(buf);
-    return abs(v1 - v2);
+    a = x;
+    for (int i = 0, t = N-1; i < n1; t--) {
+        if (D[t]!=x && D[t]!=y) { a *= 10; a += D[t]; i++; }
+    }
+    b = y;
+    for (int i = 0, t = 0; i < n2; t++) {
+        if (D[t]!=x && D[t]!=y) { b *= 10; b += D[t]; i++; }
+    }
 }
 
 void solve()
 {
-    N = D.size();
-    int best = INF;
-    do {
-        // print_set();
-        if (N % 2 == 0) {
-            best = min(best, difference(0, N/2, N/2, N/2));
+    N = D.size(); // N >= 2
+    sort(D.begin(), D.end());
+    //print_set(); printf("N = %d\n------\n", N);
+    int best = INF, besta, bestb;
+    if (N % 2 == 0) {
+        int a = 0, b = 0;
+        for (int i = 0; i+1 < N; i++) {
+            if (D[i] == 0 && i!=N-2) continue;
+            form(D[i], D[i+1], (N-2)/2, (N-2)/2, a, b);
+            int diff = (a > b) ? a - b : b - a;
+            if (diff < best) { best = diff; besta = a; bestb = b; }
+            //printf("(%d %d) a = %5d b = %5d\n", D[i], D[i+1], a, b);
         }
-        else {
-            best = min(best, difference(0, N/2, N/2, N/2));
-            best = min(best, difference(0, N/2+1, N/2+1, N/2-1));
-        }
-    } while (next_permutation(D.begin(), D.end()));
+    }
+    else {
+        int a = 0, b = 0;
+        int d1 = (D[0] == 0) ? D[1] : D[0];
+        int d2 = D[N-1];
+        form(d2, d1, (N-2)/2, (N-2)/2+1, a, b);
+        int diff = (a > b) ? a - b: b - a;
+        if (diff < best) { best = diff; besta = a; bestb = b; }
+        //printf("(%d %d) a = %5d b = %5d\n", d1, d2, a, b);
+    }
+    //printf("\n\n");
     printf("%d\n", best);
 }
 
