@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <vector>
 #include <algorithm>
+#include <queue>
 #define MAXN 25010
 #define MAXT 1000010
 using namespace std;
@@ -26,31 +27,21 @@ void print()
   }
 }
 
+bool cmp(const P &a, const P &b) { return a.second < b.second; }
+
 void solve()
 {
-  sort(v.begin(), v.end());
-  print();
-
-  int curr = 1;
-  int cnt = 0, ok = 1;
-  int i = 0;
-  while (curr < T) {
-
-    if (v[i].first > curr) { ok = 0; break; }
-    //printf("i = %d curr = %d\n", i, curr);
-    while (i < v.size() && v[i].first <= curr) i++;
-    if (i == v.size() && v[i-1].second < T) { ok = 0; break; }
-    //if (v[i].first > curr) { ok = 0; break; }
-    //i--;
-    //printf("i = %d\n", i);
-
-    curr = v[i-1].second;
-    cnt++;
-    //printf("curr %d\n", curr);
-  }
-
-  if (ok) printf("%d\n", cnt);
-  else printf("-1\n");
+    sort(v.begin(), v.end(), cmp);
+    int cnt = 0, time = 0, sel = -1;
+    while (sel < ((int)v.size())-1) {
+        for (sel = v.size()-1; sel >= 0; sel--) {
+            if (v[sel].first <= time + 1 && v[sel].second > time) break;
+        }
+        if (sel == -1) { cnt = -1; break; }
+        else { time = v[sel].second; cnt++; }
+    }
+    if (v[sel].second != T) cnt = -1;
+    printf("%d\n", cnt);
 }
 
 int main()
