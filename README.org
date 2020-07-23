@@ -189,7 +189,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 9                 | POJ 3617            | Best Cow Line                     | CE CE PE PE PE PE             |        |
 | CPC Exercise 2-1              | POJ 1979            | Red and Black                     | AC                            | ✓      |
 | CPC Exercise 2-10             | POJ 3050            | Hopscotch                         | AC                            | ✓      |
-| CPC Exercise 2-12             | POJ 2376            | Cleaning Shifts                   | WA WA WA WA WA                |        |
+| CPC Exercise 2-12             | POJ 2376            | Cleaning Shifts                   | WA WA WA WA WA WA AC          | ✓      |
 | CPC Exercise 2-13             | POJ 1328            | Radar Installation                | WA WA CE WA WA CE CE CE WA AC | ✓      |
 | CPC Exercise 2-14             | POJ 3190            | Stall Reservations                | WA TLE AC WA AC               | ✓      |
 | CPC Exercise 2-15             | POJ 2393            | Yogurt Factory                    | AC                            | ✓      |
@@ -206,7 +206,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-49             | POJ 2429            | GCD & LCM Inverse                 | TLE TLE TLE                   |        |
 | CPC Exercise 2-5              | AOJ 0558            | Cheese                            | AC                            | ✓      |
 | CPC Exercise 2-6              | POJ 3669            | Meteor Shower                     | TLE WA WA AC                  | ✓      |
-| CPC Exercise 2-8              | POJ 2718            | Smallest Difference               | TLE                           |        |
+| CPC Exercise 2-8              | POJ 2718            | Smallest Difference               | TLE AC                        | ✓      |
 | CPC Exercise 2-9              | POJ 3187            | Backward Digit Sums               | AC                            | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
 | CPC2 12.2                     | AOJ ALDS1_11_A      | Graph                             | AC                            | ✓      |
@@ -278,4 +278,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 184 / 231
+Solved / All: 186 / 231
