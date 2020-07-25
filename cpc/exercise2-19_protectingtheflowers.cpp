@@ -17,7 +17,7 @@ int N;
 
 bool cmp(const PII &a, const PII &b)
 {
-    return (a.first < b.first) || (a.first==b.first && a.second > b.second);
+    return a.second/(double)a.first > b.second/(double)b.first;
 }
 
 int main()
