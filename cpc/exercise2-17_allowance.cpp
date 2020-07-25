@@ -13,7 +13,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
-const int INF = 1000000000;
+const int INF = 2000000000;
 const int MAXN = 20+10;
 PII D[MAXN];
 int N, C;
@@ -31,34 +31,49 @@ bool cmp(const PII &a, const PII &b)
 
 int take(int amount)
 {
-    int cnt = 0;
     map<int,int> m;
     // printf("take ---");
     while (amount > 0) {
-        int x = -1;
+        bool found = false;
         for (int i = 0; i < N; i++) {
-            if (D[i].first <= amount && D[i].second > 0) { x = i; break; }
+            if (D[i].second > 0 && amount / D[i].first > 0
+                //&& amount / D[i].first <= D[i].second
+                ) {
+                int c = (amount / D[i].first < D[i].second) ?
+                    amount / D[i].first : D[i].second;
+                // printf("(%d * %d)", D[i].first, c);
+                m[i] += c;
+                D[i].second -= c;
+                amount -= D[i].first * c;
+                found = true;
+            }
         }
-        int y = -1;
-        for (int i = N-1; i >= 0; i--) {
-            if (D[i].first > amount && D[i].second > 0) { y = i; break; }
-        }
-        if (x != -1) {
-            // printf("%d(%d) ", D[x].first, amount);
-            amount -= D[x].first; D[x].second -= 1; m[x] += 1; cnt++;
-        }
-        else if (y != -1) {
-            // printf("%d(%d) ", D[y].first, amount);
-            amount -= D[y].first; D[y].second -= 1; m[y] += 1; cnt++;
-        }
-        else break;
+        if (!found) break;
     }
-    if (cnt == 0) return 0;
+    // printf("(rest amount = %d)", amount);
+    if (amount > 0) { // rest
+        bool found = false;
+        for (int i = N-1; i >= 0; i--) {
+            if (D[i].second <= 0 || amount <= 0) continue;
+            if (amount < D[i].first || amount / D[i].first <= D[i].second) {
+                int c = (amount / D[i].first > 0
+                         && amount <= D[i].second * D[i].first) ?
+                    amount / D[i].first : 1;
+                // printf("(%d %d)", D[i].first, c);
+                m[i] += c;
+                D[i].second -= c;
+                amount -= D[i].first * c;
+                found = true;
+            }
+        }
+        if (!found) return 0;
+    }
+
     int mi = INF;
     for (map<int,int>::iterator it = m.begin(); it != m.end(); it++) {
         PII pair = *it; int index = pair.first; int cnt = pair.second;
         // printf("[%d %d %d]", D[index].second, cnt, D[index].second / cnt);
-        mi = min(mi, D[index].second / cnt);
+        if (cnt > 0) mi = min(mi, D[index].second / cnt);
     }
     for (map<int,int>::iterator it = m.begin(); it != m.end(); it++) {
          PII pair = *it; int index = pair.first; int cnt = pair.second;
@@ -77,15 +92,19 @@ void solve()
     while ((c = take(C)) != 0) {
         cnt += c;
     }
+    // printf("\n");
     printf("%d\n", cnt);
 }
 
 int main()
 {
-    scanf("%d%d", &N, &C);
-    for (int i = 0; i < N; i++) {
-        int v, b; scanf("%d%d", &v, &b);
-        D[i] = PII(v, b);
+    while (scanf("%d%d", &N, &C) == 2) {
+        if (N == 0 && C == 0) break;
+        memset(D, 0, sizeof(D));
+        for (int i = 0; i < N; i++) {
+            int v, b; scanf("%d%d", &v, &b);
+            D[i] = PII(v, b);
+        }
+        solve();
     }
-    solve();
 }
