@@ -194,6 +194,9 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-14             | POJ 3190            | Stall Reservations                | WA TLE AC WA AC               | ✓      |
 | CPC Exercise 2-15             | POJ 2393            | Yogurt Factory                    | AC                            | ✓      |
 | CPC Exercise 2-16             | POJ 1017            | Packets                           | WA AC                         | ✓      |
+| CPC Exercise 2-17             | POJ 3040            | Allowance                         | TLE WA TLE AC AC              | ✓      |
+| CPC Exercise 2-18             | POJ 1862            | Stripies                          | AC                            | ✓      |
+| CPC Exercise 2-19             | POJ 3262            | Protecting the Flowers            | WA WA AC                      | ✓      |
 | CPC Exercise 2-2              | AOJ 0118            | Property Distribution             | AC                            | ✓      |
 | CPC Exercise 2-21             | POJ 2229            | Sumsets                           | WA WA TLE AC                  | ✓      |
 | CPC Exercise 2-35             | POJ 2236            | Wireless Network                  | AC                            | ✓      |
@@ -278,4 +281,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 186 / 231
+Solved / All: 189 / 234
