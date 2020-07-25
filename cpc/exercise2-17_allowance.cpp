@@ -32,54 +32,40 @@ bool cmp(const PII &a, const PII &b)
 int take(int amount)
 {
     map<int,int> m;
-    // printf("take ---");
-    while (amount > 0) {
-        bool found = false;
-        for (int i = 0; i < N; i++) {
-            if (D[i].second > 0 && amount / D[i].first > 0
-                //&& amount / D[i].first <= D[i].second
-                ) {
-                int c = (amount / D[i].first < D[i].second) ?
-                    amount / D[i].first : D[i].second;
-                // printf("(%d * %d)", D[i].first, c);
-                m[i] += c;
-                D[i].second -= c;
-                amount -= D[i].first * c;
-                found = true;
-            }
+    for (int i = 0; i < N; i++) {// descent
+        if (D[i].second > 0 && amount / D[i].first > 0) {
+            int c = (amount / D[i].first < D[i].second) ?
+                amount / D[i].first : D[i].second;
+            // printf("(%d * %d)", D[i].first, c);
+            m[i] += c;
+            D[i].second -= c;
+            amount -= D[i].first * c;
         }
-        if (!found) break;
     }
-    // printf("(rest amount = %d)", amount);
-    if (amount > 0) { // rest
-        bool found = false;
-        for (int i = N-1; i >= 0; i--) {
-            if (D[i].second <= 0 || amount <= 0) continue;
-            if (amount < D[i].first || amount / D[i].first <= D[i].second) {
-                int c = (amount / D[i].first > 0
-                         && amount <= D[i].second * D[i].first) ?
-                    amount / D[i].first : 1;
-                // printf("(%d %d)", D[i].first, c);
-                m[i] += c;
-                D[i].second -= c;
-                amount -= D[i].first * c;
-                found = true;
-            }
+    for (int i = N-1; i >= 0; i--) {// ascent
+        if (amount <= 0) break;
+        if (D[i].second <= 0) continue;
+        if (amount < D[i].first || amount / D[i].first <= D[i].second) {
+            int c = (amount / D[i].first > 0
+                     && amount <= D[i].second * D[i].first) ?
+                amount / D[i].first : 1;
+            // printf("(%d %d)", D[i].first, c);
+            m[i] += c;
+            D[i].second -= c;
+            amount -= D[i].first * c;
         }
-        if (!found) return 0;
     }
+    if (amount > 0) return 0;
 
     int mi = INF;
     for (map<int,int>::iterator it = m.begin(); it != m.end(); it++) {
         PII pair = *it; int index = pair.first; int cnt = pair.second;
-        // printf("[%d %d %d]", D[index].second, cnt, D[index].second / cnt);
         if (cnt > 0) mi = min(mi, D[index].second / cnt);
     }
     for (map<int,int>::iterator it = m.begin(); it != m.end(); it++) {
          PII pair = *it; int index = pair.first; int cnt = pair.second;
          D[index].second -= (mi * cnt);
     }
-    // printf(" * %d\n", mi+1);
     // print_d();
     return mi+1;
 }
