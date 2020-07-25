@@ -12,7 +12,7 @@ typedef pair<int,int> PII;
 
 const int MAXN = 100000 + 10;
 PII A[MAXN];
-int S[MAXN];
+ll S[MAXN];
 int N;
 
 bool cmp(const PII &a, const PII &b)
@@ -29,10 +29,10 @@ int main()
         S[N-1] = 0;
         for (int i = N-2; i >= 0; i--) { S[i] = S[i+1] + A[i+1].second; }
 
-        int sum = 0;
+        ll sum = 0;
         for (int i = 0; i < N; i++) {
             sum += A[i].first * 2 * S[i];
         }
-        printf("%d\n", sum);
+        printf("%lld\n", sum);
     }
 }
