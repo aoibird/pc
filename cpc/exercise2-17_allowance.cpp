@@ -53,6 +53,7 @@ int take(int amount)
         }
         else break;
     }
+    if (cnt == 0) return 0;
     int mi = INF;
     for (map<int,int>::iterator it = m.begin(); it != m.end(); it++) {
         PII pair = *it; int index = pair.first; int cnt = pair.second;
@@ -65,8 +66,7 @@ int take(int amount)
     }
     // printf(" * %d\n", mi+1);
     // print_d();
-    if (cnt != 0) return mi+1;
-    else return 0;
+    return mi+1;
 }
 
 
