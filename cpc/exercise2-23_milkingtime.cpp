@@ -38,17 +38,13 @@ int main()
         }
         sort(A, A+M, cmp);
 
-        for (int i = 0; i <= N; i++) {
-            for (int j = 0; j < i; j++) {
-                // printf("j -> i %d %d\n", j, i);
-                for (int k = 0; k < M; k++) {
-                    int f = A[k].from, t = A[k].to, e = A[k].eff;
-                    if (j <= f-2 && t <= i) dp[i] = max(dp[i], dp[j] + e);
-                    else if (dp[j] == 0 && f-2 <= 0 && t <= i) dp[i] = max(dp[i], e);
-                    else ;
-                }
+        for (int i = 0; i < M; i++) {
+            int f = A[i].from, t = A[i].to, e = A[i].eff;
+            for (int j = N; j >= t; j--) {
+                if (f-R >= 0) dp[j] = max(dp[j], dp[f-R] + e);
+                else dp[j] = max(dp[j], e);
             }
-            // for (int j = 0; j <= N; j++) printf("%2d%c", dp[j], j==N?'\n':' ');
+            //for (int j = 0; j <= N; j++) printf("%d%c", dp[j], j==N?'\n':' ');
         }
         printf("%d\n", dp[N]);
     }
