@@ -41,7 +41,7 @@ int main()
         for (int i = 0; i < M; i++) {
             int f = A[i].from, t = A[i].to, e = A[i].eff;
             for (int j = N; j >= t; j--) {
-                if (f-3 >= 0) dp[j] = max(dp[j], dp[f-3] + e);
+                if (f-2 >= 0) dp[j] = max(dp[j], dp[f-2] + e);
                 else dp[j] = max(dp[j], e);
             }
             //for (int j = 0; j <= N; j++) printf("%d%c", dp[j], j==N?'\n':' ');
