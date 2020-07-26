@@ -33,17 +33,17 @@ int main()
     while (scanf("%d%d", &N, &W) == 2) {
         memset(A, 0, sizeof(A));
         memset(dp, 0, sizeof(dp));
-        for (int i = 0; i < N; i++) { scanf("%d", &A[i]);  A[i] -= 1; }
+        for (int i = 1; i <= N; i++) { scanf("%d", &A[i]);  A[i] -= 1; }
         // print_array(A, N);
 
-        for (int i = 1; i < N; i++) {
+        for (int i = 1; i <= N; i++) {
             for (int j = 0; j <= W; j++) {
                 if (j & 1) dp[i][j] = max(dp[i-1][j], dp[i-1][j-1]) + (A[i]==1?1:0);
                 else dp[i][j] = max(dp[i-1][j], dp[i-1][j-1]) + (A[i]==0?1:0);
             }
         }
-        // print_2darray(dp, N, W+1);
+        //print_2darray(dp, N+1, W+1);
 
-        printf("%d\n", dp[N-1][W]);
+        printf("%d\n", dp[N][W]);
     }
 }
