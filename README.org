@@ -198,7 +198,11 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-18             | POJ 1862            | Stripies                          | AC                            | ✓      |
 | CPC Exercise 2-19             | POJ 3262            | Protecting the Flowers            | WA WA AC                      | ✓      |
 | CPC Exercise 2-2              | AOJ 0118            | Property Distribution             | AC                            | ✓      |
+| CPC Exercise 2-20             | POJ 3176            | Cow Bowling                       | AC                            | ✓      |
 | CPC Exercise 2-21             | POJ 2229            | Sumsets                           | WA WA TLE AC                  | ✓      |
+| CPC Exercise 2-22             | POJ 2385            | Apple Catching                    | WA AC                         | ✓      |
+| CPC Exercise 2-23             | POJ 3616            | Milking Time                      | WA WA TLE AC                  | ✓      |
+| CPC Exercise 2-24             | POJ 3280            | Cheapest Palindrome               | AC                            | ✓      |
 | CPC Exercise 2-35             | POJ 2236            | Wireless Network                  | AC                            | ✓      |
 | CPC Exercise 2-36             | POJ 1703            | Find them, Catch them             | WA WA WA AC                   | ✓      |
 | CPC Exercise 2-39             | POJ 2139            | Six Degrees of Cowvin Bacon       | AC                            | ✓      |
@@ -281,4 +285,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 189 / 234
+Solved / All: 193 / 238
