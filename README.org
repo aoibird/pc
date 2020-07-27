@@ -203,6 +203,9 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-22             | POJ 2385            | Apple Catching                    | WA AC                         | ✓      |
 | CPC Exercise 2-23             | POJ 3616            | Milking Time                      | WA WA TLE AC                  | ✓      |
 | CPC Exercise 2-24             | POJ 3280            | Cheapest Palindrome               | AC                            | ✓      |
+| CPC Exercise 2-25             | POJ 1742            | Coins                             | RE TLE TLE MLE AC             | ✓      |
+| CPC Exercise 2-26             | POJ 3046            | Ant Counting                      | TLE MLE AC                    | ✓      |
+| CPC Exercise 2-27             | POJ 3181            | Dollar Dayz                       | AC                            | ✓      |
 | CPC Exercise 2-35             | POJ 2236            | Wireless Network                  | AC                            | ✓      |
 | CPC Exercise 2-36             | POJ 1703            | Find them, Catch them             | WA WA WA AC                   | ✓      |
 | CPC Exercise 2-39             | POJ 2139            | Six Degrees of Cowvin Bacon       | AC                            | ✓      |
@@ -285,4 +288,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 193 / 238
+Solved / All: 196 / 241
