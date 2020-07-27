@@ -33,7 +33,7 @@ void solve()
                 for (int k = 1; k <= c; k++) { dp[j+a*k] = true; }
             }
         }
-        for (int k = 1; k <= c; k++) { dp[a*k] = true; }
+        for (int k = 1; k <= c && a*k <= M; k++) { dp[a*k] = true; }
         upper += a*c;
         // printf("upper = %d\n", upper);
     }
