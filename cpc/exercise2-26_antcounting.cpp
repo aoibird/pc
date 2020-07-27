@@ -17,7 +17,7 @@ const int MAXT = 1e3+10; // types
 const int MAXS = MAXA;   // sizes
 const int M = 1e6;
 int U[MAXT];
-int dp[MAXT][MAXS];
+int dp[2][MAXS];
 int T, A, S, B;
 
 void print_array(int *a, int n)
@@ -36,15 +36,16 @@ int main()
         // print_array(U, A);
 
         int sum = 0;
-        for (int i = 0; i <= T; i++) dp[i][0] = 1;
+        dp[0][0] = dp[1][0] = 1;
         for (int i = 0; i < T; i++) { // types
             for (int j = 1; j <= B; j++) { // sizes
-                if (j-1-U[i] >= 0) dp[i+1][j] = (dp[i+1][j-1] + dp[i][j] - dp[i][j-1-U[i]] + M) % M;
-                else dp[i+1][j] = (dp[i+1][j-1] + dp[i][j]) % M;
+                if (j-1-U[i] >= 0) dp[(i+1)%2][j] = (dp[(i+1)%2][j-1] + dp[i%2][j] - dp[i%2][j-1-U[i]] + M) % M;
+                else dp[(i+1)%2][j] = (dp[(i+1)%2][j-1] + dp[i%2][j]) % M;
             }
         }
-        // print_array(dp[T], B+1);
-        for (int j = S; j <= B; j++) sum = (sum + dp[T][j]) % M;
+        // print_array(dp[0], B+1);
+        // print_array(dp[1], B+1);
+        for (int j = S; j <= B; j++) sum = (sum + dp[T%2][j]) % M;
         printf("%d\n", sum);
     }
 }
