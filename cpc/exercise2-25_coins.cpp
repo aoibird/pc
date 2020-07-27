@@ -28,7 +28,7 @@ void solve()
     int upper = 0;
     for (int i = 0; i < N; i++) {
         int a = A[i], c = C[i];
-        for (int j = 0; j <= upper; j++) {
+        for (int j = 0; j <= upper && j <= M - a*c; j++) {
             if (dp[j]) {
                 for (int k = 1; k <= c; k++) { dp[j+a*k] = true; }
             }
