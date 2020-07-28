@@ -15,16 +15,28 @@ PII S[MAXN];
 int vis[MAXN];
 int N;
 
+void print_array(PII *a, int n)
+{
+    for (int i = 0; i < n; i++) printf("(%d,%d)%c", a[i].first, a[i].second, i==n-1?'\n':' ');
+}
+
+bool cmp(const PII &a, const PII &b)
+{
+    return (a.first < b.first) || (a.first==b.first && a.second < b.second);
+}
+
 void solve()
 {
     memset(vis, 0, sizeof(vis));
-    sort(S, S+N);
+    sort(S, S+N, cmp);
+    //print_array(S, N);
     int cnt = 0;
     for (int i = 0; i < N; i++) {
         if (vis[i]) continue;
+        int wb = S[i].second;
         for (int j = 0; j < N; j++) {
-            int l = S[j].first, w = S[j].second;
-            if (!vis[j] && l >= S[i].first && w >= S[i].second) { vis[j] = 1; }
+            int w = S[j].second;
+            if (!vis[j] && w >= wb) { vis[j] = 1; wb = w; }
         }
         cnt++;
     }
