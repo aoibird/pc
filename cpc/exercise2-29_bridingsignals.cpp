@@ -11,21 +11,18 @@ typedef long long ll;
 typedef pair<int,int> PII;
 
 const int MAXN = 40000+10;
+const int INF = 0x3f3f3f;
 int A[MAXN];
 int dp[MAXN];
 int N;
 
 void solve()
 {
-    int best = 0;
+    fill(dp, dp+N, INF);
     for (int i = 0; i < N; i++) {
-        dp[i] = 1;
-        for (int j = 0; j < i; j++) {
-            if (A[j] < A[i]) dp[i] = max(dp[i], dp[j] + 1);
-        }
-        best = max(best, dp[i]);
+        *lower_bound(dp, dp+N, A[i]) = A[i];
     }
-    printf("%d\n", best);
+    printf("%ld\n", lower_bound(dp, dp+N, INF) - dp);
 }
 
 int main()
