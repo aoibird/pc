@@ -10,38 +10,34 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
+const int INF = 0x3f3f3f3f;
 const int MAXN = 2000+10;
 int A[MAXN];
 int B[MAXN];
+int dp[MAXN][MAXN];
 int N;
 
-int solve()
+void solve()
 {
-    for (int i = 0; i < N; i++) B[i] = A[i];
-    int sum = 0;
-    for (int i = 1; i < N-1; i++) {
-        if (B[i] > B[i-1] && B[i] > B[i+1]) {
-            int m =  max(B[i-1], B[i+1]);
-            sum += B[i] - m;
-            B[i] = m;
+    for (int j = 0; j < N; j++) dp[0][j] = abs(A[0] - B[j]);
+    for (int i = 1; i < N; i++) {
+        int m = dp[i-1][0];
+        for (int j = 0; j < N; j++) {
+            m = min(m, dp[i-1][j]);
+            dp[i][j] = m + abs(A[i] - B[j]);
         }
-        else if (B[i] < B[i-1] && B[i] < B[i+1]) {
-            int m = min(B[i-1], B[i+1]);
-            sum += m - B[i];
-            B[i] = m;
-        }
-        else {}
     }
-    return sum;
+    int m = INF;
+    for (int j = 0; j < N; j++) m = min(m, dp[N-1][j]);
+    printf("%d\n", m);
 }
 
 int main()
 {
     while (scanf("%d", &N) == 1) {
         for (int i = 0; i < N; i++) { scanf("%d", &A[i]); }
-        int x = solve();
-        for (int i = 0; i < N/2; i++) swap(A[i], A[N-i-1]);
-        int y = solve();
-        printf("%d\n", min(x, y));
+        for (int i = 0; i < N; i++) B[i] = A[i];
+        sort(B, B+N);
+        solve();
     }
 }
