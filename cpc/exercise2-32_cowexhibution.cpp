@@ -36,7 +36,7 @@ void solve()
     dp[0] = true;
     for (int i = 0; i < N; i++) {
         for (int j = MT; j >= T[i]; j--) {
-            if (!dp[j] && dp[j-T[i]]) {
+            if (!dp[j] && j - T[i] >= 0 && dp[j-T[i]]) {
                 dp[j] = true;
                 Result &x = res[j-T[i]];
                 res[j] = Result(x.t + T[i], x.ts + S[i], x.tf + F[i]);
