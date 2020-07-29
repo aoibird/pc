@@ -36,7 +36,7 @@ void solve()
     dp[0] = true;
     for (int i = 0; i < N; i++) {
         for (int j = MT; j >= T[i]; j--) {
-            if (!dp[j] && j - T[i] >= 0 && dp[j-T[i]]) {
+            if (!dp[j] && T[i] >= 0 && dp[j-T[i]]) {
                 dp[j] = true;
                 Result &x = res[j-T[i]];
                 res[j] = Result(x.t + T[i], x.ts + S[i], x.tf + F[i]);
@@ -45,8 +45,8 @@ void solve()
         // print_array(dp, MT+1);
     }
     int m = 0;
-    for (int i = 0; i <= MT; i++) {
-        if (dp[i] && res[i].ts >= 0 && res[i].tf >= 0) m = i;
+    for (int i = MT; i >= 0; i--) {
+        if (dp[i] && res[i].ts >= 0 && res[i].tf >= 0) { m = i; break; }
     }
     printf("%d\n", m);
 }
@@ -55,6 +55,8 @@ int main()
 {
     while (scanf("%d", &N) == 1) {
         MT = 0;
+        memset(dp, 0, sizeof(dp));
+        memset(res, 0, sizeof(res));
         for (int i = 0; i < N; i++) {
             scanf("%d%d", &S[i], &F[i]);
             T[i] = S[i] + F[i];
