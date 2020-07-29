@@ -34,12 +34,24 @@ void print_array(bool *a, int n)
 void solve()
 {
     dp[0] = true;
+    MT = MAXT;
     for (int i = 0; i < N; i++) {
-        for (int j = MT; j >= T[i]; j--) {
-            if (!dp[j] && T[i] >= 0 && dp[j-T[i]]) {
-                dp[j] = true;
-                Result &x = res[j-T[i]];
-                res[j] = Result(x.t + T[i], x.ts + S[i], x.tf + F[i]);
+        if (T[i] < 0) {
+            for (int j = 0; j-T[i] <= MT; j++) {
+                if (!dp[j] && dp[j-T[i]]) {
+                    dp[j] = true;
+                    Result &x = res[j-T[i]];
+                    res[j] = Result(x.t + T[i], x.ts + S[i], x.tf + F[i]);
+                }
+            }
+        }
+        else {
+            for (int j = MT; j >= T[i]; j--) {
+                if (!dp[j] && dp[j-T[i]]) {
+                    dp[j] = true;
+                    Result &x = res[j-T[i]];
+                    res[j] = Result(x.t + T[i], x.ts + S[i], x.tf + F[i]);
+                }
             }
         }
         // print_array(dp, MT+1);
