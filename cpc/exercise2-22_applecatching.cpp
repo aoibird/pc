@@ -38,8 +38,7 @@ int main()
 
         for (int i = 1; i <= N; i++) {
             for (int j = 0; j <= W; j++) {
-                if (j & 1) dp[i][j] = max(dp[i-1][j], dp[i-1][j-1]) + (A[i]==1?1:0);
-                else dp[i][j] = max(dp[i-1][j], dp[i-1][j-1]) + (A[i]==0?1:0);
+                dp[i][j] = max(dp[i-1][j], dp[i-1][j-1]) + (A[i]==(j&1));
             }
         }
         //print_2darray(dp, N+1, W+1);
