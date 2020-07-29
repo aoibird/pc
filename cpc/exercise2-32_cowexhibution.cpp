@@ -11,8 +11,8 @@ typedef long long ll;
 typedef pair<int,int> PII;
 
 const int MAXN = 100+10;
-const int MAXSF = 1000+5;
-const int MAXT = 1e5 + 10;
+const int MAXSF = 1000;
+const int MAXT = 1e5;
 int S[MAXN];
 int F[MAXN];
 int dp[MAXT*2+10];
@@ -32,7 +32,7 @@ void solve()
     dp[C] = 0;
     for (int i = 0; i < N; i++) {
         if (S[i] < 0) {
-            for (int j = S[i]; j - S[i] <= R; j++) {
+            for (int j = S[i]; j - S[i] < R; j++) {
                 dp[j] = max(dp[j], dp[j-S[i]] + F[i]);
             }
         }
@@ -43,8 +43,8 @@ void solve()
         }
     }
     int m = -R;
-    for (int i = C; i  <= R; i++) {
-        if (dp[i] >= 0) m = max(m, i - C + dp[i]);
+    for (int i = C; i < R; i++) {
+        if (dp[i] >= 0 && i - C + dp[i] > m) m = i - C + dp[i];
     }
     printf("%d\n", m);
 }
