@@ -14,7 +14,7 @@ const int INF = 0x3f3f3f3f;
 const int MAXL = 30*2;
 char A[MAXL], B[MAXL];
 int dp[MAXL][MAXL];
-int cnt[MAXL][MAXL];
+ll cnt[MAXL][MAXL];
 int NA, NB;
 
 int dx[3] = {-1, 0, -1};
@@ -63,8 +63,9 @@ int main()
         memset(cnt, 0, sizeof(cnt));
         scanf("%s", A+1); scanf("%s", B+1);
         NA = strlen(A+1); NB = strlen(B+1);
+        // printf("(%s)(%s)\n", A+1, B+1);
 
         solve();
-        printf("Case #%d: %d %d\n", tc, dp[NA][NB], cnt[NA][NB]);
+        printf("Case #%d: %d %lld\n", tc, dp[NA][NB], cnt[NA][NB]);
     }
 }
