@@ -30,13 +30,13 @@ void solve()
     int i = 0, cnt = 0;
     while (!PQ.empty() && i < L) {
         PII p = PQ.top(); PQ.pop();
-        int lower = p.first, upper = p.second;
+        int lower = p.second, upper = p.first;
         int &spf = LO[i].second, &cover = LO[i].first;
         if (spf != 0 && lower <= cover && cover <= upper) {
             spf -= 1; cnt++;
         }
 
-        if (spf == 0 || cover < lower) { i++; }
+        if (spf == 0) { i++; }
     }
     // print_array(LO, L);
     printf("%d\n", cnt);
@@ -47,7 +47,7 @@ int main()
     while (scanf("%d%d", &C, &L) == 2) {
         while (!PQ.empty()) PQ.pop();
         memset(LO, 0, sizeof(LO));
-        for (int i = 0; i < C; i++) { int l, u; scanf("%d%d", &l, &u); PQ.push(PII(l, u)); }
+        for (int i = 0; i < C; i++) { int l, u; scanf("%d%d", &l, &u); PQ.push(PII(u, l)); }
         for (int i = 0; i < L; i++) { scanf("%d%d", &LO[i].first, &LO[i].second); }
         solve();
     }
