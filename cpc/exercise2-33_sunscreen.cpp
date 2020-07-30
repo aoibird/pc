@@ -12,11 +12,12 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
-// const int MAXC = 2500+10;
+const int MAXC = 2500+10;
 const int MAXL = 2500+10;
+PII CO[MAXC];
 PII LO[MAXL];
 int C, L;
-priority_queue<PII, vector<PII>, greater<PII> > PQ;
+priority_queue<int, vector<int>, greater<int> > PQ;
 
 void print_array(PII a[MAXL], int n)
 {
@@ -26,20 +27,15 @@ void print_array(PII a[MAXL], int n)
 
 void solve()
 {
+    sort(CO, CO+C);
     sort(LO, LO+L);
-    int i = 0, cnt = 0;
-    while (!PQ.empty() && i < L) {
-        PII p = PQ.top();
-        int lower = p.first, upper = p.second;
-        int &spf = LO[i].first, &cover = LO[i].second;
-        if (lower <= spf) {
-            PQ.pop();
-            if (cover != 0 && spf <= upper) {
-                cover -= 1; cnt++;
-            }
+    int t = 0, cnt = 0;
+    for (int i = 0; i < L; i++) {
+        while (t < C && CO[t].first <= LO[i].first) { PQ.push(CO[t].second); t++; }
+        while (!PQ.empty() && LO[i].second > 0) {
+            int maxspf = PQ.top(); PQ.pop();
+            if (maxspf >= LO[i].first) { cnt++; LO[i].second--; }
         }
-
-        if (cover == 0 || lower > spf) i++;
     }
     // print_array(LO, L);
     printf("%d\n", cnt);
@@ -50,7 +46,7 @@ int main()
     while (scanf("%d%d", &C, &L) == 2) {
         while (!PQ.empty()) PQ.pop();
         memset(LO, 0, sizeof(LO));
-        for (int i = 0; i < C; i++) { int l, u; scanf("%d%d", &l, &u); PQ.push(PII(l, u)); }
+        for (int i = 0; i < C; i++) { scanf("%d%d", &CO[i].first, &CO[i].second); }
         for (int i = 0; i < L; i++) { scanf("%d%d", &LO[i].first, &LO[i].second); }
         solve();
     }
