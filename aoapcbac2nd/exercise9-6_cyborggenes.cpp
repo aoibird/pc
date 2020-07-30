@@ -58,10 +58,17 @@ void solve()
 int main()
 {
     int TC; scanf("%d", &TC);
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF) ;
     for (int tc = 1; tc <= TC; tc++) {
         memset(dp, 0, sizeof(dp));
         memset(cnt, 0, sizeof(cnt));
-        scanf("%s", A+1); scanf("%s", B+1);
+        //scanf("%s", A+1); scanf("%s", B+1);
+        int ch;
+        int p = 1;
+        while ((ch = getchar()) != '\n' && ch != EOF) { A[p++] = ch; } A[p] = '\0';
+        p = 1;
+        while ((ch = getchar()) != '\n' && ch != EOF) { B[p++] = ch; } B[p] = '\0';
         NA = strlen(A+1); NB = strlen(B+1);
         // printf("(%s)(%s)\n", A+1, B+1);
 
