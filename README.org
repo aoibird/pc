@@ -151,6 +151,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Exercise 9-22   | UVa 1579            | Matryoshka                        | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 9-4    | UVa 1630            | Folding                           | RE RE AC                      | ✓      |
 | AOAPC BAC 2nd Exercise 9-5    | UVa 242             | Stamps and Envelope Size          | TLE WA WA WA AC AC            | ✓      |
+| AOAPC BAC 2nd Exercise 9-6    | UVa 10723           | Cyborg Genes                      | WA WA AC                      | ✓      |
 | AOAPC BAC TG Example 1-1      | UVa 11292           | The Dragon of Loowater            | AC                            | ✓      |
 | AOAPC BAC TG Example 1-2      | UVa 11729           | Commando War                      | WA AC                         | ✓      |
 | AOAPC BAC TG Example 1-3      | UVa 11300           | Spreading the Wealth              | WA AC AC AC                   | ✓      |
@@ -200,7 +201,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-2              | AOJ 0118            | Property Distribution             | AC                            | ✓      |
 | CPC Exercise 2-20             | POJ 3176            | Cow Bowling                       | AC                            | ✓      |
 | CPC Exercise 2-21             | POJ 2229            | Sumsets                           | WA WA TLE AC                  | ✓      |
-| CPC Exercise 2-22             | POJ 2385            | Apple Catching                    | WA AC                         | ✓      |
+| CPC Exercise 2-22             | POJ 2385            | Apple Catching                    | WA AC AC                      | ✓      |
 | CPC Exercise 2-23             | POJ 3616            | Milking Time                      | WA WA TLE AC                  | ✓      |
 | CPC Exercise 2-24             | POJ 3280            | Cheapest Palindrome               | AC                            | ✓      |
 | CPC Exercise 2-25             | POJ 1742            | Coins                             | RE TLE TLE MLE AC             | ✓      |
@@ -211,6 +212,8 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-30             | POJ 3666            | Making the Grade                  | WA AC                         | ✓      |
 | CPC Exercise 2-31             | POJ 2392            | Space Elevator                    | AC                            | ✓      |
 | CPC Exercise 2-32             | POJ 2184            | Cow Exhibution                    | WA WA WA WA TLE AC            | ✓      |
+| CPC Exercise 2-33             | POJ 3614            | Sunscreen                         | WA WA WA AC                   | ✓      |
+| CPC Exercise 2-34             | POJ 2010            | Moo University - Finanicial Aid   | WA WA TLE AC                  | ✓      |
 | CPC Exercise 2-35             | POJ 2236            | Wireless Network                  | AC                            | ✓      |
 | CPC Exercise 2-36             | POJ 1703            | Find them, Catch them             | WA WA WA AC                   | ✓      |
 | CPC Exercise 2-39             | POJ 2139            | Six Degrees of Cowvin Bacon       | AC                            | ✓      |
@@ -293,4 +296,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 201 / 246
+Solved / All: 204 / 249
