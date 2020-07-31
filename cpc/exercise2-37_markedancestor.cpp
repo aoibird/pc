@@ -67,7 +67,7 @@ int main()
         // print_array(par, N+1);
 
 
-        string line; int sum = 0;
+        string line; ll sum = 0;
         for (int i = 0; i < Q; i++) {
             getline(cin, line);
             if (line[0] == 'M') {
@@ -84,6 +84,6 @@ int main()
             }
             else ;
         }
-        printf("%d\n", sum);
+        printf("%lld\n", sum);
     }
 }
