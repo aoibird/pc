@@ -216,13 +216,16 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-34             | POJ 2010            | Moo University - Finanicial Aid   | WA WA TLE AC                  | ✓      |
 | CPC Exercise 2-35             | POJ 2236            | Wireless Network                  | AC                            | ✓      |
 | CPC Exercise 2-36             | POJ 1703            | Find them, Catch them             | WA WA WA AC                   | ✓      |
-| CPC Exercise 2-37             | AOJ 2170            | Marked Ancestor                   | WA WA                         |        |
+| CPC Exercise 2-37             | AOJ 2170            | Marked Ancestor                   | WA WA AC                      | ✓      |
+| CPC Exercise 2-38             | AOJ 0189            | Convenient Location               | WA AC                         | ✓      |
 | CPC Exercise 2-39             | POJ 2139            | Six Degrees of Cowvin Bacon       | AC                            | ✓      |
 | CPC Exercise 2-4              | POJ 3009            | Curling 2.0                       | MLE AC                        | ✓      |
 | CPC Exercise 2-40             | POJ 3259            | Wormholes                         | WA RE RE AC                   | ✓      |
 | CPC Exercise 2-41             | POJ 3268            | Silver Cow Party                  | TLE TLE TLE TLE AC            | ✓      |
+| CPC Exercise 2-42             | AOJ 2249            | Road Construction                 | WA AC                         | ✓      |
 | CPC Exercise 2-44             | POJ 1258            | Agri-Net                          | WA WA WA WA AC AC             | ✓      |
 | CPC Exercise 2-45             | POJ 2377            | Bad Cowtractors                   | AC                            | ✓      |
+| CPC Exercise 2-46             | AOJ 2224            | Save your cat                     | AC                            | ✓      |
 | CPC Exercise 2-47             | POJ 2395            | Out of Hay                        | AC                            | ✓      |
 | CPC Exercise 2-49             | POJ 2429            | GCD & LCM Inverse                 | TLE TLE TLE                   |        |
 | CPC Exercise 2-5              | AOJ 0558            | Cheese                            | AC                            | ✓      |
@@ -299,4 +302,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 206 / 252
+Solved / All: 210 / 255
