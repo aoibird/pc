@@ -25,9 +25,9 @@ void print_2darray(int a[MAXN][MAXN], int r, int c)
 void solve()
 {
     for (int i = 0; i < N; i++) G[i][i] = 0;
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            for (int k = 0; k < N; k++) {
+    for (int k = 0; k < N; k++) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 if (G[i][k] + G[k][j] < G[i][j]) G[i][j] = G[i][k] + G[k][j];
             }
         }
