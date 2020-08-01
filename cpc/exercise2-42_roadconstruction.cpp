@@ -51,7 +51,7 @@ void solve()
         if (D[v] < p.first) continue;
         for (int i = 0; i < G[v].size(); i++) {
             Edge e = G[v][i]; int u = e.to, len = e.len, cost = e.cost;
-            if (D[u] > D[v] + len || (D[u]==D[v]+len && F[v] > cost)) {
+            if (D[u] > D[v] + len || (D[u]==D[v]+len && F[u] > cost)) {
                 D[u] = D[v] + len; C[u] = C[v] + cost; F[u] = cost;
                 pq.push(PII(D[u], u));
             }
