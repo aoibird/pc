@@ -227,8 +227,14 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-45             | POJ 2377            | Bad Cowtractors                   | AC                            | ✓      |
 | CPC Exercise 2-46             | AOJ 2224            | Save your cat                     | AC                            | ✓      |
 | CPC Exercise 2-47             | POJ 2395            | Out of Hay                        | AC                            | ✓      |
+| CPC Exercise 2-48             | AOJ 0005            | GCD and LCM                       | AC                            | ✓      |
 | CPC Exercise 2-49             | POJ 2429            | GCD & LCM Inverse                 | TLE TLE TLE                   |        |
 | CPC Exercise 2-5              | AOJ 0558            | Cheese                            | AC                            | ✓      |
+| CPC Exercise 2-52             | POJ 3126            | Prime Path                        | AC                            | ✓      |
+| CPC Exercise 2-53             | POJ 3421            | X-factor Chains                   | AC                            | ✓      |
+| CPC Exercise 2-54             | POJ 3292            | Semi-prime H-numbers              | AC                            | ✓      |
+| CPC Exercise 2-55             | POJ 3641            | Pseudoprime numbers               | AC                            | ✓      |
+| CPC Exercise 2-56             | POJ 1995            | Raising Modulo Numbers            | AC                            | ✓      |
 | CPC Exercise 2-6              | POJ 3669            | Meteor Shower                     | TLE WA WA AC                  | ✓      |
 | CPC Exercise 2-8              | POJ 2718            | Smallest Difference               | TLE AC                        | ✓      |
 | CPC Exercise 2-9              | POJ 3187            | Backward Digit Sums               | AC                            | ✓      |
@@ -302,4 +308,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 210 / 255
+Solved / All: 216 / 261
