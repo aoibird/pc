@@ -25,7 +25,7 @@ int dp[MAXN];
 
 bool cmp(const Interval &a, const Interval &b)
 {
-    return a.from < b.from || (a.from==b.from && a.to < b.to);
+    return a.to < b.to || (a.to==b.to && a.from<b.from);
 }
 
 int main()
@@ -38,14 +38,15 @@ int main()
         }
         sort(A, A+M, cmp);
 
-        for (int i = 0; i < M; i++) {
-            int f = A[i].from, t = A[i].to, e = A[i].eff;
-            for (int j = N; j >= t; j--) {
-                if (f-R >= 0) dp[j] = max(dp[j], dp[f-R] + e);
-                else dp[j] = max(dp[j], e);
+        dp[0] = A[0].eff;
+        for (int i = 1; i < M; i++) {
+            int f = A[i].from, e = A[i].eff;
+            dp[i] = dp[i-1];
+            for (int j = i-1; j >= 0; j--) {
+                if (A[j].to <= f-R) dp[i] = max(dp[i], dp[j] + e);
+                else dp[i] = max(dp[i], e);
             }
-            //for (int j = 0; j <= N; j++) printf("%d%c", dp[j], j==N?'\n':' ');
         }
-        printf("%d\n", dp[N]);
+        printf("%d\n", dp[M-1]);
     }
 }
