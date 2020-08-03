@@ -31,7 +31,7 @@ int main()
 
         memset(dp, 0, sizeof(dp));
         int m = 0;
-        for (int i = 1; i < N-1; i++) {
+        for (int i = 0; i < N; i++) {
             fill(dp, dp+i+1, INF);
             for (int j = 0; j < i+1; j++) {
                 *lower_bound(dp, dp+i+1, A[j]) = A[j];
