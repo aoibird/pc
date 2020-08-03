@@ -38,12 +38,12 @@ int main()
         N += 2;
 
         sort(V.begin(), V.end());
-        int lb = 0, ub = L+1, mid;
-        while (lb + 1 < ub) {
+        int lb = 0, ub = L*2, mid;
+        while (lb  < ub) {
             mid = (lb+ub)/2;
-            if (can(mid)) lb = mid;
+            if (can(mid)) lb = mid+1;
             else ub = mid;
         }
-        printf("%d\n", ub);
+        printf("%d\n", lb);
     }
 }
