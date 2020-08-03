@@ -27,7 +27,7 @@ This repository contains my solutions to contest problems from online judges and
 
 * Folders
 - =aoapcbac2nd=: examples and exercises on /Beginning Algorithm Contests, 2nd/
-- =aoapcbactg=: examples and exercise on /Beginning Algorithm Contests: Training Guide/
+- =aoapcbactg=: examples and exercises on /Beginning Algorithm Contests: Training Guide/
 - =atcoder=: problems on AtCoder
 - =codeforces=: problems on Codeforces
 - =cpc=: examples and exercises on /Challenges Programming Contest, 2nd/
@@ -35,6 +35,7 @@ This repository contains my solutions to contest problems from online judges and
 - =pc=: examples and exercises on /Programming Challenges: The Programming Contest Training Manual/
 - =poaps=: exercises on /Principles of Algorithmic Problem Solving/
 - =poj=: problems on PKU JudgeOnline
+- =luogu=: problems on Luogu
 
 * Problems
 - AC: Accepted
