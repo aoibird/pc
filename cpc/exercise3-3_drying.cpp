@@ -14,37 +14,24 @@ typedef pair<int,int> PII;
 
 const int MAXN = 100000+10;
 int A[MAXN];
-int B[MAXN];
 int N, K;
+ll B[MAXN];
 
-bool can(int m)
+bool can(ll m)
 {
-    priority_queue<PII> pq;
-    for (int i = 0; i < N; i++) B[i] = A[i];
-    for (int i = 0; i < N; i++) pq.push(PII(B[i], i));
-
-    for (int i = 0; i < m && !pq.empty(); i++) {
-        bool dry = false;
-        while (!pq.empty()) {
-            PII p = pq.top(); pq.pop();
-            int water = p.first, index = p.second;
-            if (!dry) { water -= K; dry = true; }
-            else { water -= 1; }
-            B[index] = water;
-        }
-        for (int j = 0; j < N; j++) if (B[j] > 0) pq.push(PII(B[j], j));
-    }
-
-    return pq.empty();
+    for (int i = 0; i < N; i++) { B[i] = A[i] - (m-1); }
+    ll sum = 0;
+    for (int i = 0; i < N; i++) if (B[i] > 0) sum += B[i];
+    return (K-1)*m >= sum;
 }
 
 int main()
 {
     while (scanf("%d", &N) == 1 && N) {
-        for (int i = 0; i < N; i++) scanf("%d", &A[i]);
+        for (int i = 0; i < N; i++) { scanf("%d", &A[i]); }
         scanf("%d", &K);
 
-        int lb = 0, ub = 2 * 1e9;
+        int lb = 0, ub = 2 * 1e9 + 10;
         while (lb < ub) {
             int mid = (lb+ub)/2;
             if (can(mid)) { ub = mid; }
