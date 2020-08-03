@@ -23,7 +23,7 @@ bool can(int x)
         if (V[i]-V[last] >= x) last = i;
         else cnt++;
     }
-    return cnt < M && last == V.size()-1;
+    return cnt <= M && last == V.size()-1;
 }
 
 int main()
@@ -38,12 +38,12 @@ int main()
         N += 2;
 
         sort(V.begin(), V.end());
-        int lb = 0, ub = L*2, mid;
+        int lb = 0, ub = L+1, mid, res = 0;
         while (lb  < ub) {
             mid = (lb+ub)/2;
-            if (can(mid)) lb = mid+1;
+            if (can(mid)) { lb = mid+1; res = mid; }
             else ub = mid;
         }
-        printf("%d\n", lb);
+        printf("%d\n", res);
     }
 }
