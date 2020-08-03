@@ -19,10 +19,11 @@ ll B[MAXN];
 
 bool can(ll m)
 {
-    for (int i = 0; i < N; i++) { B[i] = A[i] - (m-1); }
-    ll sum = 0;
-    for (int i = 0; i < N; i++) if (B[i] > 0) sum += B[i];
-    return (K-1)*m >= sum;
+    ll tot = 0;
+    for (int i = 0; i < N; i++) {
+        if (A[i]-m > 0) tot += (A[i]-m+K-2)/(K-1);
+    }
+    return tot <= m;
 }
 
 int main()
