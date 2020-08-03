@@ -285,6 +285,9 @@ This repository contains my solutions to contest problems from online judges and
 | Codeforces 749 A              | Codeforces 749 A    | Bachgold Problem                  | AC                            | ✓      |
 | Codeforces 894 A              | Codeforces 894 A    | QAQ                               | AC                            | ✓      |
 | Codeforces 996 A              | Codeforces 996 A    | Hit the Lottery                   | AC                            | ✓      |
+| Luogu 1020                    | Luogu 1020          | 导弹拦截                          | WA AC                         | ✓      |
+| Luogu 1091                    | Luogu 1091          | 合唱队形                          | WA WA WA AC                   | ✓      |
+| Luogu 1216                    | Luogu 1216          | 数字三角形                        | AC                            | ✓      |
 | PC 1.6.1                      | UVa 100             | The 3np1 Problem                  | WA                            |        |
 | PC 1.6.2                      | UVa 10189           | Minesweeper                       | AC                            | ✓      |
 | PC 1.6.3                      | UVa 10137           | The Trip                          | RE                            |        |
@@ -312,4 +315,5 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 219 / 264
+Solved / All: 222 / 267
+
