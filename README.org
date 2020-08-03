@@ -202,7 +202,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-20             | POJ 3176            | Cow Bowling                       | AC                            | ✓      |
 | CPC Exercise 2-21             | POJ 2229            | Sumsets                           | WA WA TLE AC                  | ✓      |
 | CPC Exercise 2-22             | POJ 2385            | Apple Catching                    | WA AC AC                      | ✓      |
-| CPC Exercise 2-23             | POJ 3616            | Milking Time                      | WA WA TLE AC                  | ✓      |
+| CPC Exercise 2-23             | POJ 3616            | Milking Time                      | WA WA TLE AC AC               | ✓      |
 | CPC Exercise 2-24             | POJ 3280            | Cheapest Palindrome               | AC                            | ✓      |
 | CPC Exercise 2-25             | POJ 1742            | Coins                             | RE TLE TLE MLE AC             | ✓      |
 | CPC Exercise 2-26             | POJ 3046            | Ant Counting                      | TLE MLE AC                    | ✓      |
@@ -238,7 +238,10 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-6              | POJ 3669            | Meteor Shower                     | TLE WA WA AC                  | ✓      |
 | CPC Exercise 2-8              | POJ 2718            | Smallest Difference               | TLE AC                        | ✓      |
 | CPC Exercise 2-9              | POJ 3187            | Backward Digit Sums               | AC                            | ✓      |
+| CPC Exercise 3-1              | POJ 3258            | River Hopscotch                   | WA WA AC                      | ✓      |
+| CPC Exercise 3-2              | POJ 3273            | Monthly Expense                   | AC                            | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
+| CPC Exercise 3-3              | POJ 3104            | Drying                            | TLE WA RE AC                  | ✓      |
 | CPC2 12.2                     | AOJ ALDS1_11_A      | Graph                             | AC                            | ✓      |
 | CPC2 13.2                     | AOJ ALDS1_12_A      | Minimum Spanning Tree             | AC AC                         | ✓      |
 | CPC2 13.3                     | AOJ ALDS1_12_C      | Single Source Shortest Path II    | AC                            | ✓      |
@@ -308,4 +311,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 216 / 261
+Solved / All: 219 / 264
