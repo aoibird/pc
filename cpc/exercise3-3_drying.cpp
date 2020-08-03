@@ -29,8 +29,10 @@ bool can(ll m)
 int main()
 {
     while (scanf("%d", &N) == 1 && N) {
-        for (int i = 0; i < N; i++) { scanf("%d", &A[i]); }
+        int mw = 0;
+        for (int i = 0; i < N; i++) { scanf("%d", &A[i]); mw = max(mw, A[i]); }
         scanf("%d", &K);
+        if (K == 1) { printf("%d\n", mw); continue; }
 
         int lb = 0, ub = 2 * 1e9 + 10;
         while (lb < ub) {
