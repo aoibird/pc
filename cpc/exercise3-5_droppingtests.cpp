@@ -43,6 +43,6 @@ int main()
             if (can(mid)) { lb = mid; }
             else { ub = mid; }
         }
-        printf("%.0lf\n", (100 * ub));
+        printf("%.0lf\n", (100 * lb));
     }
 }
