@@ -13,7 +13,6 @@ typedef pair<int,int> PII;
 const int INF = 1e9;
 const int MAXN = 50000+10;
 PII C[MAXN];
-int SW[MAXN];
 int N;
 
 bool cmp(const PII &a, const PII &b)
@@ -27,13 +26,11 @@ int main()
         for (int i = 0; i < N; i++) scanf("%d%d", &C[i].first, &C[i].second);
 
         sort(C, C+N, cmp);
-        SW[N-1] = 0;
-        for (int i = N-2; i >= 0; i--) {
-            SW[i] = SW[i+1] + C[i].first;
-        }
-        int m = -INF;
+
+        int m = -INF, sum = 0;
         for (int i = 0; i < N; i++) {
-            m = max(m, SW[i] - C[i].second);
+            m = max(m, sum - C[i].second);
+            sum += C[i].first;
         }
         printf("%d\n", m);
     }
