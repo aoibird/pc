@@ -10,6 +10,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
+const double ERR = 0.00001;
 const double INF = 1e9+10;
 const int MAXN = 1000+10;
 PII T[MAXN];
@@ -37,8 +38,7 @@ int main()
         K = N - K;
 
         double lb = 0, ub = INF;
-        int limit = 200;
-        for (int i = 0; i < limit; i++) {
+        while ((ub-lb) > ERR) {
             double mid = (lb+ub)/2;
             if (can(mid)) { lb = mid; }
             else { ub = mid; }
