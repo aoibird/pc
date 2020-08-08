@@ -10,10 +10,9 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
-const ll INF = (1LL << 40);
 const int MAXN = 100000+10;
 int A[MAXN];
-int N, M;
+ll N, M;
 
 bool can(ll x)
 {
@@ -27,12 +26,12 @@ bool can(ll x)
 
 int main()
 {
-    while (scanf("%d", &N) == 1) {
+    while (scanf("%lld", &N) == 1) {
         for (int i = 0; i < N; i++) scanf("%d", &A[i]);
 
         sort(A, A+N);
         M = N * (N - 1) / 2;
-        ll lb = 0, ub = INF;
+        ll lb = 0, ub = A[N-1] - A[0] + 10;
         while (ub - lb > 1) {
             ll mid = lb+(ub-lb)/2;
             if (can(mid)) ub = mid;
