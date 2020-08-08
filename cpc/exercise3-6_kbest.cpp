@@ -34,7 +34,7 @@ int main()
         for (int i = 0; i < N; i++) scanf("%d%d", &A[i].first, &A[i].second);
 
         double lb = 0, ub = 1e7 + 10;
-        for (int i = 0; i < 100; i++) {
+        while (ub-lb > 1e-6) {
             double mid = lb + (ub-lb)/2;
             if (can(mid)) lb = mid;
             else ub = mid;
