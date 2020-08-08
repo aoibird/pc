@@ -189,6 +189,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 5                 | POJ 2386            | Lake Counting                     | AC                            | ✓      |
 | CPC Example 53                | POJ 2686            | Travelling by Stagecoach          | TLE AC                        | ✓      |
 | CPC Example 9                 | POJ 3617            | Best Cow Line                     | CE CE PE PE PE PE             |        |
+| CPC Exercies 3-11             | POJ 1759            | Garland                           | AC                            | ✓      |
 | CPC Exercise 2-1              | POJ 1979            | Red and Black                     | AC                            | ✓      |
 | CPC Exercise 2-10             | POJ 3050            | Hopscotch                         | AC                            | ✓      |
 | CPC Exercise 2-12             | POJ 2376            | Cleaning Shifts                   | WA WA WA WA WA WA AC          | ✓      |
@@ -243,6 +244,11 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 3-2              | POJ 3273            | Monthly Expense                   | AC                            | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
 | CPC Exercise 3-3              | POJ 3104            | Drying                            | TLE WA RE AC                  | ✓      |
+| CPC Exercise 3-4              | POJ 3045            | Cow Acrobats                      | WA AC                         | ✓      |
+| CPC Exercise 3-5              | POJ 2976            | Dropping tests                    | WA WA WA WA AC                | ✓      |
+| CPC Exercise 3-6              | POJ 3111            | K Best                            | TLE AC                        | ✓      |
+| CPC Exercise 3-7              | POJ 3579            | Median                            | TLE AC                        | ✓      |
+| CPC Exercise 3-8              | POJ 3685            | Matrix                            | AC                            | ✓      |
 | CPC2 12.2                     | AOJ ALDS1_11_A      | Graph                             | AC                            | ✓      |
 | CPC2 13.2                     | AOJ ALDS1_12_A      | Minimum Spanning Tree             | AC AC                         | ✓      |
 | CPC2 13.3                     | AOJ ALDS1_12_C      | Single Source Shortest Path II    | AC                            | ✓      |
@@ -291,6 +297,8 @@ This repository contains my solutions to contest problems from online judges and
 | Luogu 1091                    | Luogu 1091          | 合唱队形                          | WA WA WA AC                   | ✓      |
 | Luogu 1095                    | Luogu 1095          | 守望者的逃离                      | TLE AC                        | ✓      |
 | Luogu 1216                    | Luogu 1216          | 数字三角形                        | AC                            | ✓      |
+| Luogu 1541                    | Luogu 1541          | 乌龟棋                            | AC                            | ✓      |
+| Luogu 1868                    | Luogu 1868          | 饥饿的奶牛                        | TLE TLE AC                    | ✓      |
 | PC 1.6.1                      | UVa 100             | The 3np1 Problem                  | WA                            |        |
 | PC 1.6.2                      | UVa 10189           | Minesweeper                       | AC                            | ✓      |
 | PC 1.6.3                      | UVa 10137           | The Trip                          | RE                            |        |
@@ -318,5 +326,5 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 225 / 270
+Solved / All: 233 / 278
 
