@@ -34,14 +34,16 @@ void save_best(int q, int sum, int l, int r, int &s, int &f, int &t)
 void query(int q, int &s, int &f, int &t)
 {
     int l = 0, r = 1; int sum = S[r].first - S[l].first;
-    while (true) {
+    while (r <= N) {
         while (r <= N && abs(sum) < q) {
             r++; sum = S[r].first - S[l].first;
             save_best(q, sum, l, r, s, f, t);
         }
-        if (abs(sum) < q || l == N) break;
+        if (abs(sum) < q) break;
 
-        l++; sum = S[r].first - S[l].first;
+        if (l + 1 == r) r++;
+        else l++;
+        sum = S[r].first - S[l].first;
         save_best(q, sum, l, r, s, f, t);
     }
 }
