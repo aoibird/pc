@@ -39,7 +39,7 @@ void query(int q, int &s, int &f, int &t)
             r++; sum = S[r].first - S[l].first;
             save_best(q, sum, l, r, s, f, t);
         }
-        if (abs(sum) < q) break;
+        if (abs(sum) < q || l == N) break;
 
         l++; sum = S[r].first - S[l].first;
         save_best(q, sum, l, r, s, f, t);
