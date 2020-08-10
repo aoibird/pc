@@ -22,7 +22,7 @@ bool cmp(const PLL &a, const PLL &b)
 int main()
 {
     while (scanf("%lld", &N) == 1) {
-        ll l = 0, r = 0, sum = 0;
+        ll l = 1, r = 1, sum = 0;
         V.resize(0);
         while (true) {
             while (r*r < N && sum < N) { sum += r*r; r++; }
