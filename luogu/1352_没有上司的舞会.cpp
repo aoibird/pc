@@ -11,7 +11,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
-const int MAXN = 1000+10;
+const int MAXN = 6000+10;
 vector<int> children[MAXN];
 int happy[MAXN];
 int par[MAXN];
