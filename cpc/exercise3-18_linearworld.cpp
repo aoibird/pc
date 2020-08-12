@@ -27,8 +27,8 @@ void input()
         int p = 0;
         while ((ch = getchar()) != EOF && ch != '\n') line[p++] = ch;
         line[p++] = '\0';
-        if (line[0] == 'p') DIR[i] = true;
-        else if (line[0] == 'n') DIR[i] = false;
+        if (line[0] == 'p' || line[0] == 'P') DIR[i] = true;
+        else if (line[0] == 'n' || line[0] == 'N') DIR[i] = false;
         else ;
         int t = 1;
         while (line[t] == ' ') t++;
