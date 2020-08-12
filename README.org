@@ -247,6 +247,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 3-14             | POJ 2739            | Sum of Consecutive Prime Numbers  | AC                            | ✓      |
 | CPC Exercise 3-15             | POJ 2100            | Graveyard Design                  | WA WA AC                      | ✓      |
 | CPC Exercise 3-16             | POJ 3185            | The Water Bowls                   | WA WA AC                      | ✓      |
+| CPC Exercise 3-18             | POJ 2674            | Linear world                      | WA WA AC                      | ✓      |
 | CPC Exercise 3-2              | POJ 3273            | Monthly Expense                   | AC                            | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
 | CPC Exercise 3-3              | POJ 3104            | Drying                            | TLE WA RE AC                  | ✓      |
@@ -306,6 +307,8 @@ This repository contains my solutions to contest problems from online judges and
 | Luogu 1352                    | Luogu 1352          | 没有上司的舞会                    | RE AC                         | ✓      |
 | Luogu 1541                    | Luogu 1541          | 乌龟棋                            | AC                            | ✓      |
 | Luogu 1868                    | Luogu 1868          | 饥饿的奶牛                        | TLE TLE AC                    | ✓      |
+| Luogu 1880                    | Luogu 1880          | 石子合并                          | AC                            | ✓      |
+| Luogu 4170                    | Luogu 4170          | 涂色                              | AC                            | ✓      |
 | PC 1.6.1                      | UVa 100             | The 3np1 Problem                  | WA                            |        |
 | PC 1.6.2                      | UVa 10189           | Minesweeper                       | AC                            | ✓      |
 | PC 1.6.3                      | UVa 10137           | The Trip                          | RE                            |        |
@@ -333,4 +336,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 240 / 285
+Solved / All: 243 / 288
