@@ -62,6 +62,6 @@ int main()
         for (i = 0; i < N; i++) {
             if (abs(P[i]) < 1e-5 || abs(L-P[i]) < 1e-5) break;
         }
-        printf("%13.2f %s\n", maxt, NAME[i].c_str());
+        printf("%13.2f %s\n", floor(maxt * 100.0)/100.0, NAME[i].c_str());
     }
 }
