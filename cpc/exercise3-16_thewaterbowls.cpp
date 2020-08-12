@@ -35,17 +35,11 @@ int main()
 
         int cnt = 0;
         memset(flip, 0, sizeof(flip));
-        if (A[0] == 1) {
-            flip[0] = flip[1] = 1;
-            int cnt1 = flipit() + 1;
-            memset(flip, 0, sizeof(flip));
-            int cnt2 = flipit();
-
-            cnt = min(cnt1, cnt2);
-        }
-        else {
-            cnt = flipit();
-        }
+        flip[0] = flip[1] = 1;
+        int cnt1 = flipit() + 1;
+        memset(flip, 0, sizeof(flip));
+        int cnt2 = flipit();
+        cnt = min(cnt1, cnt2);
 
         printf("%d\n", cnt);
     }
