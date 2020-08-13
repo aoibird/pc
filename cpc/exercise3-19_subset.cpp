@@ -56,7 +56,7 @@ int main()
             int p = lower_bound(S2.begin(), S2.end(), PLI(-val, 0)) - S2.begin();
             for (int j = p-1; j <= p+1; j++) {
                 if (j < 0 || j >= S2.size()) continue;
-                ll v = S2[i].first; int l = S2[i].second;
+                ll v = S2[j].first; int l = S2[j].second;
                 ll abssum = (val + v > 0) ? val + v : - val - v;
                 if (abssum < mval || (abssum==mval && len+l<mlen))
                     mval = abssum, mlen = len + l;
