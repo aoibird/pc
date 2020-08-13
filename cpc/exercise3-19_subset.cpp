@@ -54,12 +54,13 @@ int main()
         for (int i = 0; i < S1.size(); i++) {
             ll val = S1[i].first, len = S1[i].second;
             int p = lower_bound(S2.begin(), S2.end(), PLI(-val, 0)) - S2.begin();
-            if (p >= S2.size()) p = S2.size()-1;
-
-            ll v = S2[i].first, l = S2[i].second;
-            ll abssum = (val + v > 0) ? val + v : - val - v;
-            if (abssum < mval || (abssum==mval && len+l<mlen))
-                mval = abssum, mlen = len + l;
+            for (int j = p-1; j <= p+1; j++) {
+                if (j < 0 || j >= S2.size()) continue;
+                ll v = S2[i].first; int l = S2[i].second;
+                ll abssum = (val + v > 0) ? val + v : - val - v;
+                if (abssum < mval || (abssum==mval && len+l<mlen))
+                    mval = abssum, mlen = len + l;
+            }
             // printf("%lld (%lld) %lld (%lld)\n", val, len, v, l);
         }
 
