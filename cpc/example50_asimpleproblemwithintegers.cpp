@@ -38,7 +38,7 @@ void solve()
         if (T[i] == 'C') {
             add(BIT0, L[i], -X[i]*(L[i]-1));
             add(BIT1, L[i], X[i]);
-            add(BIT0, R[i] + 1, -X[i]*R[i]);
+            add(BIT0, R[i] + 1, X[i]*R[i]);
             add(BIT1, R[i] + 1, -X[i]);
         }
         else if (T[i] == 'Q') {
