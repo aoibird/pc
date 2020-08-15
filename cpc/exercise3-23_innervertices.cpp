@@ -52,7 +52,7 @@ int get_count(int fy, int ty, int x)
         int p = lower_bound(B, B+N, PII(x, i), cmp)-B;
         // printf("i = %d p = %d (%d %d)\n", i, p, B[p].first, B[p].second);
         if (B[p].second == i && B[p].first > x
-            && p-1 >= 0 && B[p-1].first < x) cnt++;
+            && p-1 >= 0 && B[p-1].second == i && B[p-1].first < x) cnt++;
     }
     // printf("%d\n", cnt);
     return cnt;
