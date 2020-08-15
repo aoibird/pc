@@ -15,21 +15,10 @@ typedef pair<int,int> PII;
 const int MAXN = 100000+5;
 PII A[MAXN], B[MAXN];
 int X[MAXN], Y[MAXN];
+PII RX[MAXN]; // RX: Y1==Y2, X1<=X2
 int N, CX, CY;
 
-// int BITX[MAXN], BITY[MAXN];
-
-// int sum(int *bit, int i)
-// {
-//     int s = 0; for (; i > 0; i-=i&-i) { s += bit[i]; } return s;
-// }
-
-// void add(int *bit, int n, int i, int x)
-// {
-//     for ( ; i <= n; i-=i&-i) bit[i] += x;
-// }
-
-void compress(int *x, int N)
+int compress(int *x, int N)
 {
     vector<int> xs;
     for (int i = 0; i < N; i++) xs.push_back(x[i]);
@@ -37,46 +26,34 @@ void compress(int *x, int N)
     xs.erase(unique(xs.begin(), xs.end()), xs.end());
     for (int i = 0; i < N; i++)
         x[i] = find(xs.begin(), xs.end(), x[i]) - xs.begin();
+    return xs.size();
 }
-
 
 bool cmp(const PII &a, const PII &b)
 {
     return (a.second<b.second)||(a.second==b.second&&a.first<b.first);
 }
 
-int get_count(int fy, int ty, int x)
+void get_range()
 {
-    int cnt = 0;
-    for (int i = fy+1; i <= ty-1; i++) {
-        int p = lower_bound(B, B+N, PII(x, i), cmp)-B;
-        // printf("i = %d p = %d (%d %d)\n", i, p, B[p].first, B[p].second);
-        if (B[p].second == i && B[p].first > x
-            && p-1 >= 0 && B[p-1].second == i && B[p-1].first < x) cnt++;
+    for (int i = 0, p = 0; i < N; i = p) {
+        while (p < N && B[i].second == B[p].second) p++;
+        RX[B[i].second] = PII(B[i].first, B[p-1].first);
     }
-    // printf("%d\n", cnt);
-    return cnt;
 }
 
 int main()
 {
     while (scanf("%d", &N) == 1) {
         for (int i = 0; i < N; i++) scanf("%d%d", &X[i], &Y[i]);
-        // memset(BITX, 0, sizeof(BITX));
-        // memset(BITY, 0, sizeof(BITY));
 
-        compress(X, N);
-        compress(Y, N);
+        CX = compress(X, N);
+        CY = compress(Y, N);
 
         for (int i = 0; i < N; i++) A[i] = B[i] = PII(X[i], Y[i]);
         sort(A, A+N);
         sort(B, B+N, cmp);
-        // for (int i = 0; i < N; i++) {
-        //     printf("(%d %d)%c", A[i].first, A[i].second, i+1==N?'\n':' ');
-        // }
-        // for (int i = 0; i < N; i++) {
-        //     printf("(%d %d)%c", B[i].first, B[i].second, i+1==N?'\n':' ');
-        // }
+        get_range();
         int cnt = N;
         for (int i = 0, p = i; i < N; i = p) {
             while (A[i].first == A[p].first) p++;
@@ -84,7 +61,10 @@ int main()
             // printf("[%d %d]: (%d %d) (%d %d)\n", i, p,
             //        A[i].first, A[i].second, A[p-1].first, A[p-1].second);
             int fy = A[i].second, ty = A[p-1].second, x = A[i].first;
-            cnt += get_count(fy, ty, x);
+            for (int j = fy; j <= ty; j++) {
+                if (find(A, A+N, PII(x, j))-A != N) continue;
+                if (RX[j].first < x && x < RX[j].second) cnt++;
+            }
         }
         printf("%d\n", cnt);
     }
