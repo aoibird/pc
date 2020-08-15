@@ -13,7 +13,6 @@ typedef pair<int,int> PII;
 
 const int MAXN = 100000+5;
 PII A[MAXN];
-int X[MAXN], Y[MAXN];
 int N, CX, CY;
 int vertical[MAXN];
 int vis[MAXN];
@@ -28,15 +27,18 @@ void add(int *bit, int n, int i, int x)
     for ( ; i <= n; i+=i&-i) bit[i] += x;
 }
 
-int compress(int *x, int N)
+void compress(PII *A, int N, int &cx, int &cy)
 {
-    vector<int> xs;
-    for (int i = 0; i < N; i++) xs.push_back(x[i]);
-    sort(xs.begin(), xs.end());
+    vector<int> xs, ys;
+    for (int i = 0; i < N; i++) xs.push_back(A[i].first), ys.push_back(A[i].second);
+    sort(xs.begin(), xs.end()); sort(ys.begin(), ys.end());
     xs.erase(unique(xs.begin(), xs.end()), xs.end());
-    for (int i = 0; i < N; i++)
-        x[i] = lower_bound(xs.begin(), xs.end(), x[i]) - xs.begin() + 1;
-    return xs.size();
+    ys.erase(unique(ys.begin(), ys.end()), ys.end());
+    for (int i = 0; i < N; i++) {
+        A[i].first = lower_bound(xs.begin(), xs.end(), A[i].first) - xs.begin() + 1;
+        A[i].second = lower_bound(ys.begin(), ys.end(), A[i].second) - ys.begin() + 1;
+    }
+    cx = xs.size(), cy = ys.size();
 }
 
 bool cmp(const PII &a, const PII &b)
@@ -47,13 +49,10 @@ bool cmp(const PII &a, const PII &b)
 int main()
 {
     while (scanf("%d", &N) == 1) {
-        for (int i = 0; i < N; i++) scanf("%d%d", &X[i], &Y[i]);
+        for (int i = 0; i < N; i++) scanf("%d%d", &A[i].first, &A[i].second);
 
-        CX = compress(X, N);
-        CY = compress(Y, N);
+        compress(A, N, CX, CY);
 
-        for (int i = 0; i < N; i++) A[i] = PII(X[i], Y[i]);
-        sort(A, A+N, cmp);
         sort(A, A+N);
         int cnt = N;
         memset(vertical, 0, sizeof(vertical));
