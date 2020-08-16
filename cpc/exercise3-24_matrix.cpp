@@ -37,12 +37,11 @@ void solve()
         if (I[i] == 'C') {
             // printf("%c: %d %d %d %d\n", I[i], X1[i], Y1[i], X2[i], Y2[i]);
             add(BIT, N+1, N+1, X1[i], Y1[i], 1);
-            add(BIT, N+1, N+1, X2[i]+1, Y2[i]+1, -1);
+            add(BIT, N+1, N+1, X1[i], Y2[i]+1, -1);
+            add(BIT, N+1, N+1, X2[i]+1, Y1[i], -1);
+            add(BIT, N+1, N+1, X2[i]+1, Y2[i]+1, 1);
         }
         else {
-            // for (int i = 0; i <= N+1; i++) {
-            //     for (int j = 0; j <= N+1; j++) printf("%d%c", BIT[i][j], j==N+1?'\n':' ');
-            // }
             // printf("%c: %d %d\n", I[i], X1[i], Y1[i]);
             ll x = sum(BIT, X1[i]-1, Y1[i]-1), l = sum(BIT, X1[i], Y1[i]-1),
                 u = sum(BIT, X1[i]-1, Y1[i]), t = sum(BIT, X1[i], Y1[i]);
@@ -56,6 +55,7 @@ int main()
     int TC; scanf("%d", &TC);
     int ch;
     for (int i = 0; i < TC; i++) {
+        // printf("N == %d T == %d\n", N, T);
         scanf("%d%d", &N, &T);
         memset(BIT, 0, sizeof(BIT));
         while ((ch = getchar()) != EOF && ch != '\n') ;
