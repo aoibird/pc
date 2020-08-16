@@ -17,18 +17,18 @@ int N, T;
 int I[MAXT], X1[MAXT], Y1[MAXT], X2[MAXT], Y2[MAXT];
 ll BIT[MAXN][MAXN];
 
-ll sum(ll bit[MAXN][MAXN], int i, int j)
+ll sum(ll bit[MAXN][MAXN], int x, int y)
 {
     ll s = 0;
-    for ( ; i > 0; i-=i&-i)
-        for ( ; j > 0; j-=i&-i) s += bit[i][j];
+    for (int i = x; i > 0; i-=i&-i)
+        for (int j = y; j > 0; j-=j&-j) s += bit[i][j];
     return s;
 }
 
-void add(ll bit[MAXN][MAXN], int r, int c, int i, int j, int x)
+void add(ll bit[MAXN][MAXN], int r, int c, int x, int y, int d)
 {
-    for ( ; i <= r; i+=i&-i)
-        for (; j <= c; j+=i&i) bit[i][j] += x;
+    for (int i = x; i <= r; i+=i&-i)
+        for (int j = y; j <= c; j+=j&j) bit[i][j] += d;
 }
 
 void solve()
@@ -43,9 +43,8 @@ void solve()
         }
         else {
             // printf("%c: %d %d\n", I[i], X1[i], Y1[i]);
-            ll x = sum(BIT, X1[i]-1, Y1[i]-1), l = sum(BIT, X1[i], Y1[i]-1),
-                u = sum(BIT, X1[i]-1, Y1[i]), t = sum(BIT, X1[i], Y1[i]);
-            printf("%lld\n", (t+u+l-x)%2);
+            ll t = sum(BIT, X1[i], Y1[i]);
+            printf("%lld\n", t%2);
         }
     }
 }
