@@ -189,6 +189,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 45                | POJ 2785            | 4 Values whose Sum is 0           | WA AC                         | ✓      |
 | CPC Example 48                | POJ 2991            | Crane                             | WA WA AC                      | ✓      |
 | CPC Example 5                 | POJ 2386            | Lake Counting                     | AC                            | ✓      |
+| CPC Example 50                | POJ 3468            | A Simple Problem with Integers    | WA AC                         | ✓      |
 | CPC Example 53                | POJ 2686            | Travelling by Stagecoach          | TLE AC                        | ✓      |
 | CPC Example 9                 | POJ 3617            | Best Cow Line                     | CE CE PE PE PE PE             |        |
 | CPC Exercise 2-1              | POJ 1979            | Red and Black                     | AC                            | ✓      |
@@ -248,7 +249,12 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 3-15             | POJ 2100            | Graveyard Design                  | WA WA AC                      | ✓      |
 | CPC Exercise 3-16             | POJ 3185            | The Water Bowls                   | WA WA AC                      | ✓      |
 | CPC Exercise 3-18             | POJ 2674            | Linear world                      | WA WA AC                      | ✓      |
+| CPC Exercise 3-19             | POJ 3977            | Subset                            | WA WA AC                      | ✓      |
 | CPC Exercise 3-2              | POJ 3273            | Monthly Expense                   | AC                            | ✓      |
+| CPC Exercise 3-21             | AOJ 0531            | Paint Color                       | AC                            | ✓      |
+| CPC Exercise 3-22             | POJ 1990            | MooFest                           | AC                            | ✓      |
+| CPC Exercise 3-23             | POJ 3109            | Inner Vertices                    | WA TLE TLE AC AC AC           | ✓      |
+| CPC Exercise 3-24             | POJ 2155            | Matrix                            | WA WA WA WA AC AC             | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
 | CPC Exercise 3-3              | POJ 3104            | Drying                            | TLE WA RE AC                  | ✓      |
 | CPC Exercise 3-4              | POJ 3045            | Cow Acrobats                      | WA AC                         | ✓      |
@@ -336,4 +342,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 243 / 288
+Solved / All: 249 / 294
