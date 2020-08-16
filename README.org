@@ -256,6 +256,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 3-23             | POJ 3109            | Inner Vertices                    | WA TLE TLE AC AC AC           | ✓      |
 | CPC Exercise 3-24             | POJ 2155            | Matrix                            | WA WA WA WA AC AC             | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
+| CPC Exercise 3-27             | POJ 3368            | Frequenct values                  | AC                            | ✓      |
 | CPC Exercise 3-3              | POJ 3104            | Drying                            | TLE WA RE AC                  | ✓      |
 | CPC Exercise 3-4              | POJ 3045            | Cow Acrobats                      | WA AC                         | ✓      |
 | CPC Exercise 3-5              | POJ 2976            | Dropping tests                    | WA WA WA WA AC                | ✓      |
@@ -342,4 +343,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 249 / 294
+Solved / All: 250 / 295
