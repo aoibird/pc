@@ -28,7 +28,7 @@ ll sum(ll bit[MAXN][MAXN], int x, int y)
 void add(ll bit[MAXN][MAXN], int r, int c, int x, int y, int d)
 {
     for (int i = x; i <= r; i+=i&-i)
-        for (int j = y; j <= c; j+=j&j) bit[i][j] += d;
+        for (int j = y; j <= c; j+=j&-j) bit[i][j] += d;
 }
 
 void solve()
