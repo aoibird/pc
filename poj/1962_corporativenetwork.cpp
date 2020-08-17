@@ -39,7 +39,7 @@ int main()
         while (scanf("%s", instr) == 1 && instr[0] != 'O') {
             if (instr[0] == 'E') {
                 int u; scanf("%d", &u); find(u);
-                printf("%d\n", dist[u] % 1000);
+                printf("%d\n", dist[u]);
             }
             else if (instr[0] == 'I') {
                 int u, p; scanf("%d%d", &u, &p); unite(u, p);
