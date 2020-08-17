@@ -10,12 +10,12 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
-const int MOD = 1e6 + 7;
+const int MOD = 1000007;
 const int MAXN = 100+5;
 const int MAXM = 100+5;
 int C[MAXN];
 int N, M;
-int dp[MAXM];
+int dp[MAXN][MAXM];
 
 int main()
 {
@@ -23,17 +23,15 @@ int main()
         for (int i = 0; i < N; i++) scanf("%d", &C[i]);
 
         memset(dp, 0, sizeof(dp));
-        for (int j = 0; j <= C[0]; j++) dp[j] = 1;
-        for (int i = 1; i < N; i++) {
-            int sum = 0;
-            for (int j = M; j > M-C[i]; j--) sum = sum+dp[j] % MOD;
-            for (int j = M; j >= 0; j--) {
-                sum = sum-dp[j] % MOD;
-                if (j-C[i] >= 0) sum = sum+dp[j-C[i]] % MOD;
-                dp[j] = dp[j]+sum % MOD;
+        for (int i = 0; i <= N; i++) dp[i][0] = 1;
+        for (int i = 0; i < N; i++) {
+            for (int j = 1; j <= M; j++) {
+                if (j-1-C[i] >= 0)
+                    dp[i+1][j] = (dp[i+1][j-1] + dp[i][j] - dp[i][j-1-C[i]] + MOD) % MOD;
+                else
+                    dp[i+1][j] = (dp[i+1][j-1] + dp[i][j]) % MOD;
             }
-            // for (int j = 0; j <= M; j++) printf("%d%c", dp[j], j==M?'\n':' ');
         }
-        printf("%d\n", dp[M]);
+        printf("%d\n", dp[N][M]);
     }
 }
