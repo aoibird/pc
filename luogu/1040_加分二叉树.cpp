@@ -38,7 +38,8 @@ void print_solution(int l, int r)
 {
     if (l > r) return;
 
-    printf(" %d", R[l][r]+1);
+    if (!(l == 0 && r == N-1)) printf(" ");
+    printf("%d", R[l][r]+1);
     print_solution(l, R[l][r]-1);
     print_solution(R[l][r]+1, r);
 }
@@ -51,10 +52,6 @@ int main()
         memset(dp, 0, sizeof(dp));
         ll m = dfs(0, N-1);
         printf("%lld\n", m);
-        int l = 0, r = N-1;
-        printf("%d", R[l][r]+1);
-        print_solution(0, R[l][r]-1);
-        print_solution(R[l][r]+1, N-1);
-        printf("\n");
+        print_solution(0, N-1); printf("\n");
     }
 }
