@@ -14,27 +14,32 @@ typedef pair<int,int> PII;
 const int MAXN = 30+5;
 int A[MAXN];
 int N;
+int R[MAXN][MAXN];
 
-int dfs(int l, int r, vector<int> &v)
+ll dfs(int l, int r)
 {
     if (l > r) return 1;
-    else if (l == r) { v.push_back(l); return A[l]; }
+    else if (l == r) { R[l][r] = l; return A[l]; }
 
-    int m = 0;
-    vector<int> sl, sr;
+    ll m = 0;
     for (int i = l; i <= r; i++) {
-        int vl = dfs(l, i-1, sl);
-        int vr = dfs(i+1, r, sr);
+        ll vl = dfs(l, i-1);
+        ll vr = dfs(i+1, r);
         if (A[i] + vl * vr > m) {
             m = A[i] + vl * vr;
-            v.resize(0);
-            v.push_back(i);
-            for (int i = 0; i < sl.size(); i++) v.push_back(sl[i]);
-            for (int i = 0; i < sr.size(); i++) v.push_back(sr[i]);
-            sl.resize(0), sr.resize(0);
+            R[l][r] = i;
         }
     }
     return m;
+}
+
+void print_solution(int l, int r)
+{
+    if (l > r) return;
+
+    printf(" %d", R[l][r]+1);
+    print_solution(l, R[l][r]-1);
+    print_solution(R[l][r]+1, r);
 }
 
 int main()
@@ -42,9 +47,12 @@ int main()
     while (scanf("%d", &N) == 1 && N) {
         for (int i = 0; i < N; i++) scanf("%d", &A[i]);
 
-        vector<int> v;
-        int m = dfs(0, N-1, v);
-        printf("%d\n", m);
-        for (int i = 0; i < v.size(); i++) printf("%d%c", v[i]+1, i+1==v.size()?'\n':' ');
+        ll m = dfs(0, N-1);
+        printf("%lld\n", m);
+        int l = 0, r = N-1;
+        printf("%d", R[l][r]+1);
+        print_solution(0, R[l][r]-1);
+        print_solution(R[l][r]+1, N-1);
+        printf("\n");
     }
 }
