@@ -15,22 +15,23 @@ const int MAXN = 30+5;
 int A[MAXN];
 int N;
 int R[MAXN][MAXN];
+ll dp[MAXN][MAXN];
 
 ll dfs(int l, int r)
 {
+    if (dp[l][r]) return dp[l][r];
     if (l > r) return 1;
-    else if (l == r) { R[l][r] = l; return A[l]; }
+    else if (l == r) { R[l][r] = l; return dp[l][r] = A[l]; }
 
-    ll m = 0;
     for (int i = l; i <= r; i++) {
         ll vl = dfs(l, i-1);
         ll vr = dfs(i+1, r);
-        if (A[i] + vl * vr > m) {
-            m = A[i] + vl * vr;
+        if (A[i] + vl * vr > dp[l][r]) {
+            dp[l][r] = A[i] + vl * vr;
             R[l][r] = i;
         }
     }
-    return m;
+    return dp[l][r];
 }
 
 void print_solution(int l, int r)
@@ -47,6 +48,7 @@ int main()
     while (scanf("%d", &N) == 1 && N) {
         for (int i = 0; i < N; i++) scanf("%d", &A[i]);
 
+        memset(dp, 0, sizeof(dp));
         ll m = dfs(0, N-1);
         printf("%lld\n", m);
         int l = 0, r = N-1;
