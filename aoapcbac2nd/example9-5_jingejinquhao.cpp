@@ -12,9 +12,8 @@ const int MAXN = 50 + 10;
 const int MAXT = 180 * MAXN + 678;
 int A[MAXN];
 int N, T;
-int dp[MAXN][MAXT];
-int w[MAXN][MAXT];
-int ans;
+int dp[MAXT];
+int w[MAXT];
 
 
 void input()
@@ -23,39 +22,16 @@ void input()
     for (int i = 0; i < N; i++) scanf("%d", &A[i]);
 }
 
-void print_table()
-{
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j < T; j++) {
-            printf("%d(%d)%c", dp[i][j], w[i][j],j==T-1?'\n':' ');
-        }
-    }
-    printf("\n");
-}
-
 void solve()
 {
-    // for (int i = 0; i < N; i++) printf("%d ", A[i]); printf("\n");
-    ans = 0;
     for (int i = 0; i < N; i++) {
-        for (int j = 0; j < T; j++) {
-            if (j < A[i]) {
-                dp[i+1][j] = dp[i][j];
-                w[i+1][j] = w[i][j];
-            }
-            else {
-                if (dp[i][j] > dp[i][j-A[i]] + 1) {
-                    dp[i+1][j] = dp[i][j];
-                    w[i+1][j] = w[i][j];
-                }
-                else {
-                    dp[i+1][j] = dp[i][j-A[i]]+1;
-                    w[i+1][j] = w[i][j-A[i]] + A[i];
-                }
+        for (int j = T-1; j >= A[i]; j--) {
+            if (dp[j]<dp[j-A[i]]+1 || (dp[j]==dp[j-A[i]]+1 && w[j]<w[j-A[i]]+A[i])) {
+                dp[j] = dp[j-A[i]] + 1;
+                w[j] = w[j-A[i]] + A[i];
             }
         }
     }
-    // print_table();
 }
 
 int main()
@@ -67,6 +43,6 @@ int main()
         input();
         solve();
 
-        printf("Case %d: %d %d\n", i, dp[N][T-1]+1, w[N][T-1]+678);
+        printf("Case %d: %d %d\n", i, dp[T-1]+1, w[T-1]+678);
     }
 }
