@@ -106,7 +106,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 9-2     | UVa 437             | The Tower of Babylon              | AC                            | ✓      |
 | AOAPC BAC 2nd Example 9-3     | UVa 1347            | Tour                              | AC                            | ✓      |
 | AOAPC BAC 2nd Example 9-4     | UVa 116             | Unidirectional TSP                | AC                            | ✓      |
-| AOAPC BAC 2nd Example 9-5     | UVa 12563           | Jin Ge Jin Qu [h]ao               | WA WA WA                      |        |
+| AOAPC BAC 2nd Example 9-5     | UVa 12563           | Jin Ge Jin Qu [h]ao               | WA WA WA AC                   | ✓      |
 | AOAPC BAC 2nd Example 9-6     | UVa 11400           | Lighting System Design            | WA AC                         | ✓      |
 | AOAPC BAC 2nd Example 9-7     | UVa 11584           | Partitioning by Palindromes       | AC                            | ✓      |
 | AOAPC BAC 2nd Example 9-9     | UVa 10003           | Cutting Sticks                    | AC                            | ✓      |
@@ -256,7 +256,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 3-23             | POJ 3109            | Inner Vertices                    | WA TLE TLE AC AC AC           | ✓      |
 | CPC Exercise 3-24             | POJ 2155            | Matrix                            | WA WA WA WA AC AC             | ✓      |
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
-| CPC Exercise 3-27             | POJ 3368            | Frequenct values                  | AC                            | ✓      |
+| CPC Exercise 3-27             | POJ 3368            | Frequent values                   | AC                            | ✓      |
 | CPC Exercise 3-3              | POJ 3104            | Drying                            | TLE WA RE AC                  | ✓      |
 | CPC Exercise 3-4              | POJ 3045            | Cow Acrobats                      | WA AC                         | ✓      |
 | CPC Exercise 3-5              | POJ 2976            | Dropping tests                    | WA WA WA WA AC                | ✓      |
@@ -305,17 +305,26 @@ This repository contains my solutions to contest problems from online judges and
 | Codeforces 749 A              | Codeforces 749 A    | Bachgold Problem                  | AC                            | ✓      |
 | Codeforces 894 A              | Codeforces 894 A    | QAQ                               | AC                            | ✓      |
 | Codeforces 996 A              | Codeforces 996 A    | Hit the Lottery                   | AC                            | ✓      |
+| LOJ 2424                      | LOJ 2424            | 子串                              | AC                            | ✓      |
+| Luogu 1005                    | Luogu 1005          | 矩阵取数游戏                      | RE AC                         | ✓      |
 | Luogu 1020                    | Luogu 1020          | 导弹拦截                          | WA AC                         | ✓      |
+| Luogu 1040                    | Luogu 1040          | 加分二叉树                        | WA TLE AC AC                  | ✓      |
 | Luogu 1048                    | Luogu 1048          | 采药                              | AC                            | ✓      |
 | Luogu 1060                    | Luogu 1060          | 开心的金明                        | AC                            | ✓      |
+| Luogu 1063                    | Luogu 1063          | 能量项链                          | WA AC                         | ✓      |
+| Luogu 1064                    | Luogu 1064          | 金明的预算方案                    | WA                            |        |
+| Luogu 1077                    | Luogu 1077          | 摆花                              | WA AC AC                      | ✓      |
 | Luogu 1091                    | Luogu 1091          | 合唱队形                          | WA WA WA AC                   | ✓      |
 | Luogu 1095                    | Luogu 1095          | 守望者的逃离                      | TLE AC                        | ✓      |
 | Luogu 1216                    | Luogu 1216          | 数字三角形                        | AC                            | ✓      |
+| Luogu 1220                    | Luogu 1220          | 关路灯                            | RE AC                         | ✓      |
 | Luogu 1352                    | Luogu 1352          | 没有上司的舞会                    | RE AC                         | ✓      |
 | Luogu 1541                    | Luogu 1541          | 乌龟棋                            | AC                            | ✓      |
 | Luogu 1868                    | Luogu 1868          | 饥饿的奶牛                        | TLE TLE AC                    | ✓      |
 | Luogu 1880                    | Luogu 1880          | 石子合并                          | AC                            | ✓      |
+| Luogu 3397                    | Luogu 3397          | 地毯                              | AC                            | ✓      |
 | Luogu 4170                    | Luogu 4170          | 涂色                              | AC                            | ✓      |
+| Luogu 4933                    | Luogu 4933          | 大师                              | AC                            | ✓      |
 | PC 1.6.1                      | UVa 100             | The 3np1 Problem                  | WA                            |        |
 | PC 1.6.2                      | UVa 10189           | Minesweeper                       | AC                            | ✓      |
 | PC 1.6.3                      | UVa 10137           | The Trip                          | RE                            |        |
@@ -340,7 +349,8 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 1068                      | POJ 1068            | Parencodings                      | AC                            | ✓      |
 | POJ 1088                      | POJ 1088            | 滑雪                              | AC                            | ✓      |
 | POJ 1274                      | POJ 1274            | The Perfect Stall                 | AC                            | ✓      |
+| POJ 1962                      | POJ 1962            | Corporative Network               | WA AC                         | ✓      |
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 250 / 295
+Solved / All: 260 / 305

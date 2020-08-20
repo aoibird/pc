@@ -1,4 +1,4 @@
-// POJ 3368 Frequenct values
+// POJ 3368 Frequent values
 #include <cctype>
 #include <cmath>
 #include <cstdio>
