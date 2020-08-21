@@ -2,8 +2,8 @@
 #define MAXN 50010
 using namespace std;
 
-int par[MAXN];
-int rnk[MAXN];
+int par[MAXN*3];
+int rnk[MAXN*3];
 
 void init(int n)
 {
