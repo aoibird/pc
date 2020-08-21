@@ -1,5 +1,5 @@
 #include <iostream>
-#define MAXN 10000
+#define MAXN 50010
 using namespace std;
 
 int par[MAXN];
@@ -48,13 +48,13 @@ int N, K;
 
 int main()
 {
-  cin >> N >> K;
+  scanf("%d%d", &N, &K);
   init(N * 3);
 
   int wrong = 0;
   for (int i = 0; i < K; i++) {
     int t, x, y;
-    cin >> t >> x >> y;
+    scanf("%d%d%d", &t, &x, &y);
     x -= 1; y -= 1;
 
     if (x < 0 || x >= N || y < 0 || y >= N) {
@@ -72,7 +72,7 @@ int main()
         unite(x + 2 * N, y + 2 * N);
       }
     }
-    else if (t == 2) {
+    else {
       if (same(x, y) || same(x, y + 2 * N)) {
         wrong += 1;
       }
@@ -81,9 +81,6 @@ int main()
         unite(x + N, y + 2 * N);
         unite(x + 2 * N, y);
       }
-    }
-    else {
-      wrong += 1;
     }
   }
 
