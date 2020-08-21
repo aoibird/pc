@@ -55,10 +55,10 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 4-3     | UVa 133             | The Dole Queue                    | AC                            | ✓      |
 | AOAPC BAC 2nd Example 4-4     | UVa 213             | Message Decoding                  | AC                            | ✓      |
 | AOAPC BAC 2nd Example 5-1     | UVa 10474           | Where is the Marble?              | AC                            | ✓      |
-| AOAPC BAC 2nd Example 5-2     | UVa 101             | The Blocks Problem                | TLE TLE                       |        |
+| AOAPC BAC 2nd Example 5-2     | UVa 101             | The Blocks Problem                | TLE TLE TLE AC                | ✓      |
 | AOAPC BAC 2nd Example 5-3     | UVa 10815           | Andy's First Dictionary           | AC                            | ✓      |
 | AOAPC BAC 2nd Example 5-4     | UVa 156             | Ananagrams                        | AC                            | ✓      |
-| AOAPC BAC 2nd Example 5-5     | UVa 12096           | The SetStack Computer             | CE                            |        |
+| AOAPC BAC 2nd Example 5-5     | UVa 12096           | The SetStack Computer             | CE AC                         | ✓      |
 | AOAPC BAC 2nd Example 5-6     | UVa 540             | Team Queue                        | AC                            | ✓      |
 | AOAPC BAC 2nd Example 5-7     | UVa 136             | Ugly Numbers                      | AC                            | ✓      |
 | AOAPC BAC 2nd Example 5-8     | UVa 400             | Unix Is                           | AC                            | ✓      |
@@ -100,6 +100,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 8-8     | UVa 1471            | Defense Lines                     | AC                            | ✓      |
 | AOAPC BAC 2nd Example 8-9     | UVa 1451            | Average                           | AC                            | ✓      |
 | AOAPC BAC 2nd Example 9-1     | UVa 1025            | A Spy in the Metro                | AC AC                         | ✓      |
+| AOAPC BAC 2nd Example 9-10    | UVa 1626            | Brackets Sequence                 | AC                            | ✓      |
 | AOAPC BAC 2nd Example 9-12    | UVa 12186           | Another Crisis                    | AC                            | ✓      |
 | AOAPC BAC 2nd Example 9-13    | UVa 1220            | Party at Hali-Bula                | WA                            |        |
 | AOAPC BAC 2nd Example 9-14    | UVa 1218            | Perfect Service                   | TLE AC                        | ✓      |
@@ -109,6 +110,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Example 9-5     | UVa 12563           | Jin Ge Jin Qu [h]ao               | WA WA WA AC                   | ✓      |
 | AOAPC BAC 2nd Example 9-6     | UVa 11400           | Lighting System Design            | WA AC                         | ✓      |
 | AOAPC BAC 2nd Example 9-7     | UVa 11584           | Partitioning by Palindromes       | AC                            | ✓      |
+| AOAPC BAC 2nd Example 9-8     | UVa 1625            | Color Length                      | AC                            | ✓      |
 | AOAPC BAC 2nd Example 9-9     | UVa 10003           | Cutting Sticks                    | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 3-1    | UVa 1585            | Score                             | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 3-10   | UVa 1587            | Box                               | WA WA AC                      | ✓      |
@@ -124,7 +126,7 @@ This repository contains my solutions to contest problems from online judges and
 | AOAPC BAC 2nd Exercise 4-10   | UVa 815             | Flooded!                          | WA WA WA AC                   | ✓      |
 | AOAPC BAC 2nd Exercise 4-2    | UVa 201             | Squares                           | AC                            | ✓      |
 | AOAPC BAC 2nd Exercise 4-3    | UVa 220             | Othello                           | PE AC                         | ✓      |
-| AOAPC BAC 2nd Exercise 4-4    | UVa 253             | Cube Painting                     | WA                            |        |
+| AOAPC BAC 2nd Exercise 4-4    | UVa 253             | Cube Painting                     | WA WA                         |        |
 | AOAPC BAC 2nd Exercise 4-5    | UVa 1590            | IP Networks                       | WA WA WA AC                   | ✓      |
 | AOAPC BAC 2nd Exercise 4-6    | UVa 508             | Morse Mismatches                  | CE WA                         |        |
 | AOAPC BAC 2nd Exercise 4-8    | UVa 12108           | Extraordinarily Tired Students    | WA                            |        |
@@ -175,9 +177,9 @@ This repository contains my solutions to contest problems from online judges and
 | AtCoder APC B                 | AtCoder APC B       | Interactive Sorting               | WA WA WA WA WA WA WA          |        |
 | CPC Example 10                | POJ 3069            | Saruman's Army                    | AC                            | ✓      |
 | CPC Example 11                | POJ 3253            | Fence Repair                      | WA WA AC                      | ✓      |
-| CPC Example 20                | POJ 2431            | Expedition                        | WA WA                         |        |
-| CPC Example 21                | POJ 1182            | 食物链                            | RE                            |        |
-| CPC Example 23                | POJ 3255            | Roadblocks                        | CE                            |        |
+| CPC Example 20                | POJ 2431            | Expedition                        | WA WA AC                      | ✓      |
+| CPC Example 21                | POJ 1182            | 食物链                            | RE RE AC                      | ✓      |
+| CPC Example 23                | POJ 3255            | Roadblocks                        | CE WA AC                      | ✓      |
 | CPC Example 3                 | POJ 1852            | Ants                              | AC                            | ✓      |
 | CPC Example 37                | POJ 1064            | Cable master                      | AC                            | ✓      |
 | CPC Example 38                | POJ 2456            | Aggressive cows                   | AC                            | ✓      |
@@ -353,4 +355,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 260 / 305
+Solved / All: 267 / 307
