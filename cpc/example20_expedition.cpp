@@ -2,39 +2,41 @@
 #include <queue>
 #define MAXN 10005
 using namespace std;
+typedef pair<int,int> PII;
 
 int n, l, p;
-int a[MAXN];
-int b[MAXN];
+PII T[MAXN];
+
 
 void input()
 {
   cin >> n;
   for (int i = n-1; i >= 0; i--) {
-    cin >> a[i] >> b[i];
+    cin >> T[i].first >> T[i].second;
   }
   cin >> l >> p;
   for (int i = 0; i < n; i++) {
-    a[i] = l - a[i];
+    T[i].first = l - T[i].first;
     //printf("%d %d\n", a[i], b[i]);
   }
 }
 
 void solve()
 {
-  a[n] = l;
-  b[n] = 0;
+  T[n].first = l;
+  T[n].second = 0;
   n++;
+  sort(T, T+n);
 
   priority_queue<int> pq;
   int cnt = 0, pos = 0, tank = p;
 
   for (int i = 0; i < n; i++) {
-    int d = a[i] - pos;
+    int d = T[i].first - pos;
 
     while (tank - d < 0) {
       if (pq.empty()) {
-        cout << "-1\n";
+        cout << "-1";
         return;
       }
       //printf("%d\n", pq.top());
@@ -43,8 +45,8 @@ void solve()
     }
 
     tank -= d;
-    pos = a[i];
-    pq.push(b[i]);
+    pos = T[i].first;
+    pq.push(T[i].second);
   }
 
   cout << cnt << endl;
