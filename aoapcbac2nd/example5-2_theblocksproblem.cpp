@@ -8,52 +8,34 @@ using namespace std;
 
 vector<int> blocks[MAXN];
 int n;
-int ax, ay;
-int bx, by;
 
-void find_block(int a, int b)
+void find_block(int a, int &p, int &h)
 {
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < blocks[i].size(); j++) {
-      if (blocks[i][j] == a) {
-        ax = i;
-        ay = j;
-      }
-      else if (blocks[i][j] == b) {
-        bx = i;
-        by = j;
-      }
-      else {
-        ;
-      }
+    for (p = 0; p < n; p++) {
+        for (h = 0; h < blocks[p].size(); h++) if (blocks[p][h] == a) return;
     }
-  }
 }
 
-void clear_block(int x, int y)
+void clear_block(int p, int h)
 {
-  for (int i = y+1; i < blocks[x].size(); i++) {
-    int value = blocks[x][i];
-    blocks[value].push_back(value);
+  for (int i = h+1; i < blocks[p].size(); i++) {
+    int b = blocks[p][i];
+    blocks[b].push_back(b);
   }
+  blocks[p].resize(h+1);
 }
 
-void pile()
+void pile_onto(int p, int h, int p2)
 {
-  for (int y = ay; y < blocks[ax].size(); y++) {
-    int value = blocks[ax][y];
-    blocks[bx].push_back(value);
-  }
-  blocks[ax].resize(ay);
+  for (int i = h; i < blocks[p].size(); i++) blocks[p2].push_back(blocks[p][i]);
+  blocks[p].resize(h);
 }
 
 void print()
 {
   for (int i = 0; i < n; i++) {
     printf("%d:", i);
-    for (int j = 0; j < blocks[i].size(); j++) {
-      printf(" %d", blocks[i][j]);
-    }
+    for (int j = 0; j < blocks[i].size(); j++) printf(" %d", blocks[i][j]);
     printf("\n");
   }
 }
@@ -64,20 +46,18 @@ int main()
   cin >> n;
   string s1, s2;
   int a, b;
-  for (int i = 0; i < n; i++) {
-    blocks[i].push_back(i);
-  }
+  for (int i = 0; i < n; i++) blocks[i].push_back(i);
+
   while (cin >> s1 >> a >> s2 >> b) {
-    //cout << s1 << " " << a << " " << s2 << " " << b << endl;
-    find_block(a, b);
-    //printf("%d %d %d %d\n", ax, ay, bx, by);
+    int pa, pb, ha, hb;
+    find_block(a, pa, ha);
+    find_block(b, pb, hb);
 
-    if (ax == bx) continue; // illegal
+    if (pa == pb) continue; // illegal
 
-    if (s2 == "onto") clear_block(bx, by);
-    if (s1 == "move") clear_block(ax, ay);
-    pile();
-    //print();
+    if (s2 == "onto") clear_block(pb, hb);
+    if (s1 == "move") clear_block(pa, ha);
+    pile_onto(pa, ha, pb);
   }
 
   print();
