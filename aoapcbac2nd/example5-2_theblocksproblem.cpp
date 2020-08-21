@@ -1,3 +1,4 @@
+// UVa 101
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
@@ -73,8 +74,8 @@ int main()
 
     if (ax == bx) continue; // illegal
 
+    if (s2 == "onto") clear_block(bx, by);
     if (s1 == "move") clear_block(ax, ay);
-    else if (s2 == "onto") clear_block(bx, by);
     pile();
     //print();
   }
