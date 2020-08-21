@@ -36,14 +36,13 @@ void dijkstra(int s)
     P p = pq.top(); pq.pop();
     int d = p.first;
     int v = p.second;
-    if (dist[v] < p.first) continue;
+    if (dist2[v] < p.first) continue;
 
     for (int i = 0; i < G[v].size(); i++) {
-      edge e = G[v][i];
+      edge &e = G[v][i];
       int d2 = d + e.weight;
       if (dist[e.to] > d2) {
-        //swap(dist[e.to], d2);
-        dist[e.to] = d2;
+        swap(dist[e.to], d2);
         pq.push(P(dist[e.to], e.to));
       }
       if (dist2[e.to] > d2 && dist[e.to] < d2) {
