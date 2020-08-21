@@ -7,7 +7,7 @@
 using namespace std;
 
 typedef pair<int, int> P;
-struct edge { int to; int weight; };
+struct edge { int to; int weight; edge(int t=0, int w=0) { to=t; weight=w; } };
 vector<edge> G[MAXV];
 int dist[MAXV];
 int dist2[MAXV];
@@ -19,8 +19,8 @@ void input()
   for (int i = 0; i < r; i++) {
     int from, to, weight;
     scanf("%d%d%d", &from, &to, &weight);
-    G[from-1].push_back({to-1, weight});
-    G[to-1].push_back({from-1, weight});
+    G[from-1].push_back(edge(to-1, weight));
+    G[to-1].push_back(edge(from-1, weight));
   }
 }
 
