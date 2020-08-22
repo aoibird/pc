@@ -42,25 +42,26 @@ mat mul(mat &A, mat &B)
 
 mat pow(mat A, ll n)
 {
-    mat B(A.size(), vec(A[0].size()));
+    mat B(A.size(), vec(A.size()));
     for (int i = 0; i < A.size(); i++) B[i][i] = 1;
-    for (int x = n; x > 0; x >>= 1) { if (x&1) B = mul(B, A); A = mul(A, A); }
+    while (n > 0) { if (n&1) B = mul(B, A); A = mul(A, A); n>>=1; }
     return B;
 }
 
-void set_identity(mat &A) { for (int i = 0; i <= N; i++) A[i][i] = 1; }
+void set_identity(mat &A) {
+    for (int i = 0; i <= N; i++) A[i][i] = 1;
+}
 
 void solve()
 {
     mat A(N+1, vec(N+1, 0)); set_identity(A);
+    mat B(N+1, vec(N+1, 0)); set_identity(B);
     for (int k = 0; k < K; k++) {
         int cmd = O[k], i = I[k], j = J[k];
-        mat B(N+1, vec(N+1, 0)); set_identity(B);
-        if (cmd == 'g') { B[i][0] = 1; }
-        else if (cmd == 'e') { B[i][i] = 0; }
-        else if (cmd == 's') { B[i][i] = B[j][j] = 0; B[i][j] = B[j][i] = 1; }
+        if (cmd == 'g') { A[i][0]++; }
+        else if (cmd == 'e') { for (int c = 0; c <= N; c++) A[i][c] = 0; }
+        else if (cmd == 's') { for (int c = 0; c <= N; c++) swap(A[i][c], A[j][c]); }
         else ;
-        A = mul(B, A);
     }
     A = pow(A, M);
     for (int i = 1; i <= N; i++) printf("%lld%c", A[i][0], i==N?'\n':' ');
