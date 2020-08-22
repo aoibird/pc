@@ -38,9 +38,9 @@ int get_area(int set)
 
 void solve()
 {
+    for (int s = 0; s < (1<<N); s++) dp[s] = get_area(s);
     for (int s = 1; s < (1<<N); s++) {
         for (int t = 1; t < s; t++) {
-            dp[t|s] = min(dp[t|s], get_area(t|s));
             dp[t|s] = min(dp[t|s], dp[t] + dp[s]);
         }
     }
