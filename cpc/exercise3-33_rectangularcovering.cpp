@@ -38,21 +38,10 @@ int get_area(int set)
 
 void solve()
 {
-    dp[0] = INF;
-    for (int i = 0; i < N; i++) dp[1<<i] = INF;
-
-    for (int k = 2; k <= N; k++) {
-        for (int set = (1<<k)-1; set < (1<<N); ) {
-            dp[set] = get_area(set);
-
-            for (int s1=(set-1)&set; s1; s1=(s1-1)&set) {
-                for (int s2=(set-1)&set; s2; s2=(s2-1)&set) {
-                    if ((s1|s2)==set) dp[set] = min(dp[set], dp[s1] + dp[s2]);
-                }
-            }
-
-            int x = set & -set, y = set + x;
-            set = ((set & ~y) / x >> 1) | y;
+    for (int s = 1; s < (1<<N); s++) {
+        for (int t = 1; t < s; t++) {
+            dp[t|s] = min(dp[t|s], get_area(t|s));
+            dp[t|s] = min(dp[t|s], dp[t] + dp[s]);
         }
     }
     printf("%d\n", dp[(1<<N)-1]);
@@ -63,7 +52,7 @@ int main()
     while (scanf("%d", &N) == 1 && N) {
         for (int i = 0; i < N; i++) scanf("%d%d", &A[i].first, &A[i].second);
 
-        memset(dp, 0, sizeof(dp));
+        fill(dp, dp+(1<<N), INF);
         solve();
     }
 }
