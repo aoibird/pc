@@ -40,11 +40,7 @@ int query(int a, int b, int k, int l, int r)
 {
     if (r <= a || b <= l) return INF;
     if (a <= l && r <= b) return seg[k];
-    else {
-        int vl = query(a, b, k*2+1, l, (l+r)/2);
-        int vr = query(a, b, k*2+2, (l+r)/2, r);
-        return min(vl, vr);
-    }
+    else return min(query(a, b, k*2+1, l, (l+r)/2), query(a, b, k*2+2, (l+r)/2, r));
 }
 
 bool cmp(const Cow &a, const Cow &b)
@@ -55,11 +51,7 @@ bool cmp(const Cow &a, const Cow &b)
 int main()
 {
     while (scanf("%d%d%d", &N, &M, &E) == 3) {
-        int L = MAXE, R = 0;
-        for (int i = 0; i < N; i++) {
-            scanf("%d%d%d", &A[i].left, &A[i].right, &A[i].cost);
-            L = min(L, A[i].left); R = max(R, A[i].right);
-        }
+        for (int i = 0; i < N; i++) scanf("%d%d%d", &A[i].left, &A[i].right, &A[i].cost);
 
         sort(A, A+N, cmp);
         memset(dp, 0x3f, sizeof(dp));
@@ -67,14 +59,7 @@ int main()
         for (int i = 0; i < N; i++) {
             int l = A[i].left, r = A[i].right, c = A[i].cost;
             if (l == M) { dp[r] = c; update(r, c); }
-            else {
-                int minval = query(l-1, r+1, 0, 0, n);
-                dp[r] = min(dp[r], minval + c);
-                update(r, dp[r]);
-                // for (int j = l-1; j <= r; j++) { dp[r] = min(dp[r], dp[j] + c); }
-            }
-            // for (int j = M; j <= E; j++) printf("%2d%c", j, j==E?'\n':' ');
-            // for (int j = M; j <= E; j++) printf("%2d%c", dp[j], j==E?'\n':' ');
+            else { dp[r] = min(dp[r], query(l-1, r+1, 0, 0, n) + c); update(r, dp[r]); }
         }
         printf("%d\n", dp[E]<INF?dp[E]:-1);
     }
