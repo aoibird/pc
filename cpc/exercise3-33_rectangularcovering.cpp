@@ -11,37 +11,40 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
-const int INF = 0x3f3f3f3f;
 const int MAXN = 15;
-PII A[MAXN];
+PII A[MAXN]; // (x, y)
+PII S[MAXN*MAXN]; // (set, area)
 int N;
 int dp[1 << MAXN];
 
-int get_area(int set)
+int get_area(int a, int b)
 {
-    vector<int> s;
-    for (int i = 0; set; i++, set>>=1) { if (set&1) s.push_back(i); }
-    if (s.size() < 2) return INF;
-
-    int t = s[0];
-    int fx = A[t].first, tx = A[t].first, fy = A[t].second, ty = A[t].second;
-    for (int i = 0; i < s.size(); i++) {
-        int t = s[i];
-        fx = min(fx, A[t].first); tx = max(tx, A[t].first);
-        fy = min(fy, A[t].second); ty = max(ty, A[t].second);
-    }
-    if (ty - fy == 0) return 1 * (tx - fx);
-    if (tx - fx == 0) return (ty - fy) * 1;
-    return (ty - fy) * (tx - fx);
+    int fx = A[a].first, tx = A[b].first, fy = A[a].second, ty = A[b].second;
+    return max(1, abs(ty - fy)) * max(1, abs(tx - fx));
 }
 
+bool iscover(PII &a, PII &b, PII &c)
+{
+    return (a.first-c.first)*(b.first-c.first)<=0
+        && (a.second-c.second)*(b.second-c.second)<=0;
+}
 
 void solve()
 {
-    for (int s = 0; s < (1<<N); s++) dp[s] = get_area(s);
-    for (int s = 1; s < (1<<N); s++) {
-        for (int t = 1; t < s; t++) {
-            dp[t|s] = min(dp[t|s], dp[t] + dp[s]);
+    int C = 0;
+    for (int i = 0; i < N; i++) {
+        for (int j = i+1; j < N; j++) {
+            S[C] = PII((1<<i)|(1<<j), get_area(i, j));
+            for (int k = 0; k < N; k++) if (iscover(A[i], A[j], A[k])) S[C].first |= 1<<k;
+            C++;
+        }
+    }
+
+    memset(dp, 0x3f, sizeof(dp));
+    dp[0] = 0;
+    for (int s = 0; s < (1<<N); s++) {
+        for (int i = 0; i < C; i++) {
+            dp[s|S[i].first] = min(dp[s|S[i].first], dp[s] + S[i].second);
         }
     }
     printf("%d\n", dp[(1<<N)-1]);
@@ -52,7 +55,6 @@ int main()
     while (scanf("%d", &N) == 1 && N) {
         for (int i = 0; i < N; i++) scanf("%d%d", &A[i].first, &A[i].second);
 
-        fill(dp, dp+(1<<N), INF);
         solve();
     }
 }
