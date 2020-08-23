@@ -260,6 +260,11 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 3-26             | POJ 3264            | Balanced Lineup                   | WA AC                         | ✓      |
 | CPC Exercise 3-27             | POJ 3368            | Frequent values                   | AC                            | ✓      |
 | CPC Exercise 3-3              | POJ 3104            | Drying                            | TLE WA RE AC                  | ✓      |
+| CPC Exercise 3-31             | POJ 2441            | Arrange the Bulls                 | AC                            | ✓      |
+| CPC Exercise 3-32             | POJ 3254            | Corn Fields                       | AC                            | ✓      |
+| CPC Exercise 3-33             | POJ 2836            | Rectangular Covering              | TLE TLE TLE AC                | ✓      |
+| CPC Exercise 3-36             | POJ 3735            | Training little cats              | TLE AC                        | ✓      |
+| CPC Exercise 3-38             | POJ 3171            | Cleaning Shifts                   | RE AC AC                      | ✓      |
 | CPC Exercise 3-4              | POJ 3045            | Cow Acrobats                      | WA AC                         | ✓      |
 | CPC Exercise 3-5              | POJ 2976            | Dropping tests                    | WA WA WA WA AC                | ✓      |
 | CPC Exercise 3-6              | POJ 3111            | K Best                            | TLE AC                        | ✓      |
@@ -355,4 +360,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee            | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                   | AC                            | ✓      |
 
-Solved / All: 267 / 307
+Solved / All: 272 / 312
