@@ -18,10 +18,11 @@ struct Cow {
 const int INF = 0x3f3f3f3f;
 const int MAXN = 10000+5;
 const int MAXE = 86399+11;
+const int MAXE2 = 1 << 17;
 Cow A[MAXN];
 int N, M, E;
 int dp[MAXE];
-int n, seg[2 * MAXE - 1];
+int n, seg[2 * MAXE2 - 1];
 
 void init(int N)
 {
