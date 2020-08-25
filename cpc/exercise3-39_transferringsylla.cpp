@@ -7,6 +7,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <queue>
 using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
@@ -17,11 +18,11 @@ struct Edge {
 };
 
 const int MAXN = 500+5;
-// const int INF = 100000;
+const int INF = 100000;
 const int MAXM = 20000+5;
 PII E[MAXM];
 vector<Edge> G[MAXN*2];
-bool used[MAXN*2];
+int level[MAXN*2], iter[MAXN*2];
 int N, M;
 
 void add_edge(int from, int to, int cap)
@@ -30,13 +31,28 @@ void add_edge(int from, int to, int cap)
     G[to].push_back(Edge(from, 0, G[from].size()-1));
 }
 
+void bfs(int s)
+{
+    memset(level, -1, sizeof(level));
+    queue<int> q;
+    level[s] = 0; q.push(s);
+    while (!q.empty()) {
+        int v = q.front(); q.pop();
+        for (int i = 0; i < G[v].size(); i++) {
+            Edge &e = G[v][i];
+            if (e.cap > 0 && level[e.to] < 0) {
+                level[e.to] = level[v] + 1; q.push(e.to);
+            }
+        }
+    }
+}
+
 int dfs(int v, int t, int f)
 {
     if (v == t) return f;
-    used[v] = true;
-    for (int i = 0; i < G[v].size(); i++) {
+    for (int &i = iter[v]; i < G[v].size(); i++) {
         Edge &e = G[v][i];
-        if (!used[e.to] && e.cap > 0) {
+        if (e.cap > 0 && level[v] < level[e.to]) {
             int d = dfs(e.to, t, min(f, e.cap));
             if (d > 0) { e.cap -= d; G[e.to][e.rev].cap += d; return d; }
         }
@@ -47,12 +63,13 @@ int dfs(int v, int t, int f)
 int max_flow(int s, int t)
 {
     int flow = 0;
-    while (true) {
-        memset(used, 0, sizeof(used));
-        int f = dfs(s, t, 1);
-        if (f == 0 || flow >= 3) return flow;
-        else flow += f;
+    while (flow < 3) {
+        bfs(s);
+        if (level[t] < 0) return flow;
+        memset(iter, 0, sizeof(iter));
+        int f; while (flow < 3 && (f = dfs(s, t, INF)) > 0) flow += f;
     }
+    return flow;
 }
 
 void init_edge()
