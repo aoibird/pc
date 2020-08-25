@@ -12,12 +12,12 @@ typedef long long ll;
 typedef pair<int,int> PII;
 
 struct Edge {
-    int to, cap, rev;
-    Edge(int t=0, int c=0, int r=0) { to=t; cap=c; rev=r; }
+    int to, cap, bak, rev;
+    Edge(int t=0, int c=0, int r=0) { to=t; bak=cap=c; rev=r; }
 };
 
 const int MAXN = 500+5;
-const int INF = 100000;
+// const int INF = 100000;
 const int MAXM = 20000+5;
 PII E[MAXM];
 vector<Edge> G[MAXN*2];
@@ -49,21 +49,28 @@ int max_flow(int s, int t)
     int flow = 0;
     while (true) {
         memset(used, 0, sizeof(used));
-        int f = dfs(s, t, INF);
-        if (f == 0) return flow;
+        int f = dfs(s, t, 1);
+        if (f == 0 || flow >= 3) return flow;
         else flow += f;
     }
 }
 
 void init_edge()
 {
-    for (int i = 0; i < N; i++) { add_edge(i, i+N, 1); add_edge(i+N, i, 1); }
+    for (int i = 0; i < N; i++) { add_edge(i, i+N, 1); }
     for (int i = 0; i < M; i++) {
         int a = E[i].first, b = E[i].second;
         int a2 = a + N, b2 = b + N;
         add_edge(b2, a, 1); add_edge(a2, b, 1);
     }
 
+}
+
+void recover_edge()
+{
+    for (int i = 0; i < N*2; i++) {
+        for (int j = 0; j < G[i].size(); j++) G[i][j].cap = G[i][j].bak;
+    }
 }
 
 void init_graph() { for (int i = 0; i < N*2; i++) G[i].clear(); }
@@ -87,15 +94,17 @@ int main()
         // init_graph(), init_edge();
         // print_graph();
 
+        init_graph(); init_edge();
         bool yes = true;
         for (int i = 0; i < N; i++) {
             for (int j = i+1; j < N; j++) {
                 if (i == j) continue;
-                init_graph(); init_edge();
+                recover_edge();
                 int flow = max_flow(i+N, j);
                 // printf("%d-%d %d\n", i, j, flow);
                 if (flow < 3) { yes = false; break; }
             }
+            if (yes == false) break;
         }
 
         if (yes) printf("YES\n");
