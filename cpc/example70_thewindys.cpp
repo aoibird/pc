@@ -25,32 +25,12 @@ struct Edge {
 const int MAXV = MAXN + MAXN * MAXM;
 int V;
 vector<Edge> G[MAXV];
-int h[MAXV], dist[MAXV], prevv[MAXV], preve[MAXV];
+int dist[MAXV], prevv[MAXV], preve[MAXV];
 
 void add_edge(int from, int to, int cap, int cost)
 {
     G[from].push_back(Edge(to, cap, cost, G[to].size()));
     G[to].push_back(Edge(from, 0, -cost, G[from].size()-1));
-}
-
-void dijkstra(int s)
-{
-    priority_queue<PII, vector<PII>, greater<PII> > pq;
-    fill(dist, dist+V, INF);
-    dist[s] = 0; pq.push(PII(0, s));
-    while (!pq.empty()) {
-        PII p = pq.top(); pq.pop();
-        int d = p.first, v = p.second;
-        if (dist[v] < d) continue;
-        for (int i = 0; i < G[v].size(); i++) {
-            Edge &e = G[v][i];
-            if (e.cap > 0 && dist[e.to] > dist[v]+e.cost+h[v]-h[e.to]) {
-                dist[e.to] = dist[v]+e.cost+h[v]-h[e.to];
-                prevv[e.to] = v; preve[e.to] = i;
-                pq.push(PII(dist[e.to], e.to));
-            }
-        }
-    }
 }
 
 void bellman_ford(int s)
@@ -102,7 +82,7 @@ int main()
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) scanf("%d", &Z[i][j]);
         }
-        for (int i = 0; i < N+N*M+1; i++) G[i].clear();
+        for (int i = 0; i < MAXV; i++) G[i].clear();
 
         int s = N+N*M; int t = s+1;
         V = t+1;
