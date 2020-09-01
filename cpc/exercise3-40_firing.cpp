@@ -72,15 +72,20 @@ ll max_flow(int s, int t)
     }
 }
 
-
-bool vis[MAXV];
-vector<int> F;
-void access(int s)
+int vis[MAXN]; // -1 visit 0 unvisited 1 accessible
+int access(int v, int t)
 {
-    vis[s] = true;
-    F.push_back(s);
-    for (int i = 0; i < G[s].size(); i++)
-        if (!vis[G[s][i].to] && G[s][i].cap > 0) access(G[s][i].to);
+    if (vis[v] != 0) return vis[v];
+    if (v == t) return vis[v] = 1;
+
+    int yes = 0; vis[v] = -1;
+    for (int i = 0; i < G[v].size(); i++) {
+        if (vis[G[v][i].to] != -1 && G[v][i].cap > 0) {
+            int x = access(G[v][i].to, t);
+            if (x == 1) { yes = 1; break; }
+        }
+    }
+    return vis[v] = yes;
 }
 
 int main()
@@ -101,8 +106,10 @@ int main()
         }
 
         ll flow = max_flow(s, t);
-        memset(vis, 0, sizeof(vis)); F.clear();
-        access(s);
-        printf("%d %lld\n", N-(int)F.size()+1, sum-flow);
+        int cnt = 0;
+        memset(vis, 0, sizeof(vis));
+        for (int i = 0; i < N; i++) access(i, t);
+        for (int i = 0; i < N; i++) if (vis[i] == 1) cnt++;
+        printf("%d %lld\n", cnt, sum-flow);
     }
 }
