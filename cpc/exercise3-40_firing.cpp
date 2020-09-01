@@ -13,9 +13,11 @@ typedef long long ll;
 typedef pair<int,int> PII;
 
 const int MAXN = 5000+5;
-// const int MAXM = 60000+5;
+const int MAXM = 60000+5;
 const ll INF = 1LL << 40;
 int N, M;
+int C[MAXN];
+PII E[MAXM];
 
 const int MAXV = MAXN + 2;
 struct Edge {
@@ -72,44 +74,40 @@ ll max_flow(int s, int t)
     }
 }
 
-int vis[MAXN]; // -1 visit 0 unvisited 1 accessible
-int access(int v, int t)
+bool vis[MAXV];
+void access(int s)
 {
-    if (vis[v] != 0) return vis[v];
-    if (v == t) return vis[v] = 1;
-
-    int yes = 0; vis[v] = -1;
-    for (int i = 0; i < G[v].size(); i++) {
-        if (vis[G[v][i].to] != -1 && G[v][i].cap > 0) {
-            int x = access(G[v][i].to, t);
-            if (x == 1) { yes = 1; break; }
-        }
-    }
-    return vis[v] = yes;
+    vis[s] = true;
+    for (int i = 0; i < G[s].size(); i++)
+        if (!vis[G[s][i].to] && G[s][i].cap > 0) access(G[s][i].to);
 }
 
 int main()
 {
     while (scanf("%d%d", &N, &M) == 2) {
+        for (int i = 0; i < N; i++) { scanf("%d", &C[i]); }
+        for (int i = 0; i < M; i++) {
+            int a, b; scanf("%d%d", &a, &b); a--; b--;
+            E[i] = PII(a, b);
+        }
         for (int i = 0; i < MAXV; i++) G[i].clear();
 
         ll sum = 0;
         int s = N; int t = s+1; V = N+2;
         for (int i = 0; i < N; i++) {
-            int x; scanf("%d", &x);
-            if (x < 0) { add_edge(s, i, -x); }
-            else { add_edge(i, t, x); sum += x; }
+            int x = C[i];
+            if (x < 0) { add_edge(i, t, -x); }
+            else { add_edge(s, i, x); sum += x; }
         }
-        for (int i = 0; i < M; i++) {
-            int a, b; scanf("%d%d", &a, &b); a--; b--;
-            add_edge(b, a, INF);
-        }
+        for (int i = 0; i < M; i++) { add_edge(E[i].first, E[i].second, INF); }
 
         ll flow = max_flow(s, t);
+
         int cnt = 0;
         memset(vis, 0, sizeof(vis));
-        for (int i = 0; i < N; i++) access(i, t);
-        for (int i = 0; i < N; i++) if (vis[i] == 1) cnt++;
+        access(s);
+        for (int i = 0; i < N; i++) if (vis[i]) cnt++;
+
         printf("%d %lld\n", cnt, sum-flow);
     }
 }
