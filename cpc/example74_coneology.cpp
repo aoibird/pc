@@ -20,7 +20,7 @@ double X[MAXN], Y[MAXN], R[MAXN];
 bool inside(int i, int j)
 {
     double dx = X[i]-X[j], dy = Y[i]-Y[j];
-    return dx * dx + dy * dy <= R[i]*R[j];
+    return dx * dx + dy * dy <= R[j]*R[j];
 }
 
 void solve()
