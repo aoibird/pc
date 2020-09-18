@@ -50,7 +50,7 @@ void solve()
     for (int i = 0; i < N; i++) {
         int x = A[i].x2;
         int expand = true;
-        for (int j = i+1; j < N && A[j].x1 == x; j++) {
+        for (int j = i+1; j < N && A[j].x1 <= x; j++) {
             if (A[j].x1 == x && !(A[j].y1 > A[i].y2 || A[j].y2 < A[i].y1)) {
                 A[j].expand = false; expand = false;
             }
@@ -65,7 +65,7 @@ void solve()
     for (int i = 0; i < N; i++) {
         int y = A[i].y2;
         int expand = true;
-        for (int j = i+1; j < N && A[j].y1 == y; j++) {
+        for (int j = i+1; j < N && A[j].y1 <= y; j++) {
             if (A[j].y1 == y && !(A[j].x1 > A[i].x2 || A[j].x2 < A[i].x1)) {
                 A[j].expand = false; expand = false;
             }
