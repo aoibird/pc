@@ -1,4 +1,4 @@
- c#+TITLE: Programming Contests
+#+TITLE: Programming Contests
 
 This repository contains my solutions to contest problems from online judges and books.
 
