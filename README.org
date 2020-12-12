@@ -1,4 +1,4 @@
-#+TITLE: Programming Contests
+ c#+TITLE: Programming Contests
 
 This repository contains my solutions to contest problems from online judges and books.
 
@@ -200,6 +200,9 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Example 68                | POJ 2135            | Farm Four                           | AC                            | ✓      |
 | CPC Example 70                | POJ 3686            | The Windy's                         | TLE AC                        | ✓      |
 | CPC Example 72                | POJ 1127            | Jack Straws                         | AC                            | ✓      |
+| CPC Example 73                | AOJ 2308            | White Bird                          | AC                            | ✓      |
+| CPC Example 74                | POJ 2932            | Coneology                           | OLE AC                        | ✓      |
+| CPC Example 75                | POJ 2187            | Beauty Contest                      | AC                            | ✓      |
 | CPC Example 9                 | POJ 3617            | Best Cow Line                       | CE CE PE PE PE PE             |        |
 | CPC Exercise 2-1              | POJ 1979            | Red and Black                       | AC                            | ✓      |
 | CPC Exercise 2-10             | POJ 3050            | Hopscotch                           | AC                            | ✓      |
@@ -252,6 +255,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 2-8              | POJ 2718            | Smallest Difference                 | TLE AC                        | ✓      |
 | CPC Exercise 2-9              | POJ 3187            | Backward Digit Sums                 | AC                            | ✓      |
 | CPC Exercise 3-1              | POJ 3258            | River Hopscotch                     | WA WA AC                      | ✓      |
+| CPC Exercise 3-10             | POJ 3662            | Telephone Lines                     | TLE AC                        | ✓      |
 | CPC Exercise 3-11             | POJ 1759            | Garland                             | AC                            | ✓      |
 | CPC Exercise 3-13             | POJ 2566            | Bound Found                         | WA RE WA WA AC                | ✓      |
 | CPC Exercise 3-14             | POJ 2739            | Sum of Consecutive Prime Numbers    | AC                            | ✓      |
@@ -284,6 +288,7 @@ This repository contains my solutions to contest problems from online judges and
 | CPC Exercise 3-5              | POJ 2976            | Dropping tests                      | WA WA WA WA AC                | ✓      |
 | CPC Exercise 3-51             | POJ 3068            | "Shortest" pair of paths            | AC                            | ✓      |
 | CPC Exercise 3-52             | POJ 2195            | Going Home                          | AC                            | ✓      |
+| CPC Exercise 3-59             | POJ 3168            | Barn Expansion                      | WA TLE                        |        |
 | CPC Exercise 3-6              | POJ 3111            | K Best                              | TLE AC                        | ✓      |
 | CPC Exercise 3-7              | POJ 3579            | Median                              | TLE AC                        | ✓      |
 | CPC Exercise 3-8              | POJ 3685            | Matrix                              | AC                            | ✓      |
@@ -382,4 +387,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee              | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                     | AC                            | ✓      |
 
-Solved / All: 293 / 334
+Solved / All: 297 / 339
