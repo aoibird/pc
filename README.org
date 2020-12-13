@@ -318,6 +318,10 @@ This repository contains my solutions to contest problems from online judges and
 | Codeforces 102318 A           | Codeforces 102318 A | Electric Bill                       | AC                            | ✓      |
 | Codeforces 102318 B           | Codeforces 102318 B | Simplified Keyboard                 | AC                            | ✓      |
 | Codeforces 102318 C           | Codeforces 102318 C | Singin' in the Rain                 | AC                            | ✓      |
+| Codeforces 102460 C           | Codeforces 102460 C | Are They All Integers?              | AC                            | ✓      |
+| Codeforces 102460 D           | Codeforces 102460 D | Tapioka                             | AC                            | ✓      |
+| Codeforces 102460 H           | Codeforces 102460 H | Mining a                            | AC                            | ✓      |
+| Codeforces 102460 K           | Codeforces 102460 K | Length of Bundle Rope               | AC                            | ✓      |
 | Codeforces 1051 B             | Codeforces 1051 B   | Relatively Prime Pairs              | WA AC                         | ✓      |
 | Codeforces 1180 A             | Codeforces 1180 A   | Alex and a Rhombus                  | AC                            | ✓      |
 | Codeforces 1323 A             | Codeforces 1323 A   | Even Subset Sum Problem             | AC                            | ✓      |
@@ -387,4 +391,4 @@ This repository contains my solutions to contest problems from online judges and
 | POJ 2400                      | POJ 2400            | Supervisor, Supervisee              | WA WA                         |        |
 | POJ 2719                      | POJ 2719            | Faulty Odometer                     | AC                            | ✓      |
 
-Solved / All: 297 / 339
+Solved / All: 301 / 343
