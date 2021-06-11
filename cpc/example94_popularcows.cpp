@@ -53,8 +53,8 @@ int scc()
 
     memset(VIS, 0, sizeof(VIS));
     int cnt = 0;
-    for (int i = 1; i <= N; i++) {
-        if (!VIS[i]) rdfs(i, cnt++);
+    for (int i = N-1; i >= 0; i--) {
+        if (!VIS[SEQ[i]]) rdfs(SEQ[i], cnt++);
     }
 
     return cnt;
