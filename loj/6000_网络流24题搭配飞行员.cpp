@@ -30,7 +30,7 @@ int N, M, S, T;
 void add_edge(int from, int to, int cap)
 {
     G[from].push_back(Edge(to, cap, G[to].size()));
-    G[to].push_back(Edge(to, 0, G[from].size()-1));
+    G[to].push_back(Edge(from, 0, G[from].size()-1));
 }
 
 int dfs(int v, int t, int f)
