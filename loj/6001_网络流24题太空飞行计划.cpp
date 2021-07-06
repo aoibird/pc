@@ -8,38 +8,53 @@
 #include <algorithm>
 #include <vector>
 #include <set>
+#include <queue>
 using namespace std;
 typedef long long ll;
 typedef pair<int,int> PII;
 
 const int MAXM = 50+10;
 const int MAXN = MAXM;
+const int MAXV = MAXM + MAXN + 2;
 const int INF = 1e9;
 
 struct Edge {
-    int to, cap, rev;
-    Edge(int t=0, int c=0, int r=0) {
-        to = t, cap = c, rev = r;
-    }
+    int to; ll cap; int rev;
+    Edge(int t=0, ll c=0, int r=0) { to = t, cap = c, rev = r; }
 };
 
 vector<Edge> G[MAXN*2];
-bool VIS[MAXN*2];
-int N, M, S, T;
+int V, N, M, S, T;
 
-void add_edge(int from, int to, int cap)
+int level[MAXV], iter[MAXV];
+void add_edge(int from, int to, ll cap)
 {
     G[from].push_back(Edge(to, cap, G[to].size()));
     G[to].push_back(Edge(from, 0, G[from].size()-1));
 }
 
-int dfs(int v, int t, int f)
+void bfs(int s)
+{
+    memset(level, -1, sizeof(level));
+    queue<int> q;
+    level[s] = 0; q.push(s);
+    while (!q.empty()) {
+        int v = q.front(); q.pop();
+        for (unsigned int i = 0; i < G[v].size(); i++) {
+            Edge &e = G[v][i];
+            if (e.cap > 0 && level[e.to] < 0){
+                level[e.to] = level[v] + 1; q.push(e.to);
+            }
+        }
+    }
+}
+
+ll dfs(int v, int t, ll f)
 {
     if (v == t) return f;
-    VIS[v] = true;
-    for (unsigned int i = 0; i < G[v].size(); i++) {
+    for (int &i = iter[v]; i < (int) G[v].size(); i++) {
         Edge &e = G[v][i];
-        if (!VIS[e.to] && e.cap > 0) {
+        if (e.cap > 0 && level[v] < level[e.to]) {
             int d = dfs(e.to, t, min(f, e.cap));
             if (d > 0) { e.cap -= d; G[e.to][e.rev].cap += d; return d; }
         }
@@ -47,22 +62,31 @@ int dfs(int v, int t, int f)
     return 0;
 }
 
-int max_flow(int s, int t)
+ll max_flow(int s, int t)
 {
-    int flow = 0;
+    ll flow = 0;
     while (true) {
-        memset(VIS, 0, sizeof(VIS));
-        int f = dfs(s, t, INF);
-        if (f == 0) return flow;
-        flow += f;
+        bfs(s);
+        if (level[t] < 0) return flow;
+        memset(iter, 0, sizeof(iter));
+        ll f; while ((f = dfs(s, t, INF)) > 0) flow += f;
     }
 }
+
+bool vis[MAXV];
+void access(int s)
+{
+    vis[s] = true;
+    for (unsigned int i = 0; i < G[s].size(); i++)
+        if (!vis[G[s][i].to] && G[s][i].cap > 0) access(G[s][i].to);
+}
+
 
 int main()
 {
     scanf("%d%d", &M, &N);
     int S = 0, T = M+N+1;
-    int sum = 0;
+    ll sum = 0;
     for (int i = 1; i <= M; i++) {
         int p; scanf("%d", &p); sum += p;
         add_edge(S, i, p);
@@ -79,12 +103,14 @@ int main()
         add_edge(M + j, T, c);
     }
 
-    int prof = sum - max_flow(S, T);
+    ll prof = sum - max_flow(S, T);
     vector<int> es, is;
+    memset(vis, 0, sizeof(vis));
+    access(S);
     for (int i = 1; i <= M+N; i++) {
-        if (VIS[i]) (i <= M) ? (es.push_back(i)) : (is.push_back(i-M));
+        if (vis[i]) (i <= M) ? (es.push_back(i)) : (is.push_back(i-M));
     }
     for (unsigned int i = 0; i < es.size(); i++) printf("%d%c", es[i], i+1==es.size()?'\n':' ');
     for (unsigned int i = 0; i < is.size(); i++) printf("%d%c", is[i], i+1==is.size()?'\n':' ');
-    printf("%d\n", prof);
+    printf("%lld\n", prof);
 }
