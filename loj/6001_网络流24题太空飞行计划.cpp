@@ -117,7 +117,7 @@ int main() {
         add_edge(S, i, p);
         int ch;
 
-        while ((ch = getchar()) != '\n') {
+        while ((ch = getchar()) != '\n' && ch != EOF) {
             ungetc(ch, stdin);
             int j;
             scanf("%d", &j);
