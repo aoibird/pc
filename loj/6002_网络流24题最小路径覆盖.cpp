@@ -18,6 +18,7 @@ int N, M, V;
 vector<int> G[MAXV];
 int match[MAXV];
 bool used[MAXV];
+vector<int> path;
 
 void print_array(int *a, int n)
 {
@@ -73,15 +74,15 @@ int main()
     memset(used, 0, sizeof(used));
     for (int i = 0; i < N; i++) {
         if (used[i]) continue;
-        int u = i; vector<int> p;
-        p.push_back(u + 1);
+        int u = i;
+        path.clear(); path.push_back(u + 1);
         while (match[u] != -1) {
-            p.push_back(match[u] - N + 1);
+            path.push_back(match[u] - N + 1);
             used[u] = used[u-N] = true;
             u = match[u] - N;
         }
         used[u] = true;
-        print_vector(p);
+        print_vector(path);
     }
     printf("%d\n", N-res);
 }
