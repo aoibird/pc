@@ -18,6 +18,8 @@ int N, M, V;
 vector<int> G[MAXV];
 int match[MAXV];
 bool used[MAXV];
+
+vector<int> P[MAXN];
 vector<int> path;
 
 void print_array(int *a, int n)
@@ -25,7 +27,7 @@ void print_array(int *a, int n)
     for (int i = 0; i < n; i++) printf("%d%c", a[i], i==n-1?'\n':' ');
 }
 
-void print_vector(vector<int> v)
+void print_vector(vector<int> &v)
 {
     for (uint i = 0; i < v.size(); i++) printf("%d%c", v[i], i+1==v.size()?'\n':' ');
 }
@@ -59,6 +61,14 @@ int bitpartite_matching()
     return res;
 }
 
+void dft(vector<int> &path, int v)
+{
+    used[v] = true; path.push_back(v);
+    for (uint i = 0; i < P[v].size(); i++) {
+        int u = P[v][i];
+        if (!used[u]) { dft(path, u); }
+    }
+}
 
 int main()
 {
@@ -71,19 +81,15 @@ int main()
     V = 2 * N;
     int res = bitpartite_matching();
 
+    for (int i = 0; i < N; i++) {
+        if (match[i] != -1) { P[i].push_back(match[i] - N); P[match[i]-N].push_back(i); }
+    }
     memset(used, 0, sizeof(used));
     for (int i = 0; i < N; i++) {
         if (used[i]) continue;
-        int u = i;
-        path.clear();
-        used[u] = true;
-        while (match[u] != -1) {
-            path.push_back(u + 1);
-            used[u] = used[u-N] = true;
-            u = match[u] - N;
-        }
-        path.push_back(u + 1); used[u] = true;
+        path.clear(); dft(path, i);
         print_vector(path);
     }
+
     printf("%d\n", N-res);
 }
