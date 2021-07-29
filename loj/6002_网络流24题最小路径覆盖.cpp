@@ -22,17 +22,6 @@ bool used[MAXV];
 vector<int> P[MAXN];
 vector<int> path;
 
-void print_array(int *a, int n)
-{
-    for (int i = 0; i < n; i++) printf("%d%c", a[i], i==n-1?'\n':' ');
-}
-
-void print_vector(vector<int> &v)
-{
-    for (uint i = 0; i < v.size(); i++) printf("%d%c", v[i], i+1==v.size()?'\n':' ');
-}
-
-
 void add_edge(int u, int v)
 {
     G[u].push_back(v); G[v].push_back(u);
@@ -88,7 +77,7 @@ int main()
     for (int i = 0; i < N; i++) {
         if (used[i]) continue;
         path.clear(); dft(path, i);
-        print_vector(path);
+        for (uint i = 0; i < path.size(); i++) printf("%d%c", path[i] + 1, i+1==path.size()?'\n':' ');
     }
 
     printf("%d\n", N-res);
