@@ -75,13 +75,14 @@ int main()
     for (int i = 0; i < N; i++) {
         if (used[i]) continue;
         int u = i;
-        path.clear(); path.push_back(u + 1);
+        path.clear();
+        used[u] = true;
         while (match[u] != -1) {
-            path.push_back(match[u] - N + 1);
+            path.push_back(u + 1);
             used[u] = used[u-N] = true;
             u = match[u] - N;
         }
-        used[u] = true;
+        path.push_back(u + 1); used[u] = true;
         print_vector(path);
     }
     printf("%d\n", N-res);
