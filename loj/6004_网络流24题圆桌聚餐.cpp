@@ -71,34 +71,33 @@ ll max_flow(int s, int t) {
 
 int main()
 {
-    while (scanf("%d%d", &M, &N) == 2) {
-        V = M + N + 2, S = 0, T = M + N + 1;
-        for (int i = 0; i < V; i++) { G[i].clear(); }
+    scanf("%d%d", &M, &N);
+    V = M + N + 2, S = 0, T = M + N + 1;
+    for (int i = 0; i < V; i++) { G[i].clear(); }
 
-        ll sum = 0;
-        for (int i = 1; i <= M; i++) {
-            int r; scanf("%d", &r); sum += r;
-            add_edge(S, i, r);
-            for (int j = 1; j <= N; j++) { add_edge(i, M+j, 1); }
-        }
-        for (int i = 1; i <= N; i++) {
-            int c; scanf("%d", &c);
-            add_edge(M+i, T, c);
-        }
-
-        ll flow = max_flow(S, T);
-        printf("%d\n", (int) flow == sum);
-        if (flow == sum) {
-            for (int i = 1; i <= M; i++) {
-                vector<int> to;
-                for (uint j = 0; j < G[i].size(); j++) {
-                    Edge &e = G[i][j];
-                    if (e.cap == 0) to.push_back(e.to);
-                }
-                for (uint j = 0; j < to.size(); j++) {
-                    printf("%d%c", to[j]-M, j+1==to.size()?'\n':' ');
-                }
-            }
-        } else {}
+    ll sum = 0;
+    for (int i = 1; i <= M; i++) {
+        int r; scanf("%d", &r); sum += r;
+        add_edge(S, i, r);
+        for (int j = 1; j <= N; j++) { add_edge(i, M+j, 1); }
     }
+    for (int i = 1; i <= N; i++) {
+        int c; scanf("%d", &c);
+        add_edge(M+i, T, c);
+    }
+
+    ll flow = max_flow(S, T);
+    printf("%d\n", (int) flow == sum);
+    if (flow == sum) {
+        for (int i = 1; i <= M; i++) {
+            vector<int> to;
+            for (uint j = 0; j < G[i].size(); j++) {
+                Edge &e = G[i][j];
+                if (e.cap == 0) to.push_back(e.to);
+            }
+            for (uint j = 0; j < to.size(); j++) {
+                printf("%d%c", to[j]-M, j+1==to.size()?'\n':' ');
+            }
+        }
+    } else {}
 }
