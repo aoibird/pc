@@ -17,9 +17,9 @@ int main()
     int n; scanf("%d", &n);
     int f = n;
     for (int i = 2; i*i <= n; i++) {
-        if (n%i == 0) { f = f * (i - 1) / i; }
+        if (n%i == 0) { f = f / i * (i - 1); }
         while (n%i == 0) { n /= i; }
     }
-    if (n != 1) { f = f * (n - 1) / n; }
+    if (n != 1) { f = f / n * (n - 1); }
     printf("%d\n", f);
 }
